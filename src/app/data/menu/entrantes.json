@@ -1,0 +1,83 @@
+{
+  "id": "entrantes",
+  "icon": "🫙",
+  "title": "Entrantes",
+  "hasTriplePricing": true,
+  "items": [
+    {
+      "name": "Papas arrugadas",
+      "description": "Con mojo rojo o mojo verde",
+      "triplePrice": { "tapa": "3,00€", "media": "4,00€", "racion": "9,00€" }
+    },
+    {
+      "name": "Queso canario",
+      "description": "Queso tierno y queso semiduro",
+      "triplePrice": { "tapa": "0,00€", "media": "0,00€", "racion": "0,00€" },
+      "allergens": ["lacteos"]
+    },
+    {
+      "name": "Queso frito con mermelada de arándanos",
+      "triplePrice": { "tapa": "0,00€", "media": "0,00€", "racion": "0,00€" },
+      "allergens": ["gluten", "huevo", "lacteos"]
+    },
+    {
+      "name": "Pimientos de padrón",
+      "triplePrice": { "tapa": "0,00€", "media": "0,00€", "racion": "0,00€" }
+    },
+    {
+      "name": "Ensalada mixta",
+      "description": "Lechuga, tomate, cebolla, aceitunas, huevo",
+      "triplePrice": { "tapa": "0,00€", "media": "0,00€", "racion": "0,00€" },
+      "allergens": ["huevo"]
+    },
+    {
+      "name": "Ensaladilla rusa",
+      "triplePrice": { "tapa": "0,00€", "media": "0,00€", "racion": "0,00€" },
+      "allergens": ["huevo", "pescado", "moluscos"]
+    },
+    {
+      "name": "Gambas al ajillo",
+      "description": "Aceite de oliva, ajo, guindilla",
+      "triplePrice": { "tapa": "0,00€", "media": "0,00€", "racion": "0,00€" },
+      "allergens": ["crustaceos"]
+    },
+    {
+      "name": "Pulpo a la vinagreta",
+      "triplePrice": { "tapa": "—", "media": "5,00€", "racion": "9,00€" },
+      "allergens": ["moluscos", "mostaza"]
+    },
+    {
+      "name": "Pulpo a la gallega",
+      "description": "Pimentón, aceite de oliva, patata",
+      "triplePrice": { "tapa": "0,00€", "media": "0,00€", "racion": "0,00€" },
+      "allergens": ["moluscos"]
+    },
+    {
+      "name": "Gofio escaldado",
+      "triplePrice": { "tapa": "0,00€", "media": "0,00€", "racion": "0,00€" },
+      "allergens": ["gluten"]
+    },
+    {
+      "name": "Puntitas de calamar",
+      "triplePrice": { "tapa": "0,00€", "media": "0,00€", "racion": "0,00€" },
+      "allergens": ["gluten", "moluscos"]
+    },
+    {
+      "name": "Mejillones a la vinagreta",
+      "triplePrice": { "tapa": "0,00€", "media": "0,00€", "racion": "0,00€" },
+      "allergens": ["moluscos", "mostaza"]
+    },
+    {
+      "name": "Gambas a la gabardina",
+      "description": "Rebozadas, crujientes",
+      "triplePrice": { "tapa": "0,00€", "media": "0,00€", "racion": "0,00€" },
+      "allergens": ["gluten", "huevo", "crustaceos"]
+    },
+    {
+      "name": "Pan",
+      "triplePrice": { "tapa": "—", "media": "—", "racion": "0,50€" },
+      "allergens": ["gluten"]
+    }
+  ]
+}
+

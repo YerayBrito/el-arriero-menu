@@ -1,0 +1,83 @@
+{
+  "id": "pescados",
+  "icon": "🐟",
+  "title": "Pescados del Atlántico",
+  "items": [
+    {
+      "name": "Pescado a la plancha",
+      "description": "Según disponibilidad del día",
+      "price": "00,00€",
+      "allergens": ["pescado"]
+    },
+    {
+      "name": "Pescado empanado",
+      "price": "00,00€",
+      "allergens": ["gluten", "huevo", "pescado"]
+    },
+    {
+      "name": "Tacos de pescado",
+      "description": "A la plancha, con guarnición",
+      "price": "00,00€",
+      "allergens": ["pescado"]
+    },
+    {
+      "name": "Croquetas de pescado caseras",
+      "price": "00,00€",
+      "allergens": ["gluten", "huevo", "lacteos", "pescado"]
+    },
+    {
+      "name": "Chipirones fritos",
+      "price": "00,00€",
+      "allergens": ["gluten", "moluscos"]
+    },
+    {
+      "name": "Chipirones a la plancha",
+      "price": "00,00€",
+      "allergens": ["moluscos"]
+    },
+    {
+      "name": "Calamares fritos",
+      "price": "00,00€",
+      "allergens": ["gluten", "moluscos"]
+    },
+    {
+      "name": "Calamares a la plancha",
+      "price": "00,00€",
+      "allergens": ["moluscos"]
+    },
+    {
+      "name": "★ Combo El Arriero",
+      "description": "Tacos de pescado, choco, pulpo frito, papas arrugadas y ensalada de col",
+      "price": "00,00€",
+      "allergens": ["pescado", "moluscos"],
+      "highlight": true
+    },
+    {
+      "name": "Chocos fritos",
+      "price": "00,00€",
+      "allergens": ["gluten", "moluscos"]
+    },
+    {
+      "name": "Morena frita",
+      "price": "00,00€",
+      "allergens": ["gluten", "pescado"]
+    },
+    {
+      "name": "Churros de pescado",
+      "price": "00,00€",
+      "allergens": ["gluten", "huevo", "pescado"]
+    },
+    {
+      "name": "Pescado frito al peso",
+      "description": "Precio por 100g",
+      "price": "00,00€",
+      "allergens": ["gluten", "pescado"]
+    },
+    {
+      "name": "Atún a la plancha",
+      "price": "00,00€",
+      "allergens": ["pescado"]
+    }
+  ]
+}
+

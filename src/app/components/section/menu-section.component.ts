@@ -35,7 +35,17 @@ import { AllergenIconComponent } from '../allergen-icon/allergen-icon.component'
       >
         <!-- Row: name + price(s) -->
         <div class="item-row">
-          <span class="item-name">{{ item.name }}</span>
+          <div class="item-left">
+            <span class="item-name">{{ item.name }}</span>
+
+            <!-- Allergens inline, right after name -->
+            <div class="allergens-inline" *ngIf="item.allergens?.length">
+              <app-allergen-icon
+                *ngFor="let code of item.allergens"
+                [code]="code"
+              ></app-allergen-icon>
+            </div>
+          </div>
 
           <!-- Triple price -->
           <div class="prices-3" *ngIf="section.hasTriplePricing && item.triplePrice">
@@ -55,14 +65,6 @@ import { AllergenIconComponent } from '../allergen-icon/allergen-icon.component'
 
         <!-- Note -->
         <div class="item-note" *ngIf="item.note">{{ item.note }}</div>
-
-        <!-- Allergens — always last -->
-        <div class="allergens" *ngIf="item.allergens?.length">
-          <app-allergen-icon
-            *ngFor="let code of item.allergens"
-            [code]="code"
-          ></app-allergen-icon>
-        </div>
       </div>
     </div>
   `,

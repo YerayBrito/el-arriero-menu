@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <style>
+      .w{fill:#fff}
+      .s{fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+      .t{fill:#fff;font-family:system-ui, -apple-system, Segoe UI, Arial, sans-serif;font-weight:700;font-size:6.3px;letter-spacing:.6px}
+      .c-gl{fill:#f2a51a}
+      .c-cr{fill:#2aa6df}
+      .c-hv{fill:#f0b31a}
+      .c-pe{fill:#2457b6}
+      .c-ca{fill:#c1843b}
+      .c-so{fill:#45a548}
+      .c-le{fill:#7b4a1e}
+      .c-fs{fill:#d14a3a}
+      .c-ap{fill:#3aa55a}
+      .c-ms{fill:#caa21a}
+      .c-se{fill:#b7a384}
+      .c-su{fill:#7b1b7a}
+      .c-al{fill:#f4d13f}
+      .c-mo{fill:#59b9d5}
+    </style>
+  </defs>
+
+  <!--
+    Iconos en SVG como ayuda visual.
+    La obligacion legal es INFORMAR de los alergenos (UE 1169/2011);
+    el icono no sustituye al texto.
+  -->
+
+  <!-- Estilo: circulo color + pictograma blanco -->
+
+  <symbol id="gluten" viewBox="0 0 24 24">
+    <circle class="c-gl" cx="12" cy="12" r="11"/>
+    <path class="s" d="M12 6c-2 2-2 4 0 6-2 2-2 4 0 6"/>
+    <path class="s" d="M10 8c1 1 3 1 4 0M10 16c1-1 3-1 4 0" opacity=".9"/>
+    <text class="t" x="12" y="21" text-anchor="middle">GLUTEN</text>
+  </symbol>
+
+  <symbol id="crustaceos" viewBox="0 0 24 24">
+    <circle class="c-cr" cx="12" cy="12" r="11"/>
+    <path class="s" d="M8 11c1-2 7-2 8 0s-1 6-4 6-5-4-4-6Z"/>
+    <path class="s" d="M7 11l-2-1M17 11l2-1"/>
+    <path class="s" d="M10 9l-1-2M14 9l1-2" opacity=".85"/>
+    <text class="t" x="12" y="21" text-anchor="middle">CRUSTACEOS</text>
+  </symbol>
+
+  <symbol id="huevo" viewBox="0 0 24 24">
+    <circle class="c-hv" cx="12" cy="12" r="11"/>
+    <path class="s" d="M12 6c3 0 5 4 5 7a5 5 0 0 1-10 0c0-3 2-7 5-7Z"/>
+    <path class="w" d="M10.8 12.2a1.2 1.2 0 1 0 0 .01Z" opacity=".9"/>
+    <text class="t" x="12" y="21" text-anchor="middle">HUEVOS</text>
+  </symbol>
+
+  <symbol id="pescado" viewBox="0 0 24 24">
+    <circle class="c-pe" cx="12" cy="12" r="11"/>
+    <path class="s" d="M7 12c3-4 8-4 11 0-3 4-8 4-11 0Z"/>
+    <path class="s" d="M18 12l3-2v4l-3-2Z"/>
+    <circle cx="10.4" cy="12" r="1" fill="#fff"/>
+    <text class="t" x="12" y="21" text-anchor="middle">PESCADO</text>
+  </symbol>
+
+  <symbol id="cacahuetes" viewBox="0 0 24 24">
+    <circle class="c-ca" cx="12" cy="12" r="11"/>
+    <path class="s" d="M10 8c-1 0-2 1-2 2s1 2 2 2c-1 0-2 1-2 2s1 2 2 2
+             2-1 2-2-1-2-2-2c1 0 2-1 2-2s-1-2-2-2Z"/>
+    <path class="w" d="M15.9 15.4c.7.2 1.4.6 1.4 1.2 0 .7-1 1.3-2.3 1.3-.9 0-1.6-.2-2-.6" opacity=".85"/>
+    <text class="t" x="12" y="21" text-anchor="middle">CACAHUETES</text>
+  </symbol>
+
+  <symbol id="soja" viewBox="0 0 24 24">
+    <circle class="c-so" cx="12" cy="12" r="11"/>
+    <path class="s" d="M9 14c2-6 6-6 8-4-2 6-6 6-8 4Z"/>
+    <path class="s" d="M10 13c2 0 4-2 5-4" opacity=".9"/>
+    <text class="t" x="12" y="21" text-anchor="middle">SOJA</text>
+  </symbol>
+
+  <symbol id="lacteos" viewBox="0 0 24 24">
+    <circle class="c-le" cx="12" cy="12" r="11"/>
+    <path class="s" d="M10 7h4l1 3v8a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V10l1-3Z"/>
+    <path class="s" d="M10 10h4" opacity=".9"/>
+    <text class="t" x="12" y="21" text-anchor="middle">LACTEOS</text>
+  </symbol>
+
+  <symbol id="frutosSecos" viewBox="0 0 24 24">
+    <circle class="c-fs" cx="12" cy="12" r="11"/>
+    <path class="s" d="M12 7c3 0 5 2 5 5s-2 6-5 6-5-3-5-6 2-5 5-5Z"/>
+    <path class="s" d="M12 9v7" opacity=".9"/>
+    <text class="t" x="12" y="21" text-anchor="middle">FRUTOS SECOS</text>
+  </symbol>
+
+  <symbol id="apio" viewBox="0 0 24 24">
+    <circle class="c-ap" cx="12" cy="12" r="11"/>
+    <path class="s" d="M12 18c0-5 4-5 4-9-2 0-4 1-4 3 0-2-2-3-4-3 0 4 4 4 4 9Z"/>
+    <text class="t" x="12" y="21" text-anchor="middle">APIO</text>
+  </symbol>
+
+  <symbol id="mostaza" viewBox="0 0 24 24">
+    <circle class="c-ms" cx="12" cy="12" r="11"/>
+    <path class="s" d="M10 8h4v2h-4V8Zm-1 2h6v8a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-8Z"/>
+    <text class="t" x="12" y="21" text-anchor="middle">MOSTAZA</text>
+  </symbol>
+
+  <symbol id="sesamo" viewBox="0 0 24 24">
+    <circle class="c-se" cx="12" cy="12" r="11"/>
+    <circle cx="9" cy="11" r="1.1" fill="#fff"/>
+    <circle cx="12" cy="10" r="1.1" fill="#fff"/>
+    <circle cx="15" cy="12" r="1.1" fill="#fff"/>
+    <circle cx="11" cy="13.5" r="1.1" fill="#fff"/>
+    <circle cx="14" cy="14" r="1.1" fill="#fff"/>
+    <text class="t" x="12" y="21" text-anchor="middle">SESAMO</text>
+  </symbol>
+
+  <symbol id="sulfitos" viewBox="0 0 24 24">
+    <circle class="c-su" cx="12" cy="12" r="11"/>
+    <path class="s" d="M10 7h4v2h-4V7Zm-1 2h6v9a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V9Z"/>
+    <path class="s" d="M10.2 13h3.6" opacity=".9"/>
+    <text class="t" x="12" y="21" text-anchor="middle">SULFITOS</text>
+  </symbol>
+
+  <symbol id="altramuces" viewBox="0 0 24 24">
+    <circle class="c-al" cx="12" cy="12" r="11"/>
+    <path class="s" d="M12 7c2 2 3 4 3 6s-1 4-3 5c-2-1-3-3-3-5s1-4 3-6Z"/>
+    <circle cx="12" cy="12.6" r="1" fill="#fff" opacity=".9"/>
+    <text class="t" x="12" y="21" text-anchor="middle">ALTRAMUCES</text>
+  </symbol>
+
+  <symbol id="moluscos" viewBox="0 0 24 24">
+    <circle class="c-mo" cx="12" cy="12" r="11"/>
+    <path class="s" d="M7.5 12c0-3 2-5 4.5-5s4.5 2 4.5 5-2 6-4.5 6-4.5-3-4.5-6Z"/>
+    <path class="s" d="M12 8v9" opacity=".9"/>
+    <text class="t" x="12" y="21" text-anchor="middle">MOLUSCOS</text>
+  </symbol>
+</svg>
+

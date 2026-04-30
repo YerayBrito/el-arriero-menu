@@ -1,0 +1,22 @@
+{
+  "id": "encargo",
+  "icon": "📞",
+  "title": "Por Encargo",
+  "items": [
+    {
+      "name": "Caldo de pescado",
+      "description": "Bajo pedido previo, para llevar",
+      "price": "00,00€",
+      "allergens": ["pescado"],
+      "note": "Consúltenos con antelación"
+    },
+    {
+      "name": "Paella para llevar",
+      "description": "Bajo pedido previo · para grupos",
+      "price": "00,00€",
+      "allergens": ["crustaceos", "moluscos", "pescado"],
+      "note": "Consúltenos con antelación"
+    }
+  ]
+}
+

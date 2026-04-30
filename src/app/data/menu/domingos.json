@@ -1,0 +1,22 @@
+{
+  "id": "domingos",
+  "icon": "🌟",
+  "title": "Especiales Domingos",
+  "items": [
+    {
+      "name": "🥘 Paella",
+      "description": "De marisco o mixta · Solo domingos",
+      "price": "00,00€",
+      "allergens": ["crustaceos", "moluscos", "pescado"],
+      "highlight": true
+    },
+    {
+      "name": "🍲 Sancocho canario",
+      "description": "Cherne, papas, mojo y gofio · Solo domingos",
+      "price": "00,00€",
+      "allergens": ["pescado", "gluten"],
+      "highlight": true
+    }
+  ]
+}
+

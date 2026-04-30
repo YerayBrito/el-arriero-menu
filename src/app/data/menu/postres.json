@@ -1,0 +1,35 @@
+{
+  "id": "postres",
+  "icon": "🍮",
+  "title": "Postres Caseros",
+  "items": [
+    {
+      "name": "Mousse de chocolate",
+      "price": "00,00€",
+      "allergens": ["huevo", "lacteos", "frutosSecos"]
+    },
+    {
+      "name": "Natillas",
+      "price": "00,00€",
+      "allergens": ["huevo", "lacteos", "gluten"]
+    },
+    {
+      "name": "Arroz con leche",
+      "price": "00,00€",
+      "allergens": ["lacteos"]
+    },
+    {
+      "name": "Porción de tarta",
+      "description": "Preguntar disponibilidad",
+      "price": "00,00€",
+      "allergens": ["gluten", "huevo", "lacteos"]
+    },
+    {
+      "name": "Polvito uruguayo",
+      "description": "Galleta y dulce de leche",
+      "price": "00,00€",
+      "allergens": ["gluten", "huevo", "lacteos"]
+    }
+  ]
+}
+

@@ -53,14 +53,6 @@ $text-muted: #7a5a42;
     radial-gradient(ellipse at top left,    rgba(180,140,80,.09) 0%, transparent 50%),
     radial-gradient(ellipse at bottom right, rgba(30,80,120,.07)  0%, transparent 50%);
   box-shadow: 0 4px 30px rgba(0,0,0,.15);
-
-  @media print {
-    margin: 0;
-    box-shadow: none;
-    width: 210mm;
-    height: 297mm;
-    overflow: hidden;
-  }
 }
 
 // ── Decorative border ─────────────────────────────────────────
@@ -204,7 +196,17 @@ $text-muted: #7a5a42;
 
 // ── Print overrides ───────────────────────────────────────────
 @media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
   .no-print { display: none !important; }
+
+  html, body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 
   body {
     background: white !important;
@@ -215,5 +217,16 @@ $text-muted: #7a5a42;
   .page {
     margin: 0 !important;
     box-shadow: none !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    height: auto !important;
+    overflow: visible !important;
+    background-image: none !important;
+  }
+
+  .menu-item,
+  .section {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }

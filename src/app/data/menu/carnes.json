@@ -1,0 +1,23 @@
+{
+  "id": "carnes",
+  "icon": "🥩",
+  "title": "Carnes",
+  "items": [
+    {
+      "name": "Vuelta de ternera a la plancha",
+      "description": "Con guarnición de la casa",
+      "price": "00,00€",
+      "allergens": ["mostaza"]
+    },
+    {
+      "name": "Pechuga de pollo a la plancha",
+      "price": "00,00€"
+    },
+    {
+      "name": "Carne de cerdo frita",
+      "description": "Con papas arrugadas y mojo",
+      "price": "00,00€"
+    }
+  ]
+}
+

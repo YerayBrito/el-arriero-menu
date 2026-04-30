@@ -32,13 +32,20 @@ export class MenuComponent {
   );
 
   readonly legend: LegendItem[] = [
-    { code: 'gluten',      label: 'Cereales/Gluten' },
+    // 14 alérgenos (UE 1169/2011)
+    { code: 'gluten',      label: 'Cereales que contengan gluten' },
     { code: 'crustaceos',  label: 'Crustáceos' },
     { code: 'huevo',       label: 'Huevos' },
-    { code: 'pescado',     label: 'Pescados' },
-    { code: 'lacteos',     label: 'Lácteos' },
-    { code: 'frutosSecos', label: 'Frutos secos' },
+    { code: 'pescado',     label: 'Pescado' },
+    { code: 'cacahuetes',  label: 'Cacahuetes' },
+    { code: 'soja',        label: 'Soja' },
+    { code: 'lacteos',     label: 'Leche' },
+    { code: 'frutosSecos', label: 'Frutos de cáscara' },
+    { code: 'apio',        label: 'Apio' },
     { code: 'mostaza',     label: 'Mostaza' },
+    { code: 'sesamo',      label: 'Granos de sésamo' },
+    { code: 'sulfitos',    label: 'Dióxido de azufre y sulfitos' },
+    { code: 'altramuces',  label: 'Altramuces' },
     { code: 'moluscos',    label: 'Moluscos' },
   ];
 

@@ -91,6 +91,14 @@
   gap: 3px;
 }
 
+.item-left {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
 .item-name {
   font-family: 'Cinzel', serif;
   font-size: 7.5px;
@@ -99,6 +107,7 @@
   letter-spacing: 0.2px;
   flex: 1;
   line-height: 1.25;
+  min-width: 0;
 }
 
 .item-price {
@@ -146,11 +155,10 @@
   margin-top: 0.5px;
 }
 
-/* Allergens — always last row */
-.allergens {
+/* Allergens inline (next to name) */
+.allergens-inline {
   display: flex;
-  gap: 2px;
-  margin-top: 2px;
+  gap: 1px;
   align-items: center;
   flex-wrap: nowrap;
 }
