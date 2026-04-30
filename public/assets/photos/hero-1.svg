@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdf8f0"/>
+      <stop offset="0.55" stop-color="#efe5d5"/>
+      <stop offset="1" stop-color="#d9cbb8"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="70%" cy="35%" r="55%">
+      <stop offset="0" stop-color="#b8933e" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#b8933e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e3a5f" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#1e3a5f" stop-opacity="0.70"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="900" rx="44" fill="url(#bg)"/>
+  <rect width="1400" height="900" rx="44" fill="url(#sun)"/>
+
+  <!-- Sea -->
+  <path d="M0 560 C 240 520, 420 650, 700 610 C 980 570, 1120 460, 1400 520 L1400 900 L0 900 Z"
+        fill="url(#sea)"/>
+
+  <!-- Foam lines -->
+  <path d="M-40 590 C 260 540, 430 700, 720 650 C 1010 600, 1160 510, 1460 570"
+        fill="none" stroke="#fdf8f0" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round"/>
+  <path d="M-60 640 C 240 600, 420 740, 720 700 C 1020 660, 1160 590, 1460 640"
+        fill="none" stroke="#fdf8f0" stroke-opacity="0.35" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Plate silhouette -->
+  <g filter="url(#soft)" opacity="0.22">
+    <circle cx="330" cy="320" r="150" fill="#1e3a5f"/>
+  </g>
+  <circle cx="330" cy="320" r="145" fill="#fdf8f0" opacity="0.7"/>
+  <circle cx="330" cy="320" r="120" fill="#fdf8f0" opacity="0.45"/>
+  <path d="M260 320c40-55 110-55 150 0-40 55-110 55-150 0Z" fill="#b8933e" opacity="0.55"/>
+  <path d="M390 320l60-35v70l-60-35Z" fill="#b8933e" opacity="0.55"/>
+
+  <!-- Label -->
+  <g opacity="0.88">
+    <rect x="70" y="70" rx="18" width="420" height="90" fill="#1e3a5f" opacity="0.10" stroke="#b8933e" stroke-opacity="0.35"/>
+    <text x="98" y="125" font-family="Georgia, serif" font-size="34" fill="#1e3a5f" letter-spacing="2">Cocina del mar</text>
+  </g>
+</svg>
+

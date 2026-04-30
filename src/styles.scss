@@ -1,8 +1,17 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
-  background: #e8e0d4;
+  --gold: #b8933e;
+  --navy: #1e3a5f;
+  --cream: #fdf8f0;
+  --text: #132b44;
+  --muted: #6e5b4f;
+
+  background: radial-gradient(1200px 700px at 10% 0%, rgba(184,147,62,.10), transparent 55%),
+              radial-gradient(900px 600px at 100% 30%, rgba(30,58,95,.10), transparent 55%),
+              #e8e0d4;
   min-height: 100vh;
+  color: var(--text);
 }
 
 @media print {
