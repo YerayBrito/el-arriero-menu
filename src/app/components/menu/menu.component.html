@@ -1,0 +1,69 @@
+<div class="screen-toolbar no-print">
+  <div class="toolbar-brand">🐟 El Arriero — Editor de Carta</div>
+  <button class="btn-print" (click)="printMenu()">🖨️ Imprimir / Guardar PDF</button>
+</div>
+
+<div class="page">
+  <div class="border-outer"></div>
+  <div class="border-inner"></div>
+  <span class="corner c-tl">✦</span>
+  <span class="corner c-tr">✦</span>
+  <span class="corner c-bl">✦</span>
+  <span class="corner c-br">✦</span>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="wave">〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰</div>
+    <div class="logo">
+      EL <span class="logo-accent">ARRIERO</span>
+    </div>
+    <div class="tagline">{{ tagline }}</div>
+    <div class="divider">
+      <div class="line line-l"></div>
+      <span class="anchor">⚓</span>
+      <div class="line line-r"></div>
+    </div>
+  </div>
+
+  <!-- TWO COLUMN LAYOUT -->
+  <div class="two-col">
+
+    <!-- LEFT COLUMN -->
+    <div class="col">
+      <app-menu-section
+        *ngFor="let section of leftSections"
+        [section]="section"
+      ></app-menu-section>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col">
+      <app-menu-section
+        *ngFor="let section of rightSections"
+        [section]="section"
+      ></app-menu-section>
+    </div>
+
+  </div>
+
+  <!-- ALLERGEN LEGEND -->
+  <div class="legend">
+    <div class="legend-title">⚠ Alérgenos — Reglamento UE 1169/2011</div>
+    <div class="legend-row">
+      <div class="legend-item" *ngFor="let item of legend">
+        <app-allergen-icon [code]="item.code"></app-allergen-icon>
+        <span class="legend-text">{{ item.label }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-note">
+      Precios con IVA incluido · Producto fresco de temporada · Consulte la carta de bebidas con el personal
+    </div>
+    <div class="footer-warn">
+      ⚠ Informe al personal si padece alguna alergia o intolerancia · Playa de Arinaga · Agüimes · Gran Canaria
+    </div>
+  </div>
+</div>

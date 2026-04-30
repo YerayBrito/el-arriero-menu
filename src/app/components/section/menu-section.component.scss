@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:wght@400;700&display=swap');
+
+.section {
+  margin-bottom: 3.5mm;
+}
+
+/* ── Section header ── */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 1px solid #b8933e;
+  margin-bottom: 2px;
+  padding-bottom: 1px;
+}
+
+.section-icon { font-size: 10px; flex-shrink: 0; }
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 7.8px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #1e3a5f;
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.section-deco { color: #b8933e; font-size: 8px; }
+
+/* ── Triple price header ── */
+.price-header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0;
+  margin-bottom: 1px;
+}
+
+.ph-label {
+  font-family: 'Cinzel', serif;
+  font-size: 5.5px;
+  letter-spacing: 0.5px;
+  color: #b8933e;
+  text-transform: uppercase;
+  text-align: center;
+  width: 32px;
+  border-bottom: 0.5px solid rgba(184, 147, 62, 0.4);
+  padding-bottom: 1px;
+}
+
+/* ── Pills (salsas) ── */
+.pills-row {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.pill {
+  background: rgba(30, 58, 95, 0.08);
+  border: 0.5px solid rgba(184, 147, 62, 0.45);
+  border-radius: 8px;
+  padding: 1px 6px;
+  font-size: 7.5px;
+  color: #1e3a5f;
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ── Menu item ── */
+.menu-item {
+  padding: 2px 0 1.5px;
+  border-bottom: 0.3px dashed rgba(184, 147, 62, 0.22);
+
+  &:last-child { border-bottom: none; }
+
+  &.highlight {
+    background: rgba(184, 147, 62, 0.09);
+    border: 0.8px solid rgba(184, 147, 62, 0.45);
+    border-radius: 2px;
+    padding: 2px 4px;
+    margin: 1px 0;
+  }
+}
+
+/* Row: name + price on same line */
+.item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+}
+
+.item-name {
+  font-family: 'Cinzel', serif;
+  font-size: 7.5px;
+  font-weight: 400;
+  color: #1e3a5f;
+  letter-spacing: 0.2px;
+  flex: 1;
+  line-height: 1.25;
+}
+
+.item-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 8px;
+  color: #b8933e;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Triple prices */
+.prices-3 {
+  display: flex;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.p3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 7.5px;
+  color: #b8933e;
+  font-weight: 700;
+  width: 32px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Description */
+.item-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 7px;
+  font-style: italic;
+  color: #7a5a42;
+  line-height: 1.2;
+  margin-top: 0.5px;
+}
+
+/* Note */
+.item-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 6.5px;
+  font-style: italic;
+  color: #b8933e;
+  margin-top: 0.5px;
+}
+
+/* Allergens — always last row */
+.allergens {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+  align-items: center;
+  flex-wrap: nowrap;
+}

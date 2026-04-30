@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:wght@400;700&display=swap');
+
+// ── Variables ──────────────────────────────────────────────────
+$gold:     #b8933e;
+$navy:     #1e3a5f;
+$navy-mid: #1e5080;
+$cream:    #fdf8f0;
+$brown:    #2c1810;
+$text-muted: #7a5a42;
+
+// ── Screen toolbar ─────────────────────────────────────────────
+.screen-toolbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: $navy;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+
+.toolbar-brand { letter-spacing: 2px; }
+
+.btn-print {
+  background: $gold;
+  color: #fff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background .2s;
+
+  &:hover { background: color-mix(in srgb, #b8933e 80%, black); }
+}
+
+// ── Page ───────────────────────────────────────────────────────
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 60px auto 40px;  // space for toolbar on screen
+  padding: 8mm 11mm 6mm;
+  position: relative;
+  background: $cream;
+  background-image:
+    radial-gradient(ellipse at top left,    rgba(180,140,80,.09) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(30,80,120,.07)  0%, transparent 50%);
+  box-shadow: 0 4px 30px rgba(0,0,0,.15);
+
+  @media print {
+    margin: 0;
+    box-shadow: none;
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+  }
+}
+
+// ── Decorative border ─────────────────────────────────────────
+.border-outer {
+  position: absolute; top: 5.5mm; left: 5.5mm; right: 5.5mm; bottom: 5.5mm;
+  border: 1.5px solid $gold;
+  pointer-events: none;
+}
+
+.border-inner {
+  position: absolute; top: 7.5mm; left: 7.5mm; right: 7.5mm; bottom: 7.5mm;
+  border: .5px solid rgba(184,147,62,.35);
+  pointer-events: none;
+}
+
+.corner {
+  position: absolute;
+  color: $gold;
+  font-size: 11px;
+  line-height: 1;
+}
+.c-tl { top: 4mm;    left: 4mm;   }
+.c-tr { top: 4mm;    right: 4mm;  }
+.c-bl { bottom: 4mm; left: 4mm;   }
+.c-br { bottom: 4mm; right: 4mm;  }
+
+// ── Header ────────────────────────────────────────────────────
+.header {
+  text-align: center;
+  padding-bottom: 1.5mm;
+}
+
+.wave {
+  color: $navy-mid;
+  font-size: 8px;
+  letter-spacing: 6px;
+  opacity: .55;
+  margin-bottom: 1px;
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: $navy;
+  letter-spacing: 5px;
+  line-height: 1.05;
+}
+
+.logo-accent { color: $gold; }
+
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 9px;
+  color: $navy-mid;
+  letter-spacing: 2px;
+  margin-top: 1px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 2px 0;
+}
+
+.line {
+  height: 1px;
+  width: 45px;
+  &.line-l { background: linear-gradient(to right, transparent, $gold); }
+  &.line-r { background: linear-gradient(to left,  transparent, $gold); }
+}
+
+.anchor { color: $gold; font-size: 11px; }
+
+// ── Two column layout ─────────────────────────────────────────
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 6mm;
+  margin-top: 1.5mm;
+}
+
+// ── Allergen legend ───────────────────────────────────────────
+.legend {
+  margin-top: 1.5mm;
+  padding-top: 1.5mm;
+  border-top: .5px solid rgba(184,147,62,.25);
+}
+
+.legend-title {
+  font-family: 'Cinzel', serif;
+  font-size: 6px;
+  letter-spacing: 1.5px;
+  color: $navy;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.legend-text {
+  font-size: 6px;
+  color: #5a3a2a;
+}
+
+// ── Footer ────────────────────────────────────────────────────
+.footer {
+  text-align: center;
+  margin-top: 1.5mm;
+  padding-top: 1.5mm;
+  border-top: .5px solid rgba(184,147,62,.3);
+}
+
+.footer-note {
+  font-size: 6.5px;
+  font-style: italic;
+  color: #8b6552;
+}
+
+.footer-warn {
+  font-family: 'Cinzel', serif;
+  font-size: 5.8px;
+  letter-spacing: .8px;
+  color: $navy;
+  margin-top: 1px;
+  opacity: .75;
+}
+
+// ── Print overrides ───────────────────────────────────────────
+@media print {
+  .no-print { display: none !important; }
+
+  body {
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .page {
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+}

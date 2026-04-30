@@ -1,0 +1,10 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  background: #e8e0d4;
+  min-height: 100vh;
+}
+
+@media print {
+  html, body { background: white; }
+}
