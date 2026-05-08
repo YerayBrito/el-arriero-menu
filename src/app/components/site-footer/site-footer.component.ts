@@ -25,11 +25,22 @@ import { RouterLink } from '@angular/router';
         </div>
       </div>
       <div class="bottom">
-        <span class="muted">Precios con IVA incluido · Consulte al personal si padece alergias o intolerancias</span>
+        <p class="muted notice">
+          Precios con IGIC incluido · Consulte al personal si padece alergias o intolerancias
+        </p>
+        <p class="copyright">
+          © {{ year }} Bar Las Salinas · Arinaga · Todos los derechos reservados.
+        </p>
+        <p class="legal">
+          Los contenidos de este sitio web (textos, diseño, carta e imágenes) son propiedad de Bar Las Salinas · Arinaga.
+          Queda prohibida su copia, reproducción o uso comercial sin autorización previa por escrito.
+        </p>
       </div>
     </footer>
   `,
   styleUrls: ['./site-footer.component.scss'],
 })
-export class SiteFooterComponent {}
+export class SiteFooterComponent {
+  readonly year = new Date().getFullYear();
+}
 
