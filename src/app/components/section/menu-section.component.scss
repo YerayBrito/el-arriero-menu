@@ -14,19 +14,20 @@
   padding-bottom: 1px;
 }
 
-.section-icon { font-size: 10px; flex-shrink: 0; }
+.section-icon { font-size: 11px; flex-shrink: 0; }
 
 .section-title {
   font-family: 'Cinzel', serif;
-  font-size: 7.8px;
+  font-size: 8.8px;
   font-weight: 600;
-  letter-spacing: 2px;
-  color: #1e3a5f;
+  letter-spacing: 1.8px;
+  color: #0f172a;
   text-transform: uppercase;
   flex: 1;
+  line-height: 1.25;
 }
 
-.section-deco { color: #b8933e; font-size: 8px; }
+.section-deco { color: #b8933e; font-size: 9px; }
 
 /* ── Triple price header ── */
 .price-header {
@@ -38,12 +39,12 @@
 
 .ph-label {
   font-family: 'Cinzel', serif;
-  font-size: 5.5px;
-  letter-spacing: 0.5px;
+  font-size: 6.3px;
+  letter-spacing: 0.35px;
   color: #b8933e;
   text-transform: uppercase;
   text-align: center;
-  width: 32px;
+  width: 36px;
   border-bottom: 0.5px solid rgba(184, 147, 62, 0.4);
   padding-bottom: 1px;
 }
@@ -57,14 +58,15 @@
 }
 
 .pill {
-  background: rgba(30, 58, 95, 0.08);
+  background: rgba(15, 23, 42, 0.06);
   border: 0.5px solid rgba(184, 147, 62, 0.45);
   border-radius: 8px;
   padding: 1px 6px;
-  font-size: 7.5px;
-  color: #1e3a5f;
+  font-size: 8.2px;
+  color: #0f172a;
   font-style: italic;
   font-family: 'Cormorant Garamond', serif;
+  line-height: 1.25;
 }
 
 /* ── Menu item ── */
@@ -101,18 +103,18 @@
 
 .item-name {
   font-family: 'Cinzel', serif;
-  font-size: 7.5px;
+  font-size: 8.5px;
   font-weight: 400;
-  color: #1e3a5f;
-  letter-spacing: 0.2px;
+  color: #0f172a;
+  letter-spacing: 0.15px;
   flex: 1;
-  line-height: 1.25;
+  line-height: 1.32;
   min-width: 0;
 }
 
 .item-price {
   font-family: 'Playfair Display', serif;
-  font-size: 8px;
+  font-size: 9px;
   color: #b8933e;
   font-weight: 700;
   white-space: nowrap;
@@ -128,10 +130,10 @@
 
 .p3 {
   font-family: 'Playfair Display', serif;
-  font-size: 7.5px;
+  font-size: 8.8px;
   color: #b8933e;
   font-weight: 700;
-  width: 32px;
+  width: 36px;
   text-align: center;
   white-space: nowrap;
 }
@@ -139,17 +141,17 @@
 /* Description */
 .item-desc {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 7px;
+  font-size: 7.8px;
   font-style: italic;
-  color: #7a5a42;
-  line-height: 1.2;
+  color: #334155;
+  line-height: 1.28;
   margin-top: 0.5px;
 }
 
 /* Note */
 .item-note {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 6.5px;
+  font-size: 7.2px;
   font-style: italic;
   color: #b8933e;
   margin-top: 0.5px;

@@ -9,18 +9,23 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   template: `
     <header class="header">
       <div class="inner">
-        <a class="brand" routerLink="/">
+        <a class="brand" routerLink="/" (click)="closeMenu()">
           <span class="brand-mark">⚓</span>
-          <span class="brand-name">El Arriero</span>
+          <span class="brand-name">Las Salinas</span>
         </a>
 
         <nav class="nav" [class.open]="menuOpen()">
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
-          <a routerLink="/carta" routerLinkActive="active">Carta</a>
-          <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeMenu()"
+          >Inicio</a>
+          <a routerLink="/carta" routerLinkActive="active" (click)="closeMenu()">Carta</a>
+          <a routerLink="/contacto" routerLinkActive="active" (click)="closeMenu()">Contacto</a>
         </nav>
 
-        <button class="burger" type="button" (click)="toggle()" aria-label="Abrir menú">
+        <button class="burger" type="button" (click)="toggle()" [attr.aria-label]="menuOpen() ? 'Cerrar menú' : 'Abrir menú'" [attr.aria-expanded]="menuOpen()">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -33,6 +38,10 @@ export class SiteHeaderComponent {
 
   toggle(): void {
     this.menuOpen.update(v => !v);
+  }
+
+  closeMenu(): void {
+    this.menuOpen.set(false);
   }
 }
 

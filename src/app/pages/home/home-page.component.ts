@@ -8,10 +8,16 @@ import { RouterLink } from '@angular/router';
   imports: [CommonModule, RouterLink],
   template: `
     <section class="hero">
+      <div class="sea-decor" aria-hidden="true">
+        <span class="sea-sprite sea-sprite--a">🐟</span>
+        <span class="sea-sprite sea-sprite--b">🦐</span>
+        <span class="sea-sprite sea-sprite--c">🐠</span>
+        <span class="sea-sprite sea-sprite--d">🐟</span>
+      </div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <div class="badge">Playa de Arinaga · Agüimes</div>
-          <h1>El Arriero</h1>
+          <div class="badge">Arinaga · Las Palmas</div>
+          <h1>Las Salinas</h1>
           <p class="lead">
             Cocina del mar y sabores canarios. Consulta la carta con precios y alérgenos, clara y rápida.
           </p>
@@ -22,13 +28,8 @@ import { RouterLink } from '@angular/router';
           </div>
         </div>
 
-        <div class="hero-media" aria-hidden="true">
-          <div class="photo big">
-            <img src="/assets/photos/hero-1.svg" alt="" loading="lazy" />
-          </div>
-          <div class="photo small">
-            <img src="/assets/photos/hero-2.svg" alt="" loading="lazy" />
-          </div>
+        <div class="hero-media">
+          <img class="hero-logo" src="/assets/brand/logo-las-salinas.png" alt="Logo de Las Salinas" />
         </div>
       </div>
     </section>

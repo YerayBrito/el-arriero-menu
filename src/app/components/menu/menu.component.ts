@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 import { MenuSectionComponent } from '../section/menu-section.component';
 import { AllergenIconComponent } from '../allergen-icon/allergen-icon.component';
 import { MENU_SECTIONS } from '../../data/menu.data';
@@ -13,13 +14,23 @@ interface LegendItem {
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, MenuSectionComponent, AllergenIconComponent],
+  imports: [CommonModule, RouterLink, MenuSectionComponent, AllergenIconComponent],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
-  readonly restaurantName = 'EL ARRIERO';
-  readonly tagline = 'Cocina del Mar · Playa de Arinaga · Agüimes · Gran Canaria';
+  private readonly router = inject(Router);
+
+  readonly restaurantName = 'LAS SALINAS';
+  readonly addressLine = 'C. Churruca, 40 · 35118 Arinaga · Las Palmas';
+  readonly mapsUrl = 'https://maps.app.goo.gl/Jss47pXqB7tWmpqn7';
+  readonly tagline = 'Sabor que navega contigo';
+
+  /** Vista A4 / imprimir: detectar por Router (fiable con navegación SPA). */
+  isPrintView(): boolean {
+    const url = this.router.url.split('?')[0].split('#')[0];
+    return url === '/carta/imprimir' || url.endsWith('/carta/imprimir');
+  }
 
   // Left column: entrantes, salsas, carnes, postres
   readonly leftSections: MenuSection[] = MENU_SECTIONS.filter(s =>

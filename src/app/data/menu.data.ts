@@ -1,7 +1,7 @@
 import { MenuSection } from '../models/menu.model';
 
 // ═══════════════════════════════════════════════════════════════
-//  CARTA EL ARRIERO — Datos del menú (editables)
+//  CARTA LAS SALINAS — Datos del menú (editables)
 //  Cada sección vive en un JSON independiente dentro de:
 //  `src/app/data/menu/*.json`
 // ═══════════════════════════════════════════════════════════════

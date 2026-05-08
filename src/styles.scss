@@ -1,19 +1,105 @@
+@use './app/styles/view-motion.scss';
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 html, body {
+  /* Altura aproximada del header fijo (sticky) para barras fixed debajo */
+  --site-header-h: 60px;
   --gold: #b8933e;
   --navy: #1e3a5f;
-  --cream: #fdf8f0;
-  --text: #132b44;
-  --muted: #6e5b4f;
+  /* Tonos superficie suaves tipo espuma/niebla marina (compatible con dorado azul corporativo) */
+  --cream: #eef6fa;
+  /* Texto casi negro para buen contraste sobre fondo azul claro */
+  --text: #0f172a;
+  --muted: #334155;
 
-  background: radial-gradient(1200px 700px at 10% 0%, rgba(184,147,62,.10), transparent 55%),
-              radial-gradient(900px 600px at 100% 30%, rgba(30,58,95,.10), transparent 55%),
-              #e8e0d4;
+  background:
+    radial-gradient(1150px 720px at 8% -5%, rgba(90, 150, 190, .16), transparent 58%),
+    radial-gradient(900px 600px at 98% 20%, rgba(30, 80, 120, .12), transparent 55%),
+    radial-gradient(700px 480px at 50% 100%, rgba(65, 140, 160, .08), transparent 52%),
+    radial-gradient(1200px 500px at 40% 50%, rgba(184, 147, 62, .05), transparent 45%),
+    linear-gradient(168deg, #e9f4f9 0%, #dbeaf2 38%, #d2e4ef 72%, #c8dce8 100%);
   min-height: 100vh;
   color: var(--text);
 }
 
+// Sticky footer layout (footer al final de la ventana cuando falta contenido)
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex: 1;
+}
+
+app-site-header,
+app-site-footer {
+  flex-shrink: 0;
+}
+
+.site-main {
+  flex: 1;
+  min-height: 0;
+}
+
 @media print {
-  html, body { background: white; }
+  html, body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Vista carta/imprimir: solo la hoja del menú, sin cabecera/pie del sitio */
+  html.print-sheet-only,
+  body.print-sheet-only {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  body.print-sheet-only app-site-header,
+  body.print-sheet-only app-site-footer {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  body.print-sheet-only app-root {
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  body.print-sheet-only .site-main {
+    display: block !important;
+    min-height: 0 !important;
+    flex: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  body.print-sheet-only app-menu {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.print-sheet-only {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
 }

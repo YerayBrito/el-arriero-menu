@@ -1,6 +1,11 @@
 <div class="screen-toolbar no-print">
-  <div class="toolbar-brand">🐟 El Arriero — Editor de Carta</div>
-  <button class="btn-print" (click)="printMenu()">🖨️ Imprimir / Guardar PDF</button>
+  <div class="toolbar-brand">
+    {{ isPrintView() ? 'Las Salinas — Carta (Imprimir)' : 'Las Salinas — Editor de Carta' }}
+  </div>
+  <div class="toolbar-actions">
+    <a *ngIf="!isPrintView()" class="btn-secondary" routerLink="/carta/imprimir">Ver vista de impresión</a>
+    <button *ngIf="isPrintView()" type="button" class="btn-print" (click)="printMenu()">🖨️ Imprimir / Guardar PDF</button>
+  </div>
 </div>
 
 <div class="page">
@@ -14,10 +19,14 @@
   <!-- HEADER -->
   <div class="header">
     <div class="wave">〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰</div>
-    <div class="logo">
-      EL <span class="logo-accent">ARRIERO</span>
-    </div>
+    <img
+      class="brand-logo"
+      src="/assets/brand/logo-las-salinas.png"
+      alt="Las Salinas"
+      loading="eager"
+    />
     <div class="tagline">{{ tagline }}</div>
+    <div class="tagline tagline-addr">{{ addressLine }}</div>
     <div class="divider">
       <div class="line line-l"></div>
       <span class="anchor">⚓</span>
@@ -63,7 +72,7 @@
       Precios con IVA incluido · Producto fresco de temporada · Consulte la carta de bebidas con el personal
     </div>
     <div class="footer-warn">
-      ⚠ Informe al personal si padece alguna alergia o intolerancia · Playa de Arinaga · Agüimes · Gran Canaria
+      ⚠ Informe al personal si padece alguna alergia o intolerancia · {{ addressLine }}
     </div>
   </div>
 </div>

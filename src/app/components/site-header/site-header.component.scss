@@ -35,7 +35,7 @@
   justify-content: center;
   border: 1px solid rgba(184,147,62,.55);
   border-radius: 10px;
-  background: rgba(253,248,240,.08);
+  background: rgba(238,246,250,.08);
 }
 
 .brand-name {
@@ -61,7 +61,7 @@
     border-radius: 10px;
     transition: background .15s, color .15s, border-color .15s;
 
-    &:hover { background: rgba(253,248,240,.08); color: #fff; }
+    &:hover { background: rgba(238,246,250,.08); color: #fff; }
     &.active { color: #fff; border: 1px solid rgba(184,147,62,.35); }
   }
 
@@ -79,7 +79,7 @@
   height: 38px;
   border: 1px solid rgba(184,147,62,.35);
   border-radius: 12px;
-  background: rgba(253,248,240,.08);
+  background: rgba(238,246,250,.08);
   cursor: pointer;
 
   span {

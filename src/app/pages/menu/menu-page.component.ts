@@ -11,9 +11,18 @@ import { AllergenIconComponent } from '../../components/allergen-icon/allergen-i
   template: `
     <div class="wrap">
       <div class="top">
-        <div>
+        <div class="top-copy">
           <h2>Carta</h2>
           <p class="lead">Platos, precios y alérgenos.</p>
+        </div>
+        <div class="top-logo">
+          <img
+            src="/assets/brand/logo-las-salinas.png"
+            alt="Las Salinas"
+            width="320"
+            height="200"
+            loading="lazy"
+          />
         </div>
       </div>
 
@@ -45,7 +54,7 @@ import { AllergenIconComponent } from '../../components/allergen-icon/allergen-i
 
       <div class="sections">
         <section class="section" *ngFor="let s of filteredSections()">
-          <div class="section-head">
+          <div class="section-head" [class.section-head-triple]="s.hasTriplePricing">
             <div class="left">
               <span class="emoji">{{ s.icon }}</span>
               <span class="title">{{ s.title }}</span>
@@ -61,7 +70,7 @@ import { AllergenIconComponent } from '../../components/allergen-icon/allergen-i
 
           <div class="items">
             <article class="item" *ngFor="let it of s.items" [class.highlight]="it.highlight">
-              <div class="row">
+              <div class="row" [class.row-triple]="s.hasTriplePricing">
                 <div class="name">
                   {{ it.name }}
                   <span class="allergens" *ngIf="it.allergens?.length">

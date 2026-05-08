@@ -10,8 +10,14 @@ import { RouterLink } from '@angular/router';
     <footer class="footer">
       <div class="inner">
         <div class="col">
-          <div class="name">El Arriero</div>
-          <div class="muted">Playa de Arinaga · Agüimes · Gran Canaria</div>
+          <div class="name">Las Salinas</div>
+          <div class="muted">C. Churruca, 40 · 35118 Arinaga · Las Palmas</div>
+          <a
+            class="muted"
+            href="https://maps.app.goo.gl/Jss47pXqB7tWmpqn7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Ver en Google Maps</a>
         </div>
         <div class="col links">
           <a routerLink="/carta">Carta</a>

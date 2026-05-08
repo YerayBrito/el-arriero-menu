@@ -4,20 +4,32 @@
 $gold:     #b8933e;
 $navy:     #1e3a5f;
 $navy-mid: #1e5080;
-$cream:    #fdf8f0;
-$brown:    #2c1810;
-$text-muted: #7a5a42;
+// Mismo fondo marino que la web (hoja de carta)
+$sheet-bg: linear-gradient(168deg, #e9f4f9 0%, #dbeaf2 38%, #d2e4ef 72%, #c8dce8 100%);
+$sheet-bg-layers:
+  radial-gradient(1150px 720px at 8% -5%, rgba(90, 150, 190, .16), transparent 58%),
+  radial-gradient(900px 600px at 98% 20%, rgba(30, 80, 120, .12), transparent 55%),
+  radial-gradient(700px 480px at 50% 100%, rgba(65, 140, 160, .08), transparent 52%),
+  radial-gradient(1200px 500px at 40% 50%, rgba(184, 147, 62, .05), transparent 45%),
+  $sheet-bg;
+$text-body: #0f172a;
+$text-muted: #334155;
 
 // ── Screen toolbar ─────────────────────────────────────────────
 .screen-toolbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
+  /* Debajo del header del sitio (z-index 1000), no tapado por él */
+  top: var(--site-header-h, 60px);
+  left: 0;
+  right: 0;
+  z-index: 1001;
   background: $navy;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
   padding: 8px 20px;
   font-family: 'Cinzel', serif;
   font-size: 13px;
@@ -25,6 +37,12 @@ $text-muted: #7a5a42;
 }
 
 .toolbar-brand { letter-spacing: 2px; }
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 .btn-print {
   background: $gold;
@@ -41,17 +59,36 @@ $text-muted: #7a5a42;
   &:hover { background: color-mix(in srgb, #b8933e 80%, black); }
 }
 
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,.35);
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 1px;
+  background: rgba(255,255,255,.08);
+  transition: background .2s, border-color .2s;
+
+  &:hover {
+    background: rgba(255,255,255,.14);
+    border-color: rgba(255,255,255,.55);
+  }
+}
+
 // ── Page ───────────────────────────────────────────────────────
 .page {
   width: 210mm;
   min-height: 297mm;
-  margin: 60px auto 40px;  // space for toolbar on screen
+  /* Header del sitio + barra de herramientas de la carta */
+  margin: calc(var(--site-header-h, 60px) + 52px) auto 40px;
   padding: 8mm 11mm 6mm;
   position: relative;
-  background: $cream;
-  background-image:
-    radial-gradient(ellipse at top left,    rgba(180,140,80,.09) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(30,80,120,.07)  0%, transparent 50%);
+  background-color: #dbeaf2;
+  background-image: $sheet-bg-layers;
   box-shadow: 0 4px 30px rgba(0,0,0,.15);
 }
 
@@ -86,10 +123,10 @@ $text-muted: #7a5a42;
 }
 
 .wave {
-  color: $navy-mid;
+  color: $text-body;
   font-size: 8px;
   letter-spacing: 6px;
-  opacity: .55;
+  opacity: .45;
   margin-bottom: 1px;
 }
 
@@ -104,13 +141,31 @@ $text-muted: #7a5a42;
 
 .logo-accent { color: $gold; }
 
+.brand-logo {
+  display: block;
+  // El PNG del logo trae bastante “aire” transparente debajo.
+  // Compensamos aquí para que el lema quede más pegado.
+  margin: 1px auto -2.6mm;
+  width: min(140mm, 86%);
+  max-height: 42mm;
+  object-fit: contain;
+}
+
 .tagline {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 9px;
-  color: $navy-mid;
+  font-size: 10px;
+  color: $text-body;
   letter-spacing: 2px;
-  margin-top: 1px;
+  line-height: 1.25;
+  margin-top: -0.6mm;
+}
+
+.tagline-addr {
+  font-style: normal;
+  letter-spacing: 1.4px;
+  color: $text-muted;
+  opacity: 1;
 }
 
 .divider {
@@ -147,9 +202,9 @@ $text-muted: #7a5a42;
 
 .legend-title {
   font-family: 'Cinzel', serif;
-  font-size: 6px;
-  letter-spacing: 1.5px;
-  color: $navy;
+  font-size: 6.8px;
+  letter-spacing: 1.4px;
+  color: $text-body;
   text-transform: uppercase;
   margin-bottom: 2px;
 }
@@ -167,8 +222,9 @@ $text-muted: #7a5a42;
 }
 
 .legend-text {
-  font-size: 6px;
-  color: #5a3a2a;
+  font-size: 6.6px;
+  line-height: 1.25;
+  color: $text-body;
 }
 
 // ── Footer ────────────────────────────────────────────────────
@@ -180,18 +236,20 @@ $text-muted: #7a5a42;
 }
 
 .footer-note {
-  font-size: 6.5px;
+  font-size: 7px;
   font-style: italic;
-  color: #8b6552;
+  line-height: 1.25;
+  color: $text-muted;
 }
 
 .footer-warn {
   font-family: 'Cinzel', serif;
-  font-size: 5.8px;
-  letter-spacing: .8px;
-  color: $navy;
+  font-size: 6.3px;
+  letter-spacing: .75px;
+  line-height: 1.25;
+  color: $text-body;
   margin-top: 1px;
-  opacity: .75;
+  opacity: .92;
 }
 
 // ── Print overrides ───────────────────────────────────────────
@@ -221,12 +279,65 @@ $text-muted: #7a5a42;
     min-height: 297mm !important;
     height: auto !important;
     overflow: visible !important;
-    background-image: none !important;
+    background-color: #dbeaf2 !important;
+    background-image: $sheet-bg-layers !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   .menu-item,
   .section {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+}
+
+// ── Responsive (screen) ──────────────────────────────────────────
+@media screen and (max-width: 900px) {
+  .page {
+    width: auto;
+    min-height: auto;
+    margin: calc(var(--site-header-h, 60px) + 50px) 12px 24px;
+    padding: 18px 14px 16px;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .brand-logo {
+    width: 100%;
+    max-height: 180px;
+  }
+
+  .wave {
+    letter-spacing: 4px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .screen-toolbar {
+    padding: 8px 12px;
+  }
+
+  .toolbar-brand {
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+
+  .btn-secondary,
+  .btn-print {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .page {
+    margin: calc(var(--site-header-h, 60px) + 52px) 10px 20px;
+    padding: 16px 12px 14px;
+  }
+
+  .legend-row {
+    gap: 4px 10px;
   }
 }
