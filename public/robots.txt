@@ -1,0 +1,6 @@
+# https://lassalinasarinaga.es
+User-agent: *
+Allow: /
+
+# La ruta /carta/imprimir no está pensada para producción (solo uso local);
+# en el servidor redirige al inicio.
