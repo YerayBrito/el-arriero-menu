@@ -22,7 +22,7 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
 .splash-bg {
   position: absolute;
   inset: -6px;
-  background-color: var(--navy, #1e3a5f);
+  background-color: #c9dfed;
   background-image: $splash-photo;
   background-size: cover;
   background-position: center 42%;
@@ -42,12 +42,13 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
 .splash-overlay {
   position: absolute;
   inset: 0;
+  /* Azul claro: deja ver el detalle del logo (p. ej. “comida para llevar”) */
   background:
     linear-gradient(
       180deg,
-      rgba(15, 35, 55, 0.52) 0%,
-      rgba(17, 45, 70, 0.38) 38%,
-      rgba(22, 55, 78, 0.55) 100%
+      rgba(216, 236, 246, 0.78) 0%,
+      rgba(200, 228, 242, 0.68) 38%,
+      rgba(188, 220, 236, 0.76) 100%
     );
   pointer-events: none;
 }
@@ -57,7 +58,7 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   z-index: 1;
   text-align: center;
   max-width: 520px;
-  color: #f8fafc;
+  color: var(--text, #0f172a);
   animation: splash-in 1s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -77,9 +78,9 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   font-size: clamp(17px, 2.8vw, 22px);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  opacity: 0.92;
+  color: var(--muted, #334155);
+  opacity: 1;
   margin-bottom: clamp(16px, 3vw, 28px);
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
 }
 
 .logo-wrap {
@@ -93,19 +94,8 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   height: auto;
   object-fit: contain;
   filter:
-    drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45))
-    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
-  animation: logo-drift 7s ease-in-out infinite;
-}
-
-@keyframes logo-drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(0, -6px, 0);
-  }
+    drop-shadow(0 12px 28px rgba(30, 58, 95, 0.12))
+    drop-shadow(0 2px 8px rgba(30, 58, 95, 0.08));
 }
 
 .headline {
@@ -115,7 +105,7 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   letter-spacing: 0.18em;
   text-transform: uppercase;
   line-height: 1.15;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+  color: var(--navy, #1e3a5f);
 }
 
 .tagline {
@@ -124,8 +114,7 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   font-size: clamp(19px, 3.2vw, 24px);
   font-weight: 500;
   line-height: 1.45;
-  opacity: 0.95;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  color: var(--muted, #334155);
 }
 
 .wave {
@@ -152,19 +141,18 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   z-index: 2;
   font-size: 11px;
   font-family: system-ui, sans-serif;
-  color: rgba(248, 250, 252, 0.55);
+  color: rgba(15, 35, 55, 0.45);
 }
 
 .photo-credit a {
-  color: rgba(248, 250, 252, 0.75);
+  color: rgba(30, 58, 95, 0.75);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .splash-bg,
-  .splash-body,
-  .logo {
+  .splash-body {
     animation: none !important;
   }
 
