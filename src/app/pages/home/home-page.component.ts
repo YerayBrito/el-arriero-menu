@@ -22,9 +22,10 @@ import { CommonModule } from '@angular/common';
           />
         </div>
         <h1 class="headline">Próxima apertura</h1>
-        <p class="tagline">
-          Muy pronto abrimos junto al mar. Gracias por tu paciencia.
-        </p>
+        <div class="tagline">
+          <p class="tagline-line">Muy pronto abrimos junto al mar.</p>
+          <p class="tagline-line tagline-thanks">Gracias por su paciencia.</p>
+        </div>
         <span class="wave" aria-hidden="true"></span>
       </div>
 

@@ -26,17 +26,6 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   background-image: $splash-photo;
   background-size: cover;
   background-position: center 42%;
-  transform: scale(1.06);
-  animation: splash-zoom 38s ease-in-out infinite alternate;
-}
-
-@keyframes splash-zoom {
-  from {
-    transform: scale(1.04);
-  }
-  to {
-    transform: scale(1.1);
-  }
 }
 
 .splash-overlay {
@@ -59,17 +48,15 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   text-align: center;
   max-width: 520px;
   color: var(--text, #0f172a);
-  animation: splash-in 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: splash-in 0.7s ease-out both;
 }
 
 @keyframes splash-in {
   from {
     opacity: 0;
-    transform: translate3d(0, 28px, 0);
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -110,11 +97,20 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
 
 .tagline {
   margin-top: 14px;
+  text-align: center;
+}
+
+.tagline-line {
+  margin: 0;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(19px, 3.2vw, 24px);
   font-weight: 500;
   line-height: 1.45;
   color: var(--muted, #334155);
+}
+
+.tagline-thanks {
+  margin-top: 0.35em;
 }
 
 .wave {
@@ -151,12 +147,7 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .splash-bg,
   .splash-body {
     animation: none !important;
-  }
-
-  .splash-bg {
-    transform: none;
   }
 }
