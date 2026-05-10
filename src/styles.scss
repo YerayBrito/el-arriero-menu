@@ -51,6 +51,14 @@ app-site-footer {
   min-height: 0;
 }
 
+/* Portada “próxima apertura”: el main ocupa toda la ventana sin hueco del header */
+.site-main.site-main--splash {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex: 1 1 auto;
+}
+
 @media print {
   html, body {
     background: white !important;

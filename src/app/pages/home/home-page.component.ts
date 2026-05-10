@@ -1,40 +1,39 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   template: `
-    <section class="hero">
-      <div class="sea-decor" aria-hidden="true">
-        <span class="sea-sprite sea-sprite--a">🐟</span>
-        <span class="sea-sprite sea-sprite--b">🦐</span>
-        <span class="sea-sprite sea-sprite--c">🐠</span>
-        <span class="sea-sprite sea-sprite--d">🐟</span>
-      </div>
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <div class="badge">Arinaga · Las Palmas</div>
-          <h1>Las Salinas</h1>
-          <p class="lead">
-            Cocina del mar y sabores canarios. Consulta la carta con precios y alérgenos, clara y rápida.
-          </p>
+    <section class="splash" aria-label="Próxima apertura">
+      <div class="splash-bg" aria-hidden="true"></div>
+      <div class="splash-overlay" aria-hidden="true"></div>
 
-          <div class="actions">
-            <a class="btn primary" routerLink="/carta">Ver carta</a>
-            <a class="btn ghost" routerLink="/contacto">Cómo llegar</a>
-          </div>
+      <div class="splash-body">
+        <p class="kicker">Playa de Arinaga · Gran Canaria</p>
+        <div class="logo-wrap">
+          <img
+            class="logo"
+            src="/assets/brand/logo-las-salinas.png"
+            width="340"
+            height="260"
+            alt="Bar Las Salinas"
+          />
         </div>
-
-        <div class="hero-media">
-          <img class="hero-logo" src="/assets/brand/logo-las-salinas.png" alt="Logo de Las Salinas" />
-        </div>
+        <h1 class="headline">Próxima apertura</h1>
+        <p class="tagline">
+          Muy pronto abrimos junto al mar. Gracias por tu paciencia.
+        </p>
+        <span class="wave" aria-hidden="true"></span>
       </div>
+
+      <p class="photo-credit">
+        Foto:
+        <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
+      </p>
     </section>
   `,
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent {}
-
