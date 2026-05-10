@@ -1,0 +1,174 @@
+{
+  "sections": {
+    "entrantes": "Starters",
+    "salsas": "Sauces",
+    "pescados": "Atlantic Fish",
+    "carnes": "Meat",
+    "postres": "Homemade Desserts",
+    "domingos": "Sunday Specials",
+    "encargo": "Pre-Order"
+  },
+  "pills": {
+    "salsas": {
+      "0": "Garlic aioli",
+      "1": "Red mojo",
+      "2": "Green mojo",
+      "3": "Blueberry sauce"
+    }
+  },
+  "items": {
+    "entrantes": {
+      "0": {
+        "name": "Wrinkly potatoes",
+        "description": "With red or green mojo sauce"
+      },
+      "1": {
+        "name": "Canarian cheese board",
+        "description": "Fresh and semi-cured local cheese"
+      },
+      "2": {
+        "name": "Pan-fried cheese with blueberry compote"
+      },
+      "3": {
+        "name": "Padrón peppers"
+      },
+      "4": {
+        "name": "Mixed salad",
+        "description": "Lettuce, tomato, onion, olives, egg"
+      },
+      "5": {
+        "name": "Potato salad"
+      },
+      "6": {
+        "name": "Prawns in garlic oil",
+        "description": "Olive oil, garlic, dried chilli"
+      },
+      "7": {
+        "name": "Octopus vinaigrette"
+      },
+      "8": {
+        "name": "Galician-style octopus",
+        "description": "Sweet paprika, olive oil, potato"
+      },
+      "9": {
+        "name": "Gofio escaldado",
+        "description": "Traditional Canarian toasted grain porridge with fish broth"
+      },
+      "10": {
+        "name": "Crispy squid strips"
+      },
+      "11": {
+        "name": "Mussels in vinaigrette"
+      },
+      "12": {
+        "name": "Prawns in beer batter",
+        "description": "Light crispy coating"
+      },
+      "13": {
+        "name": "Bread"
+      }
+    },
+    "pescados": {
+      "0": {
+        "name": "Grilled catch of the day",
+        "description": "Ask your server for today's fish"
+      },
+      "1": {
+        "name": "Breaded fish fillet"
+      },
+      "2": {
+        "name": "Fish bites",
+        "description": "Grilled, served with a side"
+      },
+      "3": {
+        "name": "Homemade fish croquettes"
+      },
+      "4": {
+        "name": "Fried baby squid"
+      },
+      "5": {
+        "name": "Grilled baby squid"
+      },
+      "6": {
+        "name": "Fried calamari rings"
+      },
+      "7": {
+        "name": "Grilled calamari"
+      },
+      "8": {
+        "name": "★ Las Salinas platter",
+        "description": "Fish bites, cuttlefish, fried octopus, wrinkly potatoes and coleslaw"
+      },
+      "9": {
+        "name": "Fried cuttlefish"
+      },
+      "10": {
+        "name": "Fried moray eel"
+      },
+      "11": {
+        "name": "Fish goujons"
+      },
+      "12": {
+        "name": "Fried fish by weight",
+        "description": "Price per 100g"
+      },
+      "13": {
+        "name": "Grilled tuna steak"
+      }
+    },
+    "carnes": {
+      "0": {
+        "name": "Grilled beef fillet",
+        "description": "With house side dish"
+      },
+      "1": {
+        "name": "Grilled chicken breast"
+      },
+      "2": {
+        "name": "Fried pork",
+        "description": "With wrinkly potatoes and mojo sauce"
+      }
+    },
+    "postres": {
+      "0": {
+        "name": "Chocolate mousse"
+      },
+      "1": {
+        "name": "Custard cream"
+      },
+      "2": {
+        "name": "Rice pudding"
+      },
+      "3": {
+        "name": "Slice of cake",
+        "description": "Ask your server for today's selection"
+      },
+      "4": {
+        "name": "Polvito uruguayo",
+        "description": "Biscuit crumble with dulce de leche"
+      }
+    },
+    "domingos": {
+      "0": {
+        "name": "🥘 Paella",
+        "description": "Seafood or mixed · Sundays only"
+      },
+      "1": {
+        "name": "🍲 Canarian sancocho",
+        "description": "Salt-cured grouper, potatoes, mojo and gofio · Sundays only"
+      }
+    },
+    "encargo": {
+      "0": {
+        "name": "Fish broth",
+        "description": "Available to take away on request",
+        "note": "Please ask us in advance"
+      },
+      "1": {
+        "name": "Paella to go",
+        "description": "Made to order · ideal for groups",
+        "note": "Please ask us in advance"
+      }
+    }
+  }
+}

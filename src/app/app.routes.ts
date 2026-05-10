@@ -1,19 +1,17 @@
 import { Routes } from '@angular/router';
 
 import { HomePageComponent } from './pages/home/home-page.component';
-import { MenuPageComponent } from './pages/menu/menu-page.component';
-import { ContactPageComponent } from './pages/contact/contact-page.component';
 import { localOnlyGuard } from './guards/local-only.guard';
 
+/**
+ * Modo “próxima apertura”: solo la portada es accesible en producción.
+ * Cualquier otra URL (`/carta`, `/contacto`, …) redirige a `/`.
+ *
+ * Excepción: `/carta/imprimir` solo en localhost (PDF interno).
+ */
 export const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomePageComponent },
-  { path: 'carta', component: MenuPageComponent },
-  { path: 'contacto', component: ContactPageComponent },
 
-  /**
-   * Carta PDF / imprimir: solo en localhost (ver localOnlyGuard).
-   * En producción no existe esta ruta para usuarios; el chunk solo se carga en desarrollo al entrar aquí.
-   */
   {
     path: 'carta/imprimir',
     loadComponent: () =>

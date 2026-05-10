@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-site-footer',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, TranslatePipe],
   template: `
     <footer class="footer">
       <div class="inner">
@@ -17,24 +17,19 @@ import { RouterLink } from '@angular/router';
             href="https://maps.app.goo.gl/Jss47pXqB7tWmpqn7"
             target="_blank"
             rel="noopener noreferrer"
-          >Ver en Google Maps</a>
+          >{{ 'footer.mapsLink' | t }}</a>
           <a class="muted mail" href="mailto:lassalinasarinaga@gmail.com">lassalinasarinaga@gmail.com</a>
-        </div>
-        <div class="col links">
-          <a routerLink="/carta">Carta</a>
-          <a routerLink="/contacto">Contacto</a>
         </div>
       </div>
       <div class="bottom">
         <p class="muted notice">
-          Precios con IGIC incluido · Consulte al personal si padece alergias o intolerancias
+          {{ 'footer.notice' | t }}
         </p>
         <p class="copyright">
-          © {{ year }} Bar Las Salinas · Arinaga · Todos los derechos reservados.
+          © {{ year }} {{ 'footer.copyright' | t }}
         </p>
         <p class="legal">
-          Los contenidos de este sitio web (textos, diseño, carta e imágenes) son propiedad de Bar Las Salinas · Arinaga.
-          Queda prohibida su copia, reproducción o uso comercial sin autorización previa por escrito.
+          {{ 'footer.legal' | t }}
         </p>
       </div>
     </footer>
@@ -44,4 +39,3 @@ import { RouterLink } from '@angular/router';
 export class SiteFooterComponent {
   readonly year = new Date().getFullYear();
 }
-

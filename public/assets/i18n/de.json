@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "menu": "Speisekarte",
+    "contact": "Kontakt",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "langPicker": "Sprache"
+  },
+  "lang": {
+    "es": "ES",
+    "en": "EN",
+    "de": "DE"
+  },
+  "home": {
+    "ariaSplash": "Bald geöffnet",
+    "kicker": "Strand von Arinaga · Gran Canaria",
+    "logoAlt": "Bar Las Salinas",
+    "headline": "Bald geöffnet",
+    "line1": "Wir öffnen sehr bald direkt am Meer.",
+    "line2": "Vielen Dank für Ihre Geduld.",
+    "photoCredit": "Foto:"
+  },
+  "menu": {
+    "title": "Unsere Speisekarte",
+    "lead": "Gerichte, Preise und Allergeninformationen.",
+    "logoAlt": "Las Salinas",
+    "searchPlaceholder": "Speisekarte durchsuchen…",
+    "filterAll": "Alle",
+    "pricing": {
+      "tapa": "Tapa",
+      "half": "½ Portion",
+      "racion": "Ganze Portion"
+    },
+    "legendSummary": "Allergenhinweise",
+    "legend": {
+      "gluten": "Glutenhaltiges Getreide",
+      "crustaceos": "Krebstiere",
+      "huevo": "Eier",
+      "pescado": "Fisch",
+      "cacahuetes": "Erdnüsse",
+      "soja": "Soja",
+      "lacteos": "Milch",
+      "frutosSecos": "Schalenfrüchte",
+      "apio": "Sellerie",
+      "mostaza": "Senf",
+      "sesamo": "Sesamsamen",
+      "sulfitos": "Schwefeldioxid und Sulfite",
+      "altramuces": "Lupinen",
+      "moluscos": "Weichtiere"
+    }
+  },
+  "contact": {
+    "title": "So finden Sie uns",
+    "lead": "Anfahrt, Öffnungszeiten und Kontaktdaten.",
+    "logoAlt": "Las Salinas",
+    "addressLabel": "Adresse",
+    "openMaps": "In Google Maps öffnen",
+    "phoneLabel": "Telefon",
+    "phoneHint": "Bitte durch die echte Telefonnummer ersetzen.",
+    "emailLabel": "E-Mail",
+    "hoursLabel": "Öffnungszeiten",
+    "hoursHint": "Bei Bedarf je nach Saison anpassen.",
+    "mapLabel": "Karte",
+    "mapHint": "Sie können den Standort auch in Google Maps öffnen.",
+    "mapRegion": "Karte – Bar Las Salinas",
+    "mapIframeTitle": "Karte – Bar Las Salinas"
+  },
+  "footer": {
+    "mapsLink": "In Google Maps ansehen",
+    "navMenu": "Speisekarte",
+    "navContact": "Kontakt",
+    "notice": "Preise inkl. Kanarischer Steuer (IGIC) · Bitte informieren Sie das Personal über Allergien oder Unverträglichkeiten",
+    "copyright": "Bar Las Salinas · Arinaga · Alle Rechte vorbehalten.",
+    "legal": "Alle Inhalte dieser Website (Texte, Gestaltung, Speisekarte und Bilder) sind Eigentum von Bar Las Salinas · Arinaga. Vervielfältigung, Reproduktion oder gewerbliche Nutzung ohne vorherige schriftliche Genehmigung ist untersagt."
+  }
+}

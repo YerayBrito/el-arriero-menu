@@ -1,0 +1,174 @@
+{
+  "sections": {
+    "entrantes": "Vorspeisen",
+    "salsas": "Soßen",
+    "pescados": "Atlantikfisch",
+    "carnes": "Fleischgerichte",
+    "postres": "Hausgemachte Desserts",
+    "domingos": "Sonntagsspezialitäten",
+    "encargo": "Auf Vorbestellung"
+  },
+  "pills": {
+    "salsas": {
+      "0": "Knoblauch-Aioli",
+      "1": "Rotes Mojo",
+      "2": "Grünes Mojo",
+      "3": "Heidelbeersoße"
+    }
+  },
+  "items": {
+    "entrantes": {
+      "0": {
+        "name": "Runzelige Salzkartoffeln",
+        "description": "Mit rotem oder grünem Mojo"
+      },
+      "1": {
+        "name": "Kanarische Käseplatte",
+        "description": "Frischkäse und halbgereifter Käse aus der Region"
+      },
+      "2": {
+        "name": "Gebratener Käse mit Heidelbeer-Konfitüre"
+      },
+      "3": {
+        "name": "Padrón-Paprika"
+      },
+      "4": {
+        "name": "Gemischter Salat",
+        "description": "Blattsalat, Tomate, Zwiebel, Oliven, Ei"
+      },
+      "5": {
+        "name": "Kartoffelsalat nach Art des Hauses"
+      },
+      "6": {
+        "name": "Garnelen in Knoblauchöl",
+        "description": "Olivenöl, Knoblauch, Peperoni"
+      },
+      "7": {
+        "name": "Oktopus-Vinaigrette"
+      },
+      "8": {
+        "name": "Oktopus nach galicischer Art",
+        "description": "Paprika, Olivenöl, Kartoffel"
+      },
+      "9": {
+        "name": "Gofio escaldado",
+        "description": "Traditioneller kanarischer Getreidebrei mit Fischbrühe"
+      },
+      "10": {
+        "name": "Knusprige Tintenfischstreifen"
+      },
+      "11": {
+        "name": "Miesmuscheln in Vinaigrette"
+      },
+      "12": {
+        "name": "Garnelen im Bierteig",
+        "description": "Knusprig ausgebacken"
+      },
+      "13": {
+        "name": "Brot"
+      }
+    },
+    "pescados": {
+      "0": {
+        "name": "Gegrillter Tagesfisch",
+        "description": "Bitte beim Personal nach dem Tagesangebot fragen"
+      },
+      "1": {
+        "name": "Paniertes Fischfilet"
+      },
+      "2": {
+        "name": "Fischstücke vom Grill",
+        "description": "Mit Beilage nach Wahl"
+      },
+      "3": {
+        "name": "Hausgemachte Fischkroketten"
+      },
+      "4": {
+        "name": "Frittierte Baby-Tintenfische"
+      },
+      "5": {
+        "name": "Baby-Tintenfische vom Grill"
+      },
+      "6": {
+        "name": "Frittierte Calamari-Ringe"
+      },
+      "7": {
+        "name": "Calamari vom Grill"
+      },
+      "8": {
+        "name": "★ Las Salinas Teller",
+        "description": "Fischstücke, Sepia, gebratener Oktopus, Salzkartoffeln und Krautsalat"
+      },
+      "9": {
+        "name": "Frittierte Sepia"
+      },
+      "10": {
+        "name": "Frittierte Muräne"
+      },
+      "11": {
+        "name": "Fisch-Goujons"
+      },
+      "12": {
+        "name": "Frittierter Fisch nach Gewicht",
+        "description": "Preis pro 100g"
+      },
+      "13": {
+        "name": "Thunfischsteak vom Grill"
+      }
+    },
+    "carnes": {
+      "0": {
+        "name": "Rinderfilet vom Grill",
+        "description": "Mit Beilage des Hauses"
+      },
+      "1": {
+        "name": "Hähnchenbrust vom Grill"
+      },
+      "2": {
+        "name": "Gebratenes Schweinefleisch",
+        "description": "Mit Salzkartoffeln und Mojo"
+      }
+    },
+    "postres": {
+      "0": {
+        "name": "Schokoladenmousse"
+      },
+      "1": {
+        "name": "Vanillecreme"
+      },
+      "2": {
+        "name": "Milchreis"
+      },
+      "3": {
+        "name": "Kuchenstück",
+        "description": "Bitte nach dem heutigen Angebot fragen"
+      },
+      "4": {
+        "name": "Polvito uruguayo",
+        "description": "Kekskrümel mit Dulce de leche"
+      }
+    },
+    "domingos": {
+      "0": {
+        "name": "🥘 Paella",
+        "description": "Mit Meeresfrüchten oder gemischt · nur sonntags"
+      },
+      "1": {
+        "name": "🍲 Kanarischer Sancocho",
+        "description": "Gesalzener Zackenbarsch, Kartoffeln, Mojo und Gofio · nur sonntags"
+      }
+    },
+    "encargo": {
+      "0": {
+        "name": "Fischbrühe",
+        "description": "Auf Vorbestellung, zum Mitnehmen",
+        "note": "Bitte rechtzeitig anfragen"
+      },
+      "1": {
+        "name": "Paella zum Mitnehmen",
+        "description": "Auf Vorbestellung · für Gruppen",
+        "note": "Bitte rechtzeitig anfragen"
+      }
+    }
+  }
+}

@@ -1,11 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AppLang, I18nService } from '../../i18n/i18n.service';
+import { TranslatePipe } from '../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-site-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterLink, RouterLinkActive, TranslatePipe],
   template: `
     <header class="header">
       <div class="inner">
@@ -20,12 +22,27 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
             (click)="closeMenu()"
-          >Inicio</a>
-          <a routerLink="/carta" routerLinkActive="active" (click)="closeMenu()">Carta</a>
-          <a routerLink="/contacto" routerLinkActive="active" (click)="closeMenu()">Contacto</a>
+          >{{ 'nav.home' | t }}</a>
         </nav>
 
-        <button class="burger" type="button" (click)="toggle()" [attr.aria-label]="menuOpen() ? 'Cerrar menú' : 'Abrir menú'" [attr.aria-expanded]="menuOpen()">
+        <div class="lang" role="group" [attr.aria-label]="'nav.langPicker' | t">
+          @for (l of langs; track l) {
+            <button
+              type="button"
+              class="lang-btn"
+              [class.active]="i18n.lang() === l"
+              (click)="pickLang(l)"
+            >{{ ('lang.' + l) | t }}</button>
+          }
+        </div>
+
+        <button
+          class="burger"
+          type="button"
+          (click)="toggle()"
+          [attr.aria-label]="menuOpen() ? ('nav.closeMenu' | t) : ('nav.openMenu' | t)"
+          [attr.aria-expanded]="menuOpen()"
+        >
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -35,6 +52,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class SiteHeaderComponent {
   readonly menuOpen = signal(false);
+  readonly i18n = inject(I18nService);
+  readonly langs: AppLang[] = ['es', 'en', 'de'];
 
   toggle(): void {
     this.menuOpen.update(v => !v);
@@ -43,5 +62,8 @@ export class SiteHeaderComponent {
   closeMenu(): void {
     this.menuOpen.set(false);
   }
-}
 
+  async pickLang(lang: AppLang): Promise<void> {
+    await this.i18n.useLanguage(lang);
+  }
+}

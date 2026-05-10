@@ -10,13 +10,13 @@
 }
 
 .inner {
+  position: relative;
   max-width: 1100px;
   margin: 0 auto;
   padding: 12px 16px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  justify-content: space-between;
+  gap: 10px;
 }
 
 .brand {
@@ -45,10 +45,46 @@
   font-size: 13px;
 }
 
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 10px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lang-btn {
+  min-width: 34px;
+  padding: 6px 8px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  border-radius: 8px;
+  border: 1px solid rgba(184, 147, 62, 0.35);
+  background: rgba(238, 246, 250, 0.08);
+  color: rgba(255, 255, 255, 0.86);
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+
+  &:hover {
+    background: rgba(238, 246, 250, 0.14);
+    color: #fff;
+  }
+
+  &.active {
+    background: rgba(184, 147, 62, 0.45);
+    border-color: rgba(184, 147, 62, 0.65);
+    color: #fff;
+  }
+}
+
 .nav {
   display: flex;
   align-items: center;
   gap: 14px;
+  flex: 1;
+  justify-content: flex-end;
 
   a {
     font-family: 'Cinzel', serif;
@@ -102,15 +138,32 @@
     display: none;
     flex-direction: column;
     align-items: stretch;
+    flex: none;
+    justify-content: flex-start;
     background: color-mix(in srgb, var(--navy) 96%, black);
     border: 1px solid rgba(184,147,62,.25);
     border-radius: 16px;
     padding: 10px;
     gap: 6px;
+    z-index: 1001;
 
     &.open { display: flex; }
 
     a { width: 100%; }
+  }
+
+  /* Idiomas siempre visibles en la barra (no dentro del menú desplegable) */
+  .lang {
+    margin-left: auto;
+    padding-left: 0;
+    border-left: 0;
+    gap: 3px;
+  }
+
+  .lang-btn {
+    min-width: 30px;
+    padding: 5px 6px;
+    font-size: 9px;
   }
 }
 
