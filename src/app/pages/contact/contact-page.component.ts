@@ -39,6 +39,12 @@ import { CommonModule } from '@angular/common';
           <div class="hint">Puedes cambiarlo por el número real.</div>
         </div>
         <div class="card">
+          <div class="label">Correo</div>
+          <div class="value">
+            <a href="mailto:lassalinasarinaga@gmail.com">lassalinasarinaga@gmail.com</a>
+          </div>
+        </div>
+        <div class="card">
           <div class="label">Horario</div>
           <div class="value">L–D: 12:00–23:00</div>
           <div class="hint">Ajusta según temporada.</div>

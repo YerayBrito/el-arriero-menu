@@ -18,6 +18,7 @@ import { RouterLink } from '@angular/router';
             target="_blank"
             rel="noopener noreferrer"
           >Ver en Google Maps</a>
+          <a class="muted mail" href="mailto:lassalinasarinaga@gmail.com">lassalinasarinaga@gmail.com</a>
         </div>
         <div class="col links">
           <a routerLink="/carta">Carta</a>

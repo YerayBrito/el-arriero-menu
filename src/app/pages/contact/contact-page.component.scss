@@ -52,7 +52,7 @@ h2 {
 .grid {
   margin-top: 16px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 12px;
 }
 
@@ -75,6 +75,17 @@ h2 {
   margin-top: 8px;
   font-size: 16px;
   color: var(--text);
+
+  a {
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    overflow-wrap: anywhere;
+  }
+
+  a:hover {
+    color: #2a5080;
+  }
 }
 .hint {
   margin-top: 6px;

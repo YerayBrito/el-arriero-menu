@@ -13,6 +13,22 @@
   grid-template-columns: 1fr auto;
   gap: 18px;
   align-items: center;
+
+  > .col:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+.inner > .col:first-child a.muted {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.inner > .col:first-child a.mail {
+  overflow-wrap: anywhere;
 }
 
 .name {
