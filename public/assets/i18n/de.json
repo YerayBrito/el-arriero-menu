@@ -13,13 +13,39 @@
     "de": "DE"
   },
   "home": {
-    "ariaSplash": "Bald geöffnet",
-    "kicker": "Strand von Arinaga · Gran Canaria",
-    "logoAlt": "Bar Las Salinas",
-    "headline": "Bald geöffnet",
-    "line1": "Wir öffnen sehr bald direkt am Meer.",
-    "line2": "Vielen Dank für Ihre Geduld.",
-    "photoCredit": "Foto:"
+    "ariaHero": "Las Salinas · Startseite",
+    "badge": "Arinaga · Las Palmas",
+    "title": "Las Salinas",
+    "lead": "Meeresfrüchte und kanarische Aromen. Speisekarte mit Preisen und Allergenen – übersichtlich und schnell.",
+    "ctaMenu": "Speisekarte ansehen",
+    "ctaContact": "Anfahrt",
+    "logoAlt": "Logo Las Salinas"
+  },
+  "order": {
+    "backHome": "Zur Startseite",
+    "subtitleDemo": "Bestellung · lokale Demo",
+    "badgeLocal": "Nur lokale Entwicklung: keine echte Bestellung oder Zahlung.",
+    "title": "Bestellung zusammenstellen",
+    "tabAll": "Alles",
+    "add": "Hinzufügen",
+    "addToCart": "In den Warenkorb",
+    "openCart": "Warenkorb öffnen",
+    "viewCart": "Warenkorb",
+    "yourOrder": "Ihre Bestellung",
+    "emptyCart": "Noch keine Artikel.",
+    "total": "Summe",
+    "checkoutDemo": "Zur Kasse (Demo)",
+    "checkoutMsg": "Das ist ein lokaler Prototyp: Es wird nichts an das Lokal gesendet. Später z. B. WhatsApp oder Kassensystem anbinden.",
+    "clearCart": "Warenkorb leeren",
+    "selectSize": "Portion wählen",
+    "fmtTapa": "Tapa",
+    "fmtMedia": "½ Portion",
+    "fmtRacion": "Volle Portion",
+    "close": "Schließen",
+    "fromPrice": "ab {{p}}",
+    "fromPriceAsk": "Preis laut Speisekarte",
+    "added": "In den Warenkorb gelegt",
+    "categoriesAria": "Menü-Kategorien"
   },
   "menu": {
     "title": "Unsere Speisekarte",
@@ -48,6 +74,20 @@
       "sulfitos": "Schwefeldioxid und Sulfite",
       "altramuces": "Lupinen",
       "moluscos": "Weichtiere"
+    },
+    "print": {
+      "toolbarPrint": "Las Salinas — Speisekarte (Druck)",
+      "toolbarEdit": "Las Salinas — Speisekarten-Editor",
+      "openPrintView": "Druckansicht",
+      "printPdf": "Drucken / Als PDF speichern",
+      "langPicker": "Sprache für den Druck",
+      "colTapa": "Tapa",
+      "colHalf": "½ Port.",
+      "colRacion": "Ganz",
+      "legendTitle": "⚠ Allergene — Verordnung (EU) Nr. 1169/2011",
+      "tagline": "Meeresgeschmack, der mit dir fährt",
+      "footerNote": "Preise inkl. IGIC · Frische Saisonware · Getränkekarte erfragen Sie bitte das Personal",
+      "footerAllergen": "⚠ Bitte informieren Sie das Personal über Allergien oder Unverträglichkeiten ·"
     }
   },
   "contact": {

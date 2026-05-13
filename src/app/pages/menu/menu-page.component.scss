@@ -157,22 +157,6 @@ h2 {
   justify-self: stretch;
 }
 
-.pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
-.pill {
-  border: 1px solid rgba(184,147,62,.25);
-  background: rgba(30,58,95,.06);
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  color: var(--text);
-}
-
 .items { margin-top: 10px; display: grid; gap: 10px; }
 
 .item {

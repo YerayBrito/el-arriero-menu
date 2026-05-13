@@ -1,10 +1,44 @@
 <div class="screen-toolbar no-print">
   <div class="toolbar-brand">
-    {{ isPrintView() ? 'Las Salinas — Carta (Imprimir)' : 'Las Salinas — Editor de Carta' }}
+    {{ isPrintView() ? ('menu.print.toolbarPrint' | t) : ('menu.print.toolbarEdit' | t) }}
   </div>
   <div class="toolbar-actions">
-    <a *ngIf="!isPrintView()" class="btn-secondary" routerLink="/carta/imprimir">Ver vista de impresión</a>
-    <button *ngIf="isPrintView()" type="button" class="btn-print" (click)="printMenu()">🖨️ Imprimir / Guardar PDF</button>
+    <a
+      *ngIf="!isPrintView()"
+      class="btn-secondary"
+      routerLink="/carta/imprimir"
+      [queryParams]="{ lang: i18n.lang() }"
+      >{{ 'menu.print.openPrintView' | t }}</a
+    >
+    <div *ngIf="isPrintView()" class="print-lang no-print" role="group" [attr.aria-label]="'menu.print.langPicker' | t">
+      <a
+        class="lang-chip"
+        routerLink="/carta/imprimir"
+        [queryParams]="{ lang: 'es' }"
+        queryParamsHandling="merge"
+        [class.active]="i18n.lang() === 'es'"
+        >ES</a
+      >
+      <a
+        class="lang-chip"
+        routerLink="/carta/imprimir"
+        [queryParams]="{ lang: 'en' }"
+        queryParamsHandling="merge"
+        [class.active]="i18n.lang() === 'en'"
+        >EN</a
+      >
+      <a
+        class="lang-chip"
+        routerLink="/carta/imprimir"
+        [queryParams]="{ lang: 'de' }"
+        queryParamsHandling="merge"
+        [class.active]="i18n.lang() === 'de'"
+        >DE</a
+      >
+    </div>
+    <button *ngIf="isPrintView()" type="button" class="btn-print" (click)="printMenu()">
+      🖨️ {{ 'menu.print.printPdf' | t }}
+    </button>
   </div>
 </div>
 
@@ -22,10 +56,10 @@
     <img
       class="brand-logo"
       src="/assets/brand/logo-las-salinas.png"
-      alt="Las Salinas"
+      [attr.alt]="'menu.logoAlt' | t"
       loading="eager"
     />
-    <div class="tagline">{{ tagline }}</div>
+    <div class="tagline">{{ 'menu.print.tagline' | t }}</div>
     <div class="tagline tagline-addr">{{ addressLine }}</div>
     <div class="divider">
       <div class="line line-l"></div>
@@ -57,11 +91,11 @@
 
   <!-- ALLERGEN LEGEND -->
   <div class="legend">
-    <div class="legend-title">⚠ Alérgenos — Reglamento UE 1169/2011</div>
+    <div class="legend-title">{{ 'menu.print.legendTitle' | t }}</div>
     <div class="legend-row">
-      <div class="legend-item" *ngFor="let item of legend">
-        <app-allergen-icon [code]="item.code"></app-allergen-icon>
-        <span class="legend-text">{{ item.label }}</span>
+      <div class="legend-item" *ngFor="let code of legendCodes">
+        <app-allergen-icon [code]="code"></app-allergen-icon>
+        <span class="legend-text">{{ ('menu.legend.' + code) | t }}</span>
       </div>
     </div>
   </div>
@@ -69,10 +103,10 @@
   <!-- FOOTER -->
   <div class="footer">
     <div class="footer-note">
-      Precios con IGIC incluido · Producto fresco de temporada · Consulte la carta de bebidas con el personal
+      {{ 'menu.print.footerNote' | t }}
     </div>
     <div class="footer-warn">
-      ⚠ Informe al personal si padece alguna alergia o intolerancia · {{ addressLine }}
+      {{ 'menu.print.footerAllergen' | t }} {{ addressLine }}
     </div>
   </div>
 </div>

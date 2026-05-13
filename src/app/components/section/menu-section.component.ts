@@ -1,42 +1,39 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuSection } from '../../models/menu.model';
 import { AllergenIconComponent } from '../allergen-icon/allergen-icon.component';
+import { I18nService } from '../../i18n/i18n.service';
+import { TranslatePipe } from '../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-menu-section',
   standalone: true,
-  imports: [CommonModule, AllergenIconComponent],
+  imports: [CommonModule, AllergenIconComponent, TranslatePipe],
   template: `
     <div class="section">
       <div class="section-header">
         <span class="section-icon">{{ section.icon }}</span>
-        <span class="section-title">{{ section.title }}</span>
+        <span class="section-title">{{ secTitle(section) }}</span>
         <span class="section-deco">✦</span>
       </div>
 
       <!-- Triple price header for entrantes -->
       <div class="price-header" *ngIf="section.hasTriplePricing">
-        <span class="ph-label">Tapa</span>
-        <span class="ph-label">½ Rac.</span>
-        <span class="ph-label">Rac.</span>
-      </div>
-
-      <!-- Pill items (salsas) -->
-      <div class="pills-row" *ngIf="section.pillItems?.length">
-        <span class="pill" *ngFor="let pill of section.pillItems">{{ pill }}</span>
+        <span class="ph-label">{{ 'menu.print.colTapa' | t }}</span>
+        <span class="ph-label">{{ 'menu.print.colHalf' | t }}</span>
+        <span class="ph-label">{{ 'menu.print.colRacion' | t }}</span>
       </div>
 
       <!-- Menu items -->
       <div
         class="menu-item"
-        *ngFor="let item of section.items"
+        *ngFor="let item of section.items; let i = index"
         [class.highlight]="item.highlight"
       >
         <!-- Row: name + price(s) -->
         <div class="item-row">
           <div class="item-left">
-            <span class="item-name">{{ item.name }}</span>
+            <span class="item-name">{{ itemName(section, i, item.name) }}</span>
 
             <!-- Allergens inline, right after name -->
             <div class="allergens-inline" *ngIf="item.allergens?.length">
@@ -61,10 +58,14 @@ import { AllergenIconComponent } from '../allergen-icon/allergen-icon.component'
         </div>
 
         <!-- Description -->
-        <div class="item-desc" *ngIf="item.description">{{ item.description }}</div>
+        <div class="item-desc" *ngIf="itemDesc(section, i, item.description)">
+          {{ itemDesc(section, i, item.description) }}
+        </div>
 
         <!-- Note -->
-        <div class="item-note" *ngIf="item.note">{{ item.note }}</div>
+        <div class="item-note" *ngIf="itemNote(section, i, item.note)">
+          {{ itemNote(section, i, item.note) }}
+        </div>
       </div>
     </div>
   `,
@@ -72,4 +73,24 @@ import { AllergenIconComponent } from '../allergen-icon/allergen-icon.component'
 })
 export class MenuSectionComponent {
   @Input() section!: MenuSection;
+
+  private readonly i18n = inject(I18nService);
+
+  secTitle(s: MenuSection): string {
+    return this.i18n.catalog(`catalog.sections.${s.id}`, s.title);
+  }
+
+  itemName(s: MenuSection, i: number, fallback: string): string {
+    return this.i18n.catalog(`catalog.items.${s.id}.${i}.name`, fallback);
+  }
+
+  itemDesc(s: MenuSection, i: number, fallback: string | undefined): string {
+    if (!fallback) return '';
+    return this.i18n.catalog(`catalog.items.${s.id}.${i}.description`, fallback);
+  }
+
+  itemNote(s: MenuSection, i: number, fallback: string | undefined): string {
+    if (!fallback) return '';
+    return this.i18n.catalog(`catalog.items.${s.id}.${i}.note`, fallback);
+  }
 }

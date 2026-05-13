@@ -39,5 +39,4 @@ export interface MenuSection {
   subtitle?: string;         // e.g. "Tapa · ½ Ración · Ración"
   items: MenuItem[];
   hasTriplePricing?: boolean;
-  pillItems?: string[];      // for salsas row
 }

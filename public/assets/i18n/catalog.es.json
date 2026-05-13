@@ -8,14 +8,6 @@
     "domingos": "Especiales Domingos",
     "encargo": "Por Encargo"
   },
-  "pills": {
-    "salsas": {
-      "0": "Alioli",
-      "1": "Mojo Rojo",
-      "2": "Mojo Verde",
-      "3": "Salsa de arándanos"
-    }
-  },
   "items": {
     "entrantes": {
       "0": {
@@ -66,6 +58,12 @@
       "13": {
         "name": "Pan"
       }
+    },
+    "salsas": {
+      "0": { "name": "Alioli" },
+      "1": { "name": "Mojo Rojo" },
+      "2": { "name": "Mojo Verde" },
+      "3": { "name": "Salsa de arándanos" }
     },
     "pescados": {
       "0": {

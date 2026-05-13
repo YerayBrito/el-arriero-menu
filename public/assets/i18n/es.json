@@ -13,13 +13,39 @@
     "de": "DE"
   },
   "home": {
-    "ariaSplash": "Próxima apertura",
-    "kicker": "Playa de Arinaga · Gran Canaria",
-    "logoAlt": "Bar Las Salinas",
-    "headline": "Próxima apertura",
-    "line1": "Muy pronto abrimos junto al mar.",
-    "line2": "Gracias por su paciencia.",
-    "photoCredit": "Foto:"
+    "ariaHero": "Las Salinas · inicio",
+    "badge": "Arinaga · Las Palmas",
+    "title": "Las Salinas",
+    "lead": "Cocina del mar y sabores canarios. Consulta la carta con precios y alérgenos, clara y rápida.",
+    "ctaMenu": "Ver carta",
+    "ctaContact": "Cómo llegar",
+    "logoAlt": "Logo de Las Salinas"
+  },
+  "order": {
+    "backHome": "Volver al inicio",
+    "subtitleDemo": "Pedidos · demo local",
+    "badgeLocal": "Solo desarrollo en tu equipo: no es un pedido real ni cobro.",
+    "title": "Haz tu pedido",
+    "tabAll": "Todo",
+    "add": "Añadir",
+    "addToCart": "Añadir al carrito",
+    "openCart": "Abrir carrito",
+    "viewCart": "Ver carrito",
+    "yourOrder": "Tu pedido",
+    "emptyCart": "Aún no hay productos.",
+    "total": "Total",
+    "checkoutDemo": "Finalizar (demo)",
+    "checkoutMsg": "Esto es una maqueta local: no se envía ningún pedido al bar. Cuando tengáis canal real (WhatsApp, TPV, etc.), se enlaza aquí.",
+    "clearCart": "Vaciar carrito",
+    "selectSize": "Elige formato",
+    "fmtTapa": "Tapa",
+    "fmtMedia": "½ ración",
+    "fmtRacion": "Ración",
+    "close": "Cerrar",
+    "fromPrice": "desde {{p}}",
+    "fromPriceAsk": "Precio según carta",
+    "added": "Añadido al carrito",
+    "categoriesAria": "Categorías del menú"
   },
   "menu": {
     "title": "Carta",
@@ -48,6 +74,20 @@
       "sulfitos": "Dióxido de azufre y sulfitos",
       "altramuces": "Altramuces",
       "moluscos": "Moluscos"
+    },
+    "print": {
+      "toolbarPrint": "Las Salinas — Carta (imprimir)",
+      "toolbarEdit": "Las Salinas — Editor de carta",
+      "openPrintView": "Ver vista de impresión",
+      "printPdf": "Imprimir / Guardar PDF",
+      "langPicker": "Idioma de la hoja al imprimir",
+      "colTapa": "Tapa",
+      "colHalf": "½ Rac.",
+      "colRacion": "Rac.",
+      "legendTitle": "⚠ Alérgenos — Reglamento (UE) 1169/2011",
+      "tagline": "Sabor que navega contigo",
+      "footerNote": "Precios con IGIC incluido · Producto fresco de temporada · Consulte la carta de bebidas con el personal",
+      "footerAllergen": "⚠ Informe al personal si padece alguna alergia o intolerancia ·"
     }
   },
   "contact": {

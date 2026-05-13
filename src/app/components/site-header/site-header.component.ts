@@ -23,6 +23,10 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
             [routerLinkActiveOptions]="{ exact: true }"
             (click)="closeMenu()"
           >{{ 'nav.home' | t }}</a>
+          <a routerLink="/carta" routerLinkActive="active" (click)="closeMenu()"
+          >{{ 'nav.menu' | t }}</a>
+          <a routerLink="/contacto" routerLinkActive="active" (click)="closeMenu()"
+          >{{ 'nav.contact' | t }}</a>
         </nav>
 
         <div class="lang" role="group" [attr.aria-label]="'nav.langPicker' | t">

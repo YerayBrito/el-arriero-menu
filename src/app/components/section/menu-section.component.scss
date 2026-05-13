@@ -49,26 +49,6 @@
   padding-bottom: 1px;
 }
 
-/* ── Pills (salsas) ── */
-.pills-row {
-  display: flex;
-  gap: 3px;
-  flex-wrap: wrap;
-  margin-top: 2px;
-}
-
-.pill {
-  background: rgba(15, 23, 42, 0.06);
-  border: 0.5px solid rgba(184, 147, 62, 0.45);
-  border-radius: 8px;
-  padding: 1px 6px;
-  font-size: 8.2px;
-  color: #0f172a;
-  font-style: italic;
-  font-family: 'Cormorant Garamond', serif;
-  line-height: 1.25;
-}
-
 /* ── Menu item ── */
 .menu-item {
   padding: 2px 0 1.5px;

@@ -8,14 +8,6 @@
     "domingos": "Sonntagsspezialitäten",
     "encargo": "Auf Vorbestellung"
   },
-  "pills": {
-    "salsas": {
-      "0": "Knoblauch-Aioli",
-      "1": "Rotes Mojo",
-      "2": "Grünes Mojo",
-      "3": "Heidelbeersoße"
-    }
-  },
   "items": {
     "entrantes": {
       "0": {
@@ -67,6 +59,12 @@
       "13": {
         "name": "Brot"
       }
+    },
+    "salsas": {
+      "0": { "name": "Knoblauch-Aioli" },
+      "1": { "name": "Rotes Mojo" },
+      "2": { "name": "Grünes Mojo" },
+      "3": { "name": "Heidelbeersoße" }
     },
     "pescados": {
       "0": {

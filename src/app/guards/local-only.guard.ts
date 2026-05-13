@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { CanMatchFn, Router } from '@angular/router';
 
-/** Solo máquina local: la vista PDF no debe existir en Internet (lassalinasarinaga.es, etc.). */
+/** Solo máquina local: rutas internas (PDF, prototipo pedidos) no deben existir en Internet. */
 function isLocalHostname(hostname: string): boolean {
   return (
     hostname === 'localhost' ||

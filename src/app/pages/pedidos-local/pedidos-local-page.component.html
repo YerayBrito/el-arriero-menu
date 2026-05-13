@@ -1,0 +1,229 @@
+<div class="kiosk">
+  <header class="kiosk-top">
+    <a routerLink="/" class="kiosk-back" aria-label="{{ 'order.backHome' | t }}">←</a>
+    <div class="kiosk-brand">
+      <span class="kiosk-brand-mark">⚓</span>
+      <div class="kiosk-brand-text">
+        <span class="kiosk-brand-name">Las Salinas</span>
+        <span class="kiosk-brand-sub">{{ 'order.subtitleDemo' | t }}</span>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="kiosk-cart-fab"
+      (click)="toggleCart()"
+      [attr.aria-label]="'order.openCart' | t"
+    >
+      🛒
+      @if (cartCount() > 0) {
+        <span class="kiosk-cart-fab-badge">{{ cartCount() }}</span>
+      }
+    </button>
+  </header>
+
+  <div class="kiosk-alert">{{ 'order.badgeLocal' | t }}</div>
+
+  <div class="kiosk-shell">
+    <nav class="kiosk-rail" [attr.aria-label]="'order.categoriesAria' | t">
+      <button
+        type="button"
+        class="kiosk-rail-btn"
+        [class.active]="activeSectionId() === 'todas'"
+        (click)="activeSectionId.set('todas')"
+      >
+        <span class="kiosk-rail-ico" aria-hidden="true">🏠</span>
+        <span class="kiosk-rail-label">{{ 'order.tabAll' | t }}</span>
+      </button>
+      @for (s of sections; track s.id) {
+        <button
+          type="button"
+          class="kiosk-rail-btn"
+          [class.active]="activeSectionId() === s.id"
+          (click)="activeSectionId.set(s.id)"
+        >
+          <span class="kiosk-rail-ico" aria-hidden="true">{{ s.icon }}</span>
+          <span class="kiosk-rail-label">{{ secTitle(s) }}</span>
+        </button>
+      }
+    </nav>
+
+    <div class="kiosk-chips" role="tablist" [attr.aria-label]="'order.categoriesAria' | t">
+      <button
+        type="button"
+        role="tab"
+        class="kiosk-chip"
+        [class.active]="activeSectionId() === 'todas'"
+        (click)="activeSectionId.set('todas')"
+      >{{ 'order.tabAll' | t }}</button>
+      @for (s of sections; track s.id) {
+        <button
+          type="button"
+          role="tab"
+          class="kiosk-chip"
+          [class.active]="activeSectionId() === s.id"
+          (click)="activeSectionId.set(s.id)"
+        >{{ secTitle(s) }}</button>
+      }
+    </div>
+
+    <main class="kiosk-stage">
+      <h1 class="kiosk-title">{{ 'order.title' | t }}</h1>
+
+      @for (s of filteredSections(); track s.id) {
+        <section class="kiosk-block">
+          <h2 class="kiosk-block-head">
+            <span class="kiosk-block-ico">{{ s.icon }}</span>
+            {{ secTitle(s) }}
+          </h2>
+
+          <div class="kiosk-tiles">
+            @for (it of s.items; track $index; let i = $index) {
+              <article class="kiosk-tile" [class.kiosk-tile--hot]="it.highlight">
+                <div class="kiosk-tile-visual" aria-hidden="true">
+                  <span class="kiosk-tile-emoji">{{ s.icon }}</span>
+                </div>
+                <div class="kiosk-tile-main">
+                  <div class="kiosk-tile-row1">
+                    <h3 class="kiosk-tile-name">{{ itemName(s, i, it.name) }}</h3>
+                    <span class="kiosk-tile-price">{{ fromPrice(s, it, i) }}</span>
+                  </div>
+                  @if (itemDesc(s, i, it.description)) {
+                    <p class="kiosk-tile-desc">{{ itemDesc(s, i, it.description) }}</p>
+                  }
+                  @if (it.allergens?.length) {
+                    <div class="kiosk-tile-allergens">
+                      @for (code of it.allergens; track code) {
+                        <app-allergen-icon [code]="code"></app-allergen-icon>
+                      }
+                    </div>
+                  }
+                </div>
+                @if (it.triplePrice) {
+                  <button type="button" class="kiosk-tile-cta" (click)="openSizeSheet(s, i, it)">
+                    {{ 'order.add' | t }}
+                  </button>
+                } @else {
+                  <button type="button" class="kiosk-tile-cta" (click)="quickAddSingle(s, i, it)">
+                    {{ 'order.add' | t }}
+                  </button>
+                }
+              </article>
+            }
+          </div>
+        </section>
+      }
+    </main>
+
+    <aside
+      class="order-panel"
+      [class.order-panel--open]="cartOpen()"
+      role="complementary"
+      [attr.aria-label]="'order.yourOrder' | t"
+    >
+      <div class="order-panel-head">
+        <h2>{{ 'order.yourOrder' | t }}</h2>
+        <button type="button" class="order-panel-x" (click)="toggleCart()">✕</button>
+      </div>
+      <div class="order-panel-body">
+        @if (!cart().length) {
+          <p class="order-panel-empty">{{ 'order.emptyCart' | t }}</p>
+        } @else {
+          <ul class="order-lines">
+            @for (l of cart(); track l.key) {
+              <li class="order-line">
+                <div class="order-line-text">
+                  <div class="order-line-title">{{ l.title }}</div>
+                  @if (l.subtitle) {
+                    <div class="order-line-sub">{{ l.subtitle }}</div>
+                  }
+                  <div class="order-line-money">{{ formatMoney(l.unit * l.qty) }}</div>
+                </div>
+                <div class="order-line-stepper">
+                  <button type="button" class="order-step" (click)="dec(l.key)">−</button>
+                  <span class="order-qty">{{ l.qty }}</span>
+                  <button type="button" class="order-step" (click)="inc(l.key)">+</button>
+                </div>
+              </li>
+            }
+          </ul>
+        }
+      </div>
+      <div class="order-panel-foot">
+        <div class="order-total">
+          <span>{{ 'order.total' | t }}</span>
+          <strong>{{ formatMoney(cartTotal()) }}</strong>
+        </div>
+        <button type="button" class="order-pay" (click)="checkoutDemo()">{{ 'order.checkoutDemo' | t }}</button>
+        <button type="button" class="order-clear" (click)="clearCart()">{{ 'order.clearCart' | t }}</button>
+      </div>
+    </aside>
+  </div>
+
+  @if (cartCount() > 0) {
+    <div class="kiosk-dock">
+      <button type="button" class="kiosk-dock-btn" (click)="toggleCart()">
+        <span>{{ 'order.viewCart' | t }}</span>
+        <strong>{{ cartCount() }} · {{ formatMoney(cartTotal()) }}</strong>
+      </button>
+    </div>
+  }
+
+  @if (cartOpen()) {
+    <div class="order-backdrop" (click)="toggleCart()"></div>
+  }
+
+  @if (sheet(); as sh) {
+    <div class="sheet-backdrop" (click)="closeSheet()"></div>
+    <div class="sheet" role="dialog">
+      @if (sh.section.items[sh.index]; as it) {
+        <h3 class="sheet-title">{{ itemName(sh.section, sh.index, it.name) }}</h3>
+        <p class="sheet-desc">{{ itemDesc(sh.section, sh.index, it.description) }}</p>
+        @if (it.allergens?.length) {
+          <div class="sheet-allergens">
+            @for (code of it.allergens; track code) {
+              <app-allergen-icon [code]="code"></app-allergen-icon>
+            }
+          </div>
+        }
+        <p class="sheet-hint">{{ 'order.selectSize' | t }}</p>
+        <div class="sheet-sizes">
+          <button
+            type="button"
+            class="sheet-size"
+            [class.active]="selectedFormat() === 'tapa'"
+            (click)="selectedFormat.set('tapa')"
+          >
+            <span>{{ 'order.fmtTapa' | t }}</span>
+            <em>{{ it.triplePrice?.tapa }}</em>
+          </button>
+          <button
+            type="button"
+            class="sheet-size"
+            [class.active]="selectedFormat() === 'media'"
+            (click)="selectedFormat.set('media')"
+          >
+            <span>{{ 'order.fmtMedia' | t }}</span>
+            <em>{{ it.triplePrice?.media }}</em>
+          </button>
+          <button
+            type="button"
+            class="sheet-size"
+            [class.active]="selectedFormat() === 'racion'"
+            (click)="selectedFormat.set('racion')"
+          >
+            <span>{{ 'order.fmtRacion' | t }}</span>
+            <em>{{ it.triplePrice?.racion }}</em>
+          </button>
+        </div>
+        <div class="sheet-actions">
+          <button type="button" class="sheet-btn sheet-btn--ghost" (click)="closeSheet()">{{ 'order.close' | t }}</button>
+          <button type="button" class="sheet-btn sheet-btn--gold" (click)="confirmSheetAdd()">{{ 'order.addToCart' | t }}</button>
+        </div>
+      }
+    </div>
+  }
+
+  @if (toast(); as t) {
+    <div class="kiosk-toast" role="status">{{ t }}</div>
+  }
+</div>

@@ -2,7 +2,10 @@
   "id": "salsas",
   "icon": "🫙",
   "title": "Salsas",
-  "items": [],
-  "pillItems": ["Alioli", "Mojo Rojo", "Mojo Verde", "Salsa de arándanos"]
+  "items": [
+    { "name": "Alioli", "price": "0,00€" },
+    { "name": "Mojo Rojo", "price": "0,00€" },
+    { "name": "Mojo Verde", "price": "0,00€" },
+    { "name": "Salsa de arándanos", "price": "0,00€" }
+  ]
 }
-

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { SiteHeaderComponent } from './components/site-header/site-header.component';
@@ -9,22 +9,15 @@ import { SiteFooterComponent } from './components/site-footer/site-footer.compon
   standalone: true,
   imports: [RouterOutlet, SiteHeaderComponent, SiteFooterComponent],
   template: `
-    @if (showSiteChrome()) {
-      <app-site-header></app-site-header>
-    }
-    <main class="site-main" [class.site-main--splash]="!showSiteChrome()">
+    <app-site-header></app-site-header>
+    <main class="site-main">
       <router-outlet></router-outlet>
     </main>
-    @if (showSiteChrome()) {
-      <app-site-footer></app-site-footer>
-    }
+    <app-site-footer></app-site-footer>
   `,
 })
 export class App {
   private readonly router = inject(Router);
-
-  /** En la portada solo se muestra la pantalla de próxima apertura (sin menú ni pie). */
-  readonly showSiteChrome = signal(true);
 
   constructor() {
     this.router.events
@@ -36,13 +29,15 @@ export class App {
 
   private syncLayoutAfterNav(): void {
     this.syncPrintSheetClass();
-    this.syncHomeSplashChrome();
+    this.syncPedidosKioskClass();
   }
 
-  private syncHomeSplashChrome(): void {
+  /** Vista /pedidos: pantalla completa tipo tótem de autoservicio (sin cabecera web). */
+  private syncPedidosKioskClass(): void {
+    if (typeof document === 'undefined') return;
     const path = this.router.url.split('?')[0].split('#')[0];
-    const isHome = path === '/' || path === '';
-    this.showSiteChrome.set(!isHome);
+    const onPedidos = path === '/pedidos' || path.endsWith('/pedidos');
+    document.documentElement.classList.toggle('pedidos-kiosk', onPedidos);
   }
 
   /** Solo en /carta/imprimir: al imprimir, el CSS oculta header/footer y deja solo la hoja A4. */

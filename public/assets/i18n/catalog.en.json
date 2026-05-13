@@ -8,14 +8,6 @@
     "domingos": "Sunday Specials",
     "encargo": "Pre-Order"
   },
-  "pills": {
-    "salsas": {
-      "0": "Garlic aioli",
-      "1": "Red mojo",
-      "2": "Green mojo",
-      "3": "Blueberry sauce"
-    }
-  },
   "items": {
     "entrantes": {
       "0": {
@@ -67,6 +59,12 @@
       "13": {
         "name": "Bread"
       }
+    },
+    "salsas": {
+      "0": { "name": "Garlic aioli" },
+      "1": { "name": "Red mojo" },
+      "2": { "name": "Green mojo" },
+      "3": { "name": "Blueberry sauce" }
     },
     "pescados": {
       "0": {

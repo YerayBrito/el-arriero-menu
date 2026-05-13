@@ -13,13 +13,39 @@
     "de": "DE"
   },
   "home": {
-    "ariaSplash": "Opening soon",
-    "kicker": "Arinaga Beach · Gran Canaria",
-    "logoAlt": "Bar Las Salinas",
-    "headline": "Opening soon",
-    "line1": "We'll be opening very soon right by the sea.",
-    "line2": "Thank you for your patience.",
-    "photoCredit": "Photo:"
+    "ariaHero": "Las Salinas · home",
+    "badge": "Arinaga · Las Palmas",
+    "title": "Las Salinas",
+    "lead": "Seafood and Canarian flavours. Browse the menu with prices and allergens — clear and quick.",
+    "ctaMenu": "View menu",
+    "ctaContact": "How to find us",
+    "logoAlt": "Las Salinas logo"
+  },
+  "order": {
+    "backHome": "Back to home",
+    "subtitleDemo": "Orders · local demo",
+    "badgeLocal": "Local development only: not a real order or payment.",
+    "title": "Build your order",
+    "tabAll": "All",
+    "add": "Add",
+    "addToCart": "Add to cart",
+    "openCart": "Open cart",
+    "viewCart": "View cart",
+    "yourOrder": "Your order",
+    "emptyCart": "Your cart is empty.",
+    "total": "Total",
+    "checkoutDemo": "Checkout (demo)",
+    "checkoutMsg": "This is a local prototype: nothing is sent to the restaurant. When you have a real channel (WhatsApp, POS, etc.), it can be wired here.",
+    "clearCart": "Clear cart",
+    "selectSize": "Choose a size",
+    "fmtTapa": "Tapa",
+    "fmtMedia": "Half portion",
+    "fmtRacion": "Full portion",
+    "close": "Close",
+    "fromPrice": "from {{p}}",
+    "fromPriceAsk": "See menu for price",
+    "added": "Added to cart",
+    "categoriesAria": "Menu categories"
   },
   "menu": {
     "title": "Our Menu",
@@ -48,6 +74,20 @@
       "sulfitos": "Sulphur dioxide and sulphites",
       "altramuces": "Lupin",
       "moluscos": "Molluscs"
+    },
+    "print": {
+      "toolbarPrint": "Las Salinas — Menu (print)",
+      "toolbarEdit": "Las Salinas — Menu editor",
+      "openPrintView": "Print layout",
+      "printPdf": "Print / Save as PDF",
+      "langPicker": "Sheet language for printing",
+      "colTapa": "Tapa",
+      "colHalf": "½ portion",
+      "colRacion": "Full",
+      "legendTitle": "⚠ Allergens — Regulation (EU) 1169/2011",
+      "tagline": "Flavours of the sea, sailing with you",
+      "footerNote": "Prices include IGIC · Fresh seasonal produce · Ask staff for the drinks menu",
+      "footerAllergen": "⚠ Please inform staff if you have any allergy or intolerance ·"
     }
   },
   "contact": {
