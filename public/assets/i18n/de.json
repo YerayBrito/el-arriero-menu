@@ -13,22 +13,23 @@
     "de": "DE"
   },
   "home": {
-    "ariaSplash": "Bald geöffnet",
+    "ariaSplash": "Startseite — Bar Las Salinas",
     "kicker": "Strand von Arinaga · Gran Canaria",
     "logoAlt": "Bar Las Salinas",
-    "headline": "Bald geöffnet",
-    "line1": "Wir öffnen sehr bald direkt am Meer.",
-    "line2": "Vielen Dank für Ihre Geduld.",
-    "photoCredit": "Foto:"
+    "headline": "Willkommen",
+    "tagline": "Vom Meer auf den Tisch.",
+    "ctaMenu": "Speisekarte",
+    "ctaContact": "Kontakt",
+    "photoCaption": "Las Salinas"
   },
   "menu": {
     "title": "Unsere Speisekarte",
-    "lead": "Gerichte, Preise und Allergeninformationen.",
+    "lead": "Preise, Steuer (IGIC) und Allergene.",
     "logoAlt": "Las Salinas",
     "searchPlaceholder": "Speisekarte durchsuchen…",
     "filterAll": "Alle",
     "pricing": {
-      "tapa": "Tapa",
+      "tapa": "Klein",
       "half": "½ Portion",
       "racion": "Ganze Portion"
     },

@@ -1,8 +1,8 @@
 .footer {
   margin-top: 48px;
-  border-top: 1px solid rgba(184,147,62,.25);
-  background: color-mix(in srgb, var(--navy) 94%, black);
-  color: #fff;
+  border-top: 1px solid rgba(201, 165, 74, 0.22);
+  background: linear-gradient(180deg, #35261c 0%, #2a1d15 100%);
+  color: #fffaf5;
 }
 
 .inner {
@@ -38,7 +38,7 @@
   font-size: 12px;
 }
 
-.muted { color: rgba(255,255,255,.72); font-size: 12px; }
+.muted { color: rgba(255, 250, 244, 0.72); font-size: 12px; }
 
 .notice {
   margin: 0;
@@ -46,7 +46,7 @@
 }
 
 .bottom {
-  border-top: 1px solid rgba(238,246,250,.12);
+  border-top: 1px solid rgba(255, 248, 240, 0.1);
   padding: 14px 16px 16px;
   text-align: center;
   max-width: 1100px;
@@ -61,14 +61,14 @@
   font-family: 'Cinzel', serif;
   font-size: 11px;
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 250, 244, 0.82);
 }
 
 .legal {
   margin: 0;
   font-size: 10px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 250, 244, 0.55);
   max-width: 52rem;
   margin-inline: auto;
 }

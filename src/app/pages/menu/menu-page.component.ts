@@ -28,7 +28,7 @@ const LEGEND_CODES = [
   standalone: true,
   imports: [CommonModule, AllergenIconComponent, TranslatePipe],
   template: `
-    <div class="wrap">
+    <div class="wrap menu-page">
       <div class="top">
         <div class="top-copy">
           <h2>{{ 'menu.title' | t }}</h2>
@@ -85,10 +85,6 @@ const LEGEND_CODES = [
             </div>
           </div>
 
-          <div class="pills" *ngIf="s.pillItems?.length">
-            <span class="pill" *ngFor="let p of s.pillItems; let pi = index">{{ pillAt(s, pi, p) }}</span>
-          </div>
-
           <div class="items">
             <article class="item" *ngFor="let it of s.items; let i = index" [class.highlight]="it.highlight">
               <div class="row" [class.row-triple]="s.hasTriplePricing">
@@ -143,10 +139,6 @@ export class MenuPageComponent {
     return this.i18n.catalog(`catalog.sections.${s.id}`, s.title);
   }
 
-  pillAt(s: MenuSection, pi: number, fallback: string): string {
-    return this.i18n.catalog(`catalog.pills.${s.id}.${pi}`, fallback);
-  }
-
   itemName(s: MenuSection, i: number, fallback: string): string {
     return this.i18n.catalog(`catalog.items.${s.id}.${i}.name`, fallback);
   }
@@ -176,7 +168,7 @@ export class MenuPageComponent {
         ...s,
         items: s.items.filter((it, idx) => this.itemMatchesSearch(s, it, idx, q)),
       }))
-      .filter(s => s.items.length > 0 || (s.pillItems?.length ?? 0) > 0);
+      .filter(s => s.items.length > 0);
   });
 
   private itemMatchesSearch(s: MenuSection, it: MenuItem, index: number, q: string): boolean {

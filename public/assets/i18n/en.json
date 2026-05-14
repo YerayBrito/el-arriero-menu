@@ -13,22 +13,23 @@
     "de": "DE"
   },
   "home": {
-    "ariaSplash": "Opening soon",
+    "ariaSplash": "Home — Bar Las Salinas",
     "kicker": "Arinaga Beach · Gran Canaria",
     "logoAlt": "Bar Las Salinas",
-    "headline": "Opening soon",
-    "line1": "We'll be opening very soon right by the sea.",
-    "line2": "Thank you for your patience.",
-    "photoCredit": "Photo:"
+    "headline": "Welcome",
+    "tagline": "From the sea to your table.",
+    "ctaMenu": "Menu",
+    "ctaContact": "Contact",
+    "photoCaption": "Las Salinas"
   },
   "menu": {
     "title": "Our Menu",
-    "lead": "Dishes, prices and allergen information.",
+    "lead": "Prices, tax (IGIC) and allergens listed.",
     "logoAlt": "Las Salinas",
     "searchPlaceholder": "Search the menu…",
     "filterAll": "All",
     "pricing": {
-      "tapa": "Tapa",
+      "tapa": "Small",
       "half": "½ portion",
       "racion": "Full portion"
     },

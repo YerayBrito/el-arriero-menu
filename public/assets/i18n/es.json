@@ -13,22 +13,23 @@
     "de": "DE"
   },
   "home": {
-    "ariaSplash": "Próxima apertura",
+    "ariaSplash": "Inicio — Bar Las Salinas",
     "kicker": "Playa de Arinaga · Gran Canaria",
     "logoAlt": "Bar Las Salinas",
-    "headline": "Próxima apertura",
-    "line1": "Muy pronto abrimos junto al mar.",
-    "line2": "Gracias por su paciencia.",
-    "photoCredit": "Foto:"
+    "headline": "Bienvenidos",
+    "tagline": "Del mar a la mesa.",
+    "ctaMenu": "Carta",
+    "ctaContact": "Contacto",
+    "photoCaption": "Las Salinas"
   },
   "menu": {
     "title": "Carta",
-    "lead": "Platos, precios y alérgenos.",
+    "lead": "Precios e IGIC. Alérgenos en carta.",
     "logoAlt": "Las Salinas",
     "searchPlaceholder": "Buscar en la carta…",
     "filterAll": "Todas",
     "pricing": {
-      "tapa": "Tapa",
+      "tapa": "Pequeña",
       "half": "½",
       "racion": "Ración"
     },

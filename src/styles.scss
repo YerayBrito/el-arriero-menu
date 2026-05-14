@@ -10,20 +10,19 @@ img {
 html, body {
   /* Altura aproximada del header fijo (sticky) para barras fixed debajo */
   --site-header-h: 60px;
-  --gold: #b8933e;
-  --navy: #1e3a5f;
-  /* Tonos superficie suaves tipo espuma/niebla marina (compatible con dorado azul corporativo) */
-  --cream: #eef6fa;
-  /* Texto casi negro para buen contraste sobre fondo azul claro */
-  --text: #0f172a;
-  --muted: #334155;
+  /* Paleta bar de madera / Arinaga: miel, madera oscura, terracota, papel */
+  --gold: #b8892e;
+  --terracotta: #a65d3f;
+  --navy: #3d2918;
+  --cream: #faf6f0;
+  --text: #2a221c;
+  --muted: #5c5048;
 
   background:
-    radial-gradient(1150px 720px at 8% -5%, rgba(90, 150, 190, .16), transparent 58%),
-    radial-gradient(900px 600px at 98% 20%, rgba(30, 80, 120, .12), transparent 55%),
-    radial-gradient(700px 480px at 50% 100%, rgba(65, 140, 160, .08), transparent 52%),
-    radial-gradient(1200px 500px at 40% 50%, rgba(184, 147, 62, .05), transparent 45%),
-    linear-gradient(168deg, #e9f4f9 0%, #dbeaf2 38%, #d2e4ef 72%, #c8dce8 100%);
+    radial-gradient(1000px 640px at 10% 0%, rgba(201, 165, 74, 0.12), transparent 55%),
+    radial-gradient(900px 520px at 92% 12%, rgba(166, 93, 63, 0.1), transparent 50%),
+    radial-gradient(800px 480px at 50% 100%, rgba(90, 56, 38, 0.06), transparent 55%),
+    linear-gradient(168deg, #faf6f0 0%, #f3e8dc 42%, #ebe0d4 100%);
   min-height: 100vh;
   color: var(--text);
 }
@@ -49,14 +48,6 @@ app-site-footer {
 .site-main {
   flex: 1;
   min-height: 0;
-}
-
-/* Portada “próxima apertura”: el main ocupa toda la ventana sin hueco del header */
-.site-main.site-main--splash {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  flex: 1 1 auto;
 }
 
 @media print {

@@ -36,7 +36,7 @@ export interface MenuSection {
   id: string;
   icon: string;
   title: string;
-  subtitle?: string;         // e.g. "Tapa · ½ Ración · Ración"
+  subtitle?: string;         // e.g. "Pequeña · ½ Ración · Ración"
   items: MenuItem[];
   hasTriplePricing?: boolean;
   pillItems?: string[];      // for salsas row

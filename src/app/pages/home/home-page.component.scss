@@ -1,91 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
-$splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f?auto=format&fit=crop&w=2160&q=85');
+$hero-photo: url('/assets/photos/hero-bar.png');
 
-/* Vista única pantalla completa (sin huecos del shell con header oculto) */
 :host {
   display: block;
-  min-height: 100vh;
 }
 
-.splash {
+.hero {
   position: relative;
   isolation: isolate;
-  min-height: 100vh;
+  min-height: max(520px, calc(100dvh - var(--site-header-h, 60px)));
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(24px, 5vw, 48px);
+  padding: clamp(28px, 5vw, 56px) clamp(20px, 4vw, 40px);
   overflow: clip;
 }
 
-.splash-lang {
-  position: absolute;
-  top: clamp(12px, 3vw, 20px);
-  right: clamp(12px, 3vw, 20px);
-  z-index: 2;
-  display: flex;
-  gap: 5px;
-}
-
-.splash-lang-btn {
-  min-width: 38px;
-  padding: 6px 9px;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  border-radius: 9px;
-  border: 1px solid rgba(30, 58, 95, 0.22);
-  background: rgba(255, 255, 255, 0.78);
-  color: var(--navy, #1e3a5f);
-  cursor: pointer;
-  font-family: 'Cinzel', serif;
-  text-transform: uppercase;
-  box-shadow: 0 2px 10px rgba(30, 58, 95, 0.08);
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.95);
-  }
-
-  &.active {
-    background: rgba(184, 147, 62, 0.92);
-    border-color: rgba(184, 147, 62, 0.95);
-    color: #fff;
-  }
-}
-
-.splash-bg {
+.hero-bg {
   position: absolute;
   inset: -6px;
-  background-color: #c9dfed;
-  background-image: $splash-photo;
+  background-color: #4a3228;
+  background-image: $hero-photo;
   background-size: cover;
-  background-position: center 42%;
+  background-position: center 55%;
 }
 
-.splash-overlay {
+.hero-overlay {
   position: absolute;
   inset: 0;
-  /* Azul claro: deja ver el detalle del logo (p. ej. “comida para llevar”) */
   background:
     linear-gradient(
       180deg,
-      rgba(216, 236, 246, 0.78) 0%,
-      rgba(200, 228, 242, 0.68) 38%,
-      rgba(188, 220, 236, 0.76) 100%
+      rgba(250, 246, 240, 0.82) 0%,
+      rgba(245, 236, 226, 0.72) 42%,
+      rgba(238, 224, 210, 0.78) 100%
     );
   pointer-events: none;
 }
 
-.splash-body {
+.hero-body {
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 520px;
-  color: var(--text, #0f172a);
-  animation: splash-in 0.7s ease-out both;
+  max-width: 540px;
+  color: var(--text, #2a221c);
+  animation: hero-in 0.65s ease-out both;
 }
 
-@keyframes splash-in {
+@keyframes hero-in {
   from {
     opacity: 0;
   }
@@ -99,69 +62,113 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   font-size: clamp(17px, 2.8vw, 22px);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted, #334155);
-  opacity: 1;
-  margin-bottom: clamp(16px, 3vw, 28px);
+  color: var(--muted, #5c5048);
+  margin-bottom: clamp(14px, 2.5vw, 24px);
 }
 
 .logo-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: clamp(12px, 2.5vw, 22px);
+  margin-bottom: clamp(10px, 2vw, 18px);
 }
 
 .logo {
-  width: min(280px, 72vw);
+  width: min(260px, 68vw);
   height: auto;
   object-fit: contain;
   filter:
-    drop-shadow(0 12px 28px rgba(30, 58, 95, 0.12))
-    drop-shadow(0 2px 8px rgba(30, 58, 95, 0.08));
+    drop-shadow(0 14px 32px rgba(42, 28, 20, 0.18))
+    drop-shadow(0 2px 8px rgba(42, 28, 20, 0.1));
 }
 
 .headline {
   font-family: 'Cinzel', serif;
   font-weight: 600;
-  font-size: clamp(28px, 5.2vw, 42px);
-  letter-spacing: 0.18em;
+  font-size: clamp(26px, 4.8vw, 38px);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  line-height: 1.15;
-  color: var(--navy, #1e3a5f);
+  line-height: 1.2;
+  color: var(--navy, #3d2918);
 }
 
 .tagline {
   margin-top: 14px;
-  text-align: center;
-}
-
-.tagline-line {
-  margin: 0;
+  max-width: 22rem;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(19px, 3.2vw, 24px);
+  font-size: clamp(18px, 3.2vw, 22px);
   font-weight: 500;
-  line-height: 1.45;
-  color: var(--muted, #334155);
+  line-height: 1.35;
+  color: var(--muted, #5c5048);
 }
 
-.tagline-thanks {
-  margin-top: 0.35em;
+.hero-actions {
+  margin-top: clamp(22px, 4vw, 32px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 22px;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 10px;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--navy, #3d2918);
+  color: #fffaf5;
+  border: 1px solid rgba(45, 32, 22, 0.95);
+  box-shadow: 0 4px 16px rgba(42, 28, 20, 0.25);
+
+  &:hover {
+    background: #2e1f14;
+  }
+}
+
+.btn-outline {
+  background: rgba(255, 250, 244, 0.88);
+  color: var(--navy, #3d2918);
+  border: 1px solid rgba(90, 56, 38, 0.35);
+  box-shadow: 0 2px 10px rgba(42, 28, 20, 0.08);
+
+  &:hover {
+    background: rgba(255, 252, 248, 0.96);
+    border-color: rgba(90, 56, 38, 0.5);
+  }
 }
 
 .wave {
   display: block;
-  margin: clamp(22px, 4vw, 36px) auto 0;
+  margin: clamp(20px, 3.5vw, 32px) auto 0;
   width: min(200px, 48vw);
   height: 4px;
   border-radius: 999px;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(184, 147, 62, 0.85),
-    rgba(247, 240, 220, 0.55),
-    rgba(184, 147, 62, 0.85),
+    rgba(166, 93, 63, 0.75),
+    rgba(201, 165, 74, 0.55),
+    rgba(166, 93, 63, 0.75),
     transparent
   );
-  box-shadow: 0 0 20px rgba(184, 147, 62, 0.35);
+  box-shadow: 0 0 18px rgba(166, 93, 63, 0.28);
 }
 
 .photo-credit {
@@ -171,17 +178,12 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   z-index: 2;
   font-size: 11px;
   font-family: system-ui, sans-serif;
-  color: rgba(15, 35, 55, 0.45);
-}
-
-.photo-credit a {
-  color: rgba(30, 58, 95, 0.75);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  letter-spacing: 0.04em;
+  color: rgba(42, 34, 28, 0.5);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .splash-body {
+  .hero-body {
     animation: none !important;
   }
 }
