@@ -1,0 +1,17 @@
+---
+description: SEO y sitelinks Google (Inicio, Carta, Contacto) para lassalinasarinaga.es
+alwaysApply: false
+globs: src/index.html,src/app/app.routes.ts,src/app/app.html,src/app/app.ts,src/app/pages/**/*,public/robots.txt
+---
+
+# Google: sitelinks y buena interpretación del sitio
+
+Cuando el usuario pida preparar el sitio para **Google** (sitelinks tipo Inicio / Carta / Contacto, o “que lo interprete bien”), aplicar lo acordado:
+
+1. **Rutas públicas claras** (`/`, `/carta`, `/contacto`) enlazadas desde la cabecera y pie con `<a routerLink>` / enlaces equivalentes visibles en la primera carga.
+2. **Título (`<title>`) y meta description por ruta** (Angular `Title` / `Meta` o equivalente) con textos distintos y descriptivos en ES (y coherencia con EN/DE si aplica).
+3. **`src/index.html`**: canonical, `og:*`, JSON-LD si falta o hay que alinearlos con la apertura real.
+4. **Jerarquía**: la portada debe enlazar de forma evidente a Carta y Contacto; evitar que esas URLs solo existan tras interacción sin rastro en HTML.
+5. **Recordatorio**: los sitelinks **no se eligen en Search Console**; se mejora con estructura + enlaces + títulos. Tras cambios, despliegue y re-rastreo pueden tardar.
+
+No inventar URLs nuevas sin alinearlas con `app.routes.ts` y la navegación existente.
