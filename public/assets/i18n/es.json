@@ -13,13 +13,13 @@
     "de": "DE"
   },
   "home": {
-    "ariaHero": "Las Salinas · inicio",
-    "badge": "Arinaga · Las Palmas",
-    "title": "Las Salinas",
-    "lead": "Cocina del mar y sabores canarios. Consulta la carta con precios y alérgenos, clara y rápida.",
-    "ctaMenu": "Ver carta",
-    "ctaContact": "Cómo llegar",
-    "logoAlt": "Logo de Las Salinas"
+    "ariaSplash": "Próxima apertura",
+    "kicker": "Playa de Arinaga · Gran Canaria",
+    "logoAlt": "Bar Las Salinas",
+    "headline": "Próxima apertura",
+    "line1": "Muy pronto abrimos junto al mar.",
+    "line2": "Gracias por su paciencia.",
+    "photoCaption": "Las Salinas"
   },
   "order": {
     "backHome": "Volver al inicio",

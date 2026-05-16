@@ -13,13 +13,13 @@
     "de": "DE"
   },
   "home": {
-    "ariaHero": "Las Salinas · Startseite",
-    "badge": "Arinaga · Las Palmas",
-    "title": "Las Salinas",
-    "lead": "Meeresfrüchte und kanarische Aromen. Speisekarte mit Preisen und Allergenen – übersichtlich und schnell.",
-    "ctaMenu": "Speisekarte ansehen",
-    "ctaContact": "Anfahrt",
-    "logoAlt": "Logo Las Salinas"
+    "ariaSplash": "Bald geöffnet",
+    "kicker": "Strand von Arinaga · Gran Canaria",
+    "logoAlt": "Bar Las Salinas",
+    "headline": "Bald geöffnet",
+    "line1": "Wir öffnen sehr bald direkt am Meer.",
+    "line2": "Vielen Dank für Ihre Geduld.",
+    "photoCaption": "Las Salinas"
   },
   "order": {
     "backHome": "Zur Startseite",

@@ -13,13 +13,13 @@
     "de": "DE"
   },
   "home": {
-    "ariaHero": "Las Salinas · home",
-    "badge": "Arinaga · Las Palmas",
-    "title": "Las Salinas",
-    "lead": "Seafood and Canarian flavours. Browse the menu with prices and allergens — clear and quick.",
-    "ctaMenu": "View menu",
-    "ctaContact": "How to find us",
-    "logoAlt": "Las Salinas logo"
+    "ariaSplash": "Opening soon",
+    "kicker": "Arinaga Beach · Gran Canaria",
+    "logoAlt": "Bar Las Salinas",
+    "headline": "Opening soon",
+    "line1": "We'll be opening very soon right by the sea.",
+    "line2": "Thank you for your patience.",
+    "photoCaption": "Las Salinas"
   },
   "order": {
     "backHome": "Back to home",

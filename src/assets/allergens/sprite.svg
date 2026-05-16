@@ -2,8 +2,8 @@
   <defs>
     <style>
       .bg{fill:#ffffff}
-      .ring{fill:none;stroke:#1e3a5f;stroke-width:1.4}
-      .txt{font-family:Arial, sans-serif;font-weight:700;font-size:8px;fill:#1e3a5f}
+      .ring{fill:none;stroke:#3d2918;stroke-width:1.4}
+      .txt{font-family:Arial, sans-serif;font-weight:700;font-size:8px;fill:#3d2918}
     </style>
   </defs>
 

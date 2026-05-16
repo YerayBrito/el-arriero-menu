@@ -17,7 +17,7 @@
   font-size: clamp(18px, 3vw, 22px);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--navy, #1e3a5f);
+  color: var(--navy, #3d2918);
 }
 
 .tag {
@@ -34,7 +34,7 @@
 }
 
 .editor-back {
-  color: var(--navy, #1e3a5f);
+  color: var(--navy, #3d2918);
   text-decoration: none;
   font-weight: 600;
 }
@@ -42,9 +42,9 @@
 .editor-toast {
   padding: 10px 14px;
   border-radius: 10px;
-  background: rgba(30, 58, 95, 0.12);
-  border: 1px solid rgba(30, 58, 95, 0.2);
-  color: var(--navy, #1e3a5f);
+  background: rgba(62, 44, 34, 0.12);
+  border: 1px solid rgba(62, 44, 34, 0.2);
+  color: var(--navy, #3d2918);
   margin-bottom: 12px;
   font-size: 14px;
 }
@@ -59,17 +59,17 @@
 .editor-tabs button {
   padding: 10px 16px;
   border-radius: 10px;
-  border: 1px solid rgba(30, 58, 95, 0.2);
+  border: 1px solid rgba(62, 44, 34, 0.2);
   background: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   font-size: 13px;
   font-weight: 600;
-  color: var(--text, #0f172a);
+  color: var(--text, #2a221c);
 }
 
 .editor-tabs button.active {
-  background: var(--gold, #b8933e);
-  border-color: var(--gold, #b8933e);
+  background: var(--gold, #b8892e);
+  border-color: var(--gold, #b8892e);
   color: #fff;
 }
 
@@ -86,7 +86,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin: 0 0 16px;
-  color: var(--navy, #1e3a5f);
+  color: var(--navy, #3d2918);
 }
 
 .grid2 {
@@ -113,7 +113,7 @@ label {
   display: block;
   font-size: 12px;
   font-weight: 600;
-  color: var(--muted, #334155);
+  color: var(--muted, #5c5048);
   margin-bottom: 10px;
 }
 
@@ -126,7 +126,7 @@ textarea {
   margin-top: 4px;
   padding: 8px 10px;
   border-radius: 8px;
-  border: 1px solid rgba(30, 58, 95, 0.2);
+  border: 1px solid rgba(62, 44, 34, 0.2);
   font-size: 14px;
 }
 
@@ -146,7 +146,7 @@ textarea {
 
 .allergens {
   margin-top: 12px;
-  border: 1px solid rgba(30, 58, 95, 0.12);
+  border: 1px solid rgba(62, 44, 34, 0.12);
   border-radius: 10px;
   padding: 10px 12px;
 }
@@ -194,22 +194,22 @@ label.check input {
 }
 
 .btn.primary {
-  background: var(--navy, #1e3a5f);
+  background: var(--navy, #3d2918);
   color: #fff;
 }
 
 .btn.secondary {
-  background: rgba(30, 58, 95, 0.1);
-  color: var(--navy, #1e3a5f);
-  border: 1px solid rgba(30, 58, 95, 0.25);
+  background: rgba(62, 44, 34, 0.1);
+  color: var(--navy, #3d2918);
+  border: 1px solid rgba(62, 44, 34, 0.25);
 }
 
 .catalog-downloads {
   margin-bottom: 20px;
   padding: 14px 16px;
   border-radius: 12px;
-  background: rgba(30, 58, 95, 0.06);
-  border: 1px solid rgba(30, 58, 95, 0.12);
+  background: rgba(62, 44, 34, 0.06);
+  border: 1px solid rgba(62, 44, 34, 0.12);
 }
 
 .downloads-toolbar .catalog-downloads {
@@ -234,7 +234,7 @@ label.check input {
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: var(--muted, #334155);
+  color: var(--muted, #5c5048);
   margin-bottom: 10px;
 }
 
@@ -253,7 +253,7 @@ label.check input {
   margin-bottom: 16px;
   padding: 12px 14px;
   border-radius: 12px;
-  border: 1px solid rgba(30, 58, 95, 0.18);
+  border: 1px solid rgba(62, 44, 34, 0.18);
   background: rgba(255, 255, 255, 0.75);
 }
 
@@ -274,7 +274,7 @@ label.check input {
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: var(--muted, #334155);
+  color: var(--muted, #5c5048);
   margin-bottom: 10px;
 }
 
@@ -308,7 +308,7 @@ label.check input {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin: 0 0 10px;
-  color: var(--navy, #1e3a5f);
+  color: var(--navy, #3d2918);
   font-weight: 700;
 }
 
