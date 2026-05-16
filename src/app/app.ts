@@ -23,7 +23,7 @@ import { SiteFooterComponent } from './components/site-footer/site-footer.compon
 export class App {
   private readonly router = inject(Router);
 
-  /** En la portada solo se muestra la pantalla de próxima apertura (sin menú ni pie). */
+  /** En la portada solo se muestra “próxima apertura” (sin cabecera ni pie). */
   readonly showSiteChrome = signal(true);
 
   constructor() {
@@ -36,6 +36,7 @@ export class App {
 
   private syncLayoutAfterNav(): void {
     this.syncPrintSheetClass();
+    this.syncPedidosKioskClass();
     this.syncHomeSplashChrome();
   }
 
@@ -45,7 +46,15 @@ export class App {
     this.showSiteChrome.set(!isHome);
   }
 
-  /** Solo en /carta/imprimir: al imprimir, el CSS oculta header/footer y deja solo la hoja A4. */
+  /** Vista /pedidos: pantalla completa (sin cabecera web). */
+  private syncPedidosKioskClass(): void {
+    if (typeof document === 'undefined') return;
+    const path = this.router.url.split('?')[0].split('#')[0];
+    const onPedidos = path === '/pedidos' || path.endsWith('/pedidos');
+    document.documentElement.classList.toggle('pedidos-kiosk', onPedidos);
+  }
+
+  /** Solo en /carta/imprimir: al imprimir, el CSS oculta header/footer. */
   private syncPrintSheetClass(): void {
     if (typeof document === 'undefined') return;
     const path = this.router.url.split('?')[0].split('#')[0];

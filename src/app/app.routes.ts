@@ -4,10 +4,8 @@ import { HomePageComponent } from './pages/home/home-page.component';
 import { localOnlyGuard } from './guards/local-only.guard';
 
 /**
- * Modo “próxima apertura”: solo la portada es accesible en producción.
- * Cualquier otra URL (`/carta`, `/contacto`, …) redirige a `/`.
- *
- * Excepción: `/carta/imprimir` solo en localhost (PDF interno).
+ * Portada “próxima apertura” pública; el resto de URLs redirige a `/`.
+ * Herramientas solo en local: `/editor-carta`, `/pedidos`, `/carta/imprimir`.
  */
 export const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomePageComponent },
@@ -19,6 +17,23 @@ export const appRoutes: Routes = [
     canMatch: [localOnlyGuard],
   },
 
+  {
+    path: 'editor-carta',
+    loadComponent: () =>
+      import('./pages/menu-editor-local/menu-editor-local-page.component').then(
+        m => m.MenuEditorLocalPageComponent
+      ),
+    canMatch: [localOnlyGuard],
+  },
+
+  {
+    path: 'pedidos',
+    loadComponent: () =>
+      import('./pages/pedidos-local/pedidos-local-page.component').then(
+        m => m.PedidosLocalPageComponent
+      ),
+    canMatch: [localOnlyGuard],
+  },
+
   { path: '**', redirectTo: '' },
 ];
-

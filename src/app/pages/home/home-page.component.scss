@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+/* Portada “próxima apertura” — Arinaga + velo crema/madera */
 
-$splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f?auto=format&fit=crop&w=2160&q=85');
-
-/* Vista única pantalla completa (sin huecos del shell con header oculto) */
 :host {
   display: block;
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -34,44 +32,46 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   font-size: 11px;
   letter-spacing: 0.06em;
   border-radius: 9px;
-  border: 1px solid rgba(30, 58, 95, 0.22);
-  background: rgba(255, 255, 255, 0.78);
-  color: var(--navy, #1e3a5f);
+  border: 1px solid rgba(90, 56, 38, 0.28);
+  background: rgba(255, 250, 244, 0.92);
+  color: var(--navy, #3d2918);
   cursor: pointer;
   font-family: 'Cinzel', serif;
   text-transform: uppercase;
-  box-shadow: 0 2px 10px rgba(30, 58, 95, 0.08);
+  box-shadow: 0 2px 10px rgba(42, 28, 20, 0.08);
 
   &:hover {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 252, 248, 0.98);
   }
 
   &.active {
-    background: rgba(184, 147, 62, 0.92);
-    border-color: rgba(184, 147, 62, 0.95);
-    color: #fff;
+    background: rgba(184, 137, 46, 0.92);
+    border-color: rgba(184, 137, 46, 0.95);
+    color: #fffaf5;
   }
 }
 
 .splash-bg {
   position: absolute;
   inset: -6px;
-  background-color: #c9dfed;
-  background-image: $splash-photo;
+  z-index: 0;
+  background-color: #3a6d8c;
+  background-image: url('/assets/photos/hero-arinaga.png');
   background-size: cover;
-  background-position: center 42%;
+  background-position: 52% 42%;
+  pointer-events: none;
 }
 
 .splash-overlay {
   position: absolute;
   inset: 0;
-  /* Azul claro: deja ver el detalle del logo (p. ej. “comida para llevar”) */
+  z-index: 0;
   background:
     linear-gradient(
       180deg,
-      rgba(216, 236, 246, 0.78) 0%,
-      rgba(200, 228, 242, 0.68) 38%,
-      rgba(188, 220, 236, 0.76) 100%
+      rgba(250, 246, 240, 0.86) 0%,
+      rgba(245, 236, 226, 0.78) 45%,
+      rgba(238, 224, 210, 0.82) 100%
     );
   pointer-events: none;
 }
@@ -81,17 +81,8 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   z-index: 1;
   text-align: center;
   max-width: 520px;
-  color: var(--text, #0f172a);
-  animation: splash-in 0.7s ease-out both;
-}
-
-@keyframes splash-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  width: 100%;
+  color: var(--text, #2a221c);
 }
 
 .kicker {
@@ -99,8 +90,7 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   font-size: clamp(17px, 2.8vw, 22px);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted, #334155);
-  opacity: 1;
+  color: var(--muted, #5c5048);
   margin-bottom: clamp(16px, 3vw, 28px);
 }
 
@@ -115,8 +105,8 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   height: auto;
   object-fit: contain;
   filter:
-    drop-shadow(0 12px 28px rgba(30, 58, 95, 0.12))
-    drop-shadow(0 2px 8px rgba(30, 58, 95, 0.08));
+    drop-shadow(0 14px 32px rgba(42, 28, 20, 0.18))
+    drop-shadow(0 2px 8px rgba(42, 28, 20, 0.1));
 }
 
 .headline {
@@ -126,7 +116,7 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   letter-spacing: 0.18em;
   text-transform: uppercase;
   line-height: 1.15;
-  color: var(--navy, #1e3a5f);
+  color: var(--navy, #3d2918);
 }
 
 .tagline {
@@ -137,10 +127,10 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
 .tagline-line {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(19px, 3.2vw, 24px);
+  font-size: clamp(18px, 3.2vw, 22px);
   font-weight: 500;
   line-height: 1.45;
-  color: var(--muted, #334155);
+  color: var(--muted, #5c5048);
 }
 
 .tagline-thanks {
@@ -156,12 +146,12 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(184, 147, 62, 0.85),
-    rgba(247, 240, 220, 0.55),
-    rgba(184, 147, 62, 0.85),
+    rgba(166, 93, 63, 0.75),
+    rgba(201, 165, 74, 0.55),
+    rgba(166, 93, 63, 0.75),
     transparent
   );
-  box-shadow: 0 0 20px rgba(184, 147, 62, 0.35);
+  box-shadow: 0 0 18px rgba(166, 93, 63, 0.28);
 }
 
 .photo-credit {
@@ -171,17 +161,6 @@ $splash-photo: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0749f
   z-index: 2;
   font-size: 11px;
   font-family: system-ui, sans-serif;
-  color: rgba(15, 35, 55, 0.45);
-}
-
-.photo-credit a {
-  color: rgba(30, 58, 95, 0.75);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .splash-body {
-    animation: none !important;
-  }
+  letter-spacing: 0.04em;
+  color: rgba(42, 34, 28, 0.5);
 }

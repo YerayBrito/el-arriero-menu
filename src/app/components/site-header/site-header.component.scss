@@ -4,9 +4,9 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: color-mix(in srgb, var(--navy) 92%, transparent);
+  background: linear-gradient(180deg, #3d2918 0%, #2c1e15 100%);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(184,147,62,.25);
+  border-bottom: 1px solid rgba(201, 165, 74, 0.22);
 }
 
 .inner {
@@ -24,7 +24,7 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  color: #fff;
+  color: #fffaf5;
 }
 
 .brand-mark {
@@ -33,9 +33,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(184,147,62,.55);
+  border: 1px solid rgba(201, 165, 74, 0.45);
   border-radius: 10px;
-  background: rgba(238,246,250,.08);
+  background: rgba(255, 248, 240, 0.06);
 }
 
 .brand-name {
@@ -51,7 +51,7 @@
   gap: 4px;
   margin-left: 10px;
   padding-left: 12px;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 248, 240, 0.2);
 }
 
 .lang-btn {
@@ -60,22 +60,22 @@
   font-size: 10px;
   letter-spacing: 0.06em;
   border-radius: 8px;
-  border: 1px solid rgba(184, 147, 62, 0.35);
-  background: rgba(238, 246, 250, 0.08);
-  color: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(201, 165, 74, 0.35);
+  background: rgba(255, 248, 240, 0.06);
+  color: rgba(255, 250, 244, 0.88);
   cursor: pointer;
   font-family: 'Cinzel', serif;
   text-transform: uppercase;
 
   &:hover {
-    background: rgba(238, 246, 250, 0.14);
-    color: #fff;
+    background: rgba(255, 248, 240, 0.12);
+    color: #fffaf5;
   }
 
   &.active {
-    background: rgba(184, 147, 62, 0.45);
-    border-color: rgba(184, 147, 62, 0.65);
-    color: #fff;
+    background: rgba(184, 137, 46, 0.42);
+    border-color: rgba(201, 165, 74, 0.55);
+    color: #fffaf5;
   }
 }
 
@@ -91,21 +91,21 @@
     font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255,255,255,.86);
+    color: rgba(255, 250, 244, 0.86);
     text-decoration: none;
     padding: 8px 10px;
     border-radius: 10px;
     transition: background .15s, color .15s, border-color .15s;
 
-    &:hover { background: rgba(238,246,250,.08); color: #fff; }
-    &.active { color: #fff; border: 1px solid rgba(184,147,62,.35); }
+    &:hover { background: rgba(255, 248, 240, 0.08); color: #fffaf5; }
+    &.active { color: #fffaf5; border: 1px solid rgba(201, 165, 74, 0.4); }
   }
 
   .cta {
-    background: rgba(184,147,62,.95);
-    color: #fff !important;
-    border: 1px solid rgba(184,147,62,.75);
-    &:hover { background: color-mix(in srgb, #b8933e 86%, black); }
+    background: rgba(184, 137, 46, 0.95);
+    color: #fffaf5 !important;
+    border: 1px solid rgba(201, 165, 74, 0.75);
+    &:hover { background: color-mix(in srgb, #b8892e 86%, black); }
   }
 }
 
@@ -113,16 +113,16 @@
   display: none;
   width: 42px;
   height: 38px;
-  border: 1px solid rgba(184,147,62,.35);
+  border: 1px solid rgba(201, 165, 74, 0.35);
   border-radius: 12px;
-  background: rgba(238,246,250,.08);
+  background: rgba(255, 248, 240, 0.06);
   cursor: pointer;
 
   span {
     display: block;
     height: 2px;
     margin: 6px 10px;
-    background: #fff;
+    background: #fffaf5;
     opacity: .9;
   }
 }
@@ -140,8 +140,8 @@
     align-items: stretch;
     flex: none;
     justify-content: flex-start;
-    background: color-mix(in srgb, var(--navy) 96%, black);
-    border: 1px solid rgba(184,147,62,.25);
+    background: color-mix(in srgb, #2c1e15 96%, black);
+    border: 1px solid rgba(201, 165, 74, 0.22);
     border-radius: 16px;
     padding: 10px;
     gap: 6px;
@@ -152,7 +152,6 @@
     a { width: 100%; }
   }
 
-  /* Idiomas siempre visibles en la barra (no dentro del menú desplegable) */
   .lang {
     margin-left: auto;
     padding-left: 0;
@@ -166,4 +165,3 @@
     font-size: 9px;
   }
 }
-

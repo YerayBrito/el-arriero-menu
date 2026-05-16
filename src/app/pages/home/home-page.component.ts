@@ -46,10 +46,7 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
         <span class="wave" aria-hidden="true"></span>
       </div>
 
-      <p class="photo-credit">
-        {{ 'home.photoCredit' | t }}
-        <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
-      </p>
+      <p class="photo-credit">{{ 'home.photoCaption' | t }}</p>
     </section>
   `,
   styleUrls: ['./home-page.component.scss'],

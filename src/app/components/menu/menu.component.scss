@@ -1,19 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:wght@400;700&display=swap');
 
 // ── Variables ──────────────────────────────────────────────────
-$gold:     #b8933e;
-$navy:     #1e3a5f;
-$navy-mid: #1e5080;
-// Mismo fondo marino que la web (hoja de carta)
-$sheet-bg: linear-gradient(168deg, #e9f4f9 0%, #dbeaf2 38%, #d2e4ef 72%, #c8dce8 100%);
+$gold:     #b8892e;
+$navy:     #3d2918;
+$navy-mid: #6b4423;
+$sheet-bg: linear-gradient(168deg, #faf6f0 0%, #f2e6da 45%, #e8ddd2 100%);
 $sheet-bg-layers:
-  radial-gradient(1150px 720px at 8% -5%, rgba(90, 150, 190, .16), transparent 58%),
-  radial-gradient(900px 600px at 98% 20%, rgba(30, 80, 120, .12), transparent 55%),
-  radial-gradient(700px 480px at 50% 100%, rgba(65, 140, 160, .08), transparent 52%),
-  radial-gradient(1200px 500px at 40% 50%, rgba(184, 147, 62, .05), transparent 45%),
+  radial-gradient(1000px 640px at 8% 0%, rgba(201, 165, 74, 0.14), transparent 55%),
+  radial-gradient(880px 520px at 96% 18%, rgba(166, 93, 63, 0.1), transparent 50%),
+  radial-gradient(720px 420px at 50% 100%, rgba(90, 56, 38, 0.06), transparent 52%),
+  radial-gradient(1100px 480px at 42% 45%, rgba(184, 137, 46, 0.05), transparent 48%),
   $sheet-bg;
-$text-body: #0f172a;
-$text-muted: #334155;
+$text-body: #2a221c;
+$text-muted: #5c5048;
 
 // ── Screen toolbar ─────────────────────────────────────────────
 .screen-toolbar {
