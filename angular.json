@@ -35,6 +35,7 @@
           },
           "configurations": {
             "production": {
+              "tsConfig": "tsconfig.app.prod.json",
               "fileReplacements": [
                 {
                   "replace": "src/app/app.routes.ts",
