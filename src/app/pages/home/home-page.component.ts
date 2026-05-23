@@ -39,6 +39,7 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
           />
         </div>
         <h1 class="headline">{{ 'home.headline' | t }}</h1>
+        <p class="open-date">{{ 'home.openDate' | t }}</p>
         <div class="tagline">
           <p class="tagline-line">{{ 'home.line1' | t }}</p>
           <p class="tagline-line tagline-thanks">{{ 'home.line2' | t }}</p>
