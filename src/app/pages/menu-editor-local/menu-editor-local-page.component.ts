@@ -1,11 +1,12 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
-import { firstValueFrom } from 'rxjs';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { firstValueFrom, Subscription } from 'rxjs';
 import JSZip from 'jszip';
 import { MENU_SECTIONS } from '../../data/menu.data';
+import { CartaKind, DRINKS_SECTIONS } from '../../data/drinks.data';
 import {
   AllergenCode,
   MenuItem,
@@ -71,6 +72,32 @@ function setOrDelete(entry: Record<string, string>, key: string, value: string):
   else delete entry[key];
 }
 
+const FOOD_FILE_HINT: Record<string, string> = {
+  entrantes: 'src/app/data/menu/entrantes.json',
+  salsas: 'src/app/data/menu/salsas.json',
+  pescados: 'src/app/data/menu/pescados.json',
+  carnes: 'src/app/data/menu/carnes.json',
+  postres: 'src/app/data/menu/postres.json',
+  domingos: 'src/app/data/menu/domingos.json',
+  encargo: 'src/app/data/menu/encargo.json',
+};
+
+const DRINKS_FILE_HINT: Record<string, string> = {
+  cocteles: 'src/app/data/drinks/cocteles.json',
+  licores: 'src/app/data/drinks/licores.json',
+  refrescos: 'src/app/data/drinks/refrescos.json',
+  cafe: 'src/app/data/drinks/cafe.json',
+  zumos: 'src/app/data/drinks/zumos.json',
+  cervezas: 'src/app/data/drinks/cervezas.json',
+  vodka: 'src/app/data/drinks/vodka.json',
+  aperitivos: 'src/app/data/drinks/aperitivos.json',
+  rones: 'src/app/data/drinks/rones.json',
+  brandy: 'src/app/data/drinks/brandy.json',
+  ginebra: 'src/app/data/drinks/ginebra.json',
+  whisky: 'src/app/data/drinks/whisky.json',
+  chupitos: 'src/app/data/drinks/chupitos.json',
+};
+
 @Component({
   selector: 'app-menu-editor-local-page',
   standalone: true,
@@ -78,22 +105,16 @@ function setOrDelete(entry: Record<string, string>, key: string, value: string):
   templateUrl: './menu-editor-local-page.component.html',
   styleUrls: ['./menu-editor-local-page.component.scss'],
 })
-export class MenuEditorLocalPageComponent implements OnInit {
+export class MenuEditorLocalPageComponent implements OnInit, OnDestroy {
   private readonly http = inject(HttpClient);
+  private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
+  private routeSub?: Subscription;
 
   readonly tab = signal<EditorTab>('precios');
   readonly sections = signal<MenuSection[]>(cloneSections(MENU_SECTIONS));
   readonly catalogsReady = signal(false);
-
-  readonly fileHint: Record<string, string> = {
-    entrantes: 'src/app/data/menu/entrantes.json',
-    salsas: 'src/app/data/menu/salsas.json',
-    pescados: 'src/app/data/menu/pescados.json',
-    carnes: 'src/app/data/menu/carnes.json',
-    postres: 'src/app/data/menu/postres.json',
-    domingos: 'src/app/data/menu/domingos.json',
-    encargo: 'src/app/data/menu/encargo.json',
-  };
+  cartaKind: CartaKind = 'comida';
 
   readonly allergenList = ALLERGEN_LIST;
 
@@ -168,10 +189,69 @@ export class MenuEditorLocalPageComponent implements OnInit {
 
   saveChangesDisabled(): boolean {
     if (this.tab() === 'categoria') return false;
+    if (this.isDrinks()) return false;
     return !this.catalogsReady();
   }
 
-  async ngOnInit(): Promise<void> {
+  isDrinks(): boolean {
+    return this.cartaKind === 'bebidas';
+  }
+
+  editorTitle(): string {
+    return this.isDrinks() ? 'Editor de carta de bebidas' : 'Editor de carta de comida';
+  }
+
+  getFileHint(sectionId: string): string {
+    const map = this.isDrinks() ? DRINKS_FILE_HINT : FOOD_FILE_HINT;
+    return map[sectionId] ?? '…';
+  }
+
+  printLinkQuery(): { carta?: string } {
+    return this.isDrinks() ? { carta: 'bebidas' } : {};
+  }
+
+  setCartaKind(kind: CartaKind): void {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: kind === 'comida' ? { carta: null } : { carta: kind },
+      queryParamsHandling: 'merge',
+    });
+  }
+
+  ngOnInit(): void {
+    this.routeSub = this.route.queryParamMap.subscribe(params => {
+      const kind: CartaKind = params.get('carta') === 'bebidas' ? 'bebidas' : 'comida';
+      this.applyCartaKind(kind);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.routeSub?.unsubscribe();
+  }
+
+  private applyCartaKind(kind: CartaKind): void {
+    this.cartaKind = kind;
+    const src = kind === 'bebidas' ? DRINKS_SECTIONS : MENU_SECTIONS;
+    this.sections.set(cloneSections(src));
+    this.priceSectionId = src[0]?.id ?? (kind === 'bebidas' ? 'refrescos' : 'entrantes');
+    this.addSectionId = this.priceSectionId;
+    this.priceItemIndex = 0;
+
+    if (kind === 'bebidas') {
+      this.catalogsReady.set(true);
+      this.loadPriceFormFromSelection({ silent: true });
+      return;
+    }
+
+    void this.ensureFoodCatalogsLoaded();
+  }
+
+  private async ensureFoodCatalogsLoaded(): Promise<void> {
+    if (this.catalogEs && this.catalogEn && this.catalogDe) {
+      this.catalogsReady.set(true);
+      this.loadPriceFormFromSelection({ silent: true });
+      return;
+    }
     try {
       const [es, en, de] = await Promise.all([
         firstValueFrom(this.http.get<CatalogJson>('/assets/i18n/catalog.es.json')),
@@ -235,7 +315,7 @@ export class MenuEditorLocalPageComponent implements OnInit {
       this.editMedia = '';
       this.editRacion = '';
       if (!silent && this.getPriceSection()?.items?.length === 0) {
-        this.flash('Esta categoría no tiene platos.');
+        this.flash(this.isDrinks() ? 'Esta categoría no tiene bebidas.' : 'Esta categoría no tiene platos.');
       }
       return;
     }
@@ -268,12 +348,16 @@ export class MenuEditorLocalPageComponent implements OnInit {
       this.editRacion = '';
     }
     if (!silent) {
-      this.flash('Datos del plato cargados (ES / EN / DE).');
+      this.flash(
+        this.isDrinks()
+          ? 'Datos de la bebida cargados.'
+          : 'Datos del plato cargados (ES / EN / DE).',
+      );
     }
   }
 
   applyPriceToMemory(): void {
-    if (!this.catalogEs || !this.catalogEn || !this.catalogDe) {
+    if (!this.isDrinks() && (!this.catalogEs || !this.catalogEn || !this.catalogDe)) {
       this.flash('Espera a que carguen los catálogos de idioma.');
       return;
     }
@@ -293,11 +377,13 @@ export class MenuEditorLocalPageComponent implements OnInit {
     const noteEn = this.editNoteEn.trim();
     const noteDe = this.editNoteDe.trim();
 
-    this.patchCatalogTriplet(sid, idx, {
-      es: { name: nameEs, description: descEs, note: noteEs },
-      en: { name: nameEn, description: descEn, note: noteEn },
-      de: { name: nameDe, description: descDe, note: noteDe },
-    });
+    if (!this.isDrinks()) {
+      this.patchCatalogTriplet(sid, idx, {
+        es: { name: nameEs, description: descEs, note: noteEs },
+        en: { name: nameEn, description: descEn, note: noteEn },
+        de: { name: nameDe, description: descDe, note: noteDe },
+      });
+    }
 
     this.sections.update(list => {
       const next = cloneSections(list);
@@ -305,6 +391,17 @@ export class MenuEditorLocalPageComponent implements OnInit {
       if (!sec?.items?.[idx]) return list;
       const it = sec.items[idx];
       it.name = nameEs;
+
+      if (this.isDrinks()) {
+        delete it.description;
+        delete it.note;
+        delete it.highlight;
+        delete it.allergens;
+        delete it.triplePrice;
+        it.price = this.editPriceSingle.trim() || it.price;
+        return next;
+      }
+
       if (descEs) it.description = descEs;
       else delete it.description;
       if (noteEs) it.note = noteEs;
@@ -326,12 +423,14 @@ export class MenuEditorLocalPageComponent implements OnInit {
       return next;
     });
     this.flash(
-      'Cambios guardados. Siguen acumulándose hasta recargar la página (F5). Al terminar, descarga menu.zip y los catalog.*.json y cópialos al repo.',
+      this.isDrinks()
+        ? 'Cambios guardados. Al terminar, descarga drinks.zip y sustituye src/app/data/drinks/.'
+        : 'Cambios guardados. Siguen acumulándose hasta recargar la página (F5). Al terminar, descarga menu.zip y los catalog.*.json y cópialos al repo.',
     );
   }
 
   addDishToMemory(): void {
-    if (!this.catalogEs || !this.catalogEn || !this.catalogDe) {
+    if (!this.isDrinks() && (!this.catalogEs || !this.catalogEn || !this.catalogDe)) {
       this.flash('Espera a que carguen los catálogos de idioma.');
       return;
     }
@@ -350,22 +449,27 @@ export class MenuEditorLocalPageComponent implements OnInit {
     const noteDe = this.addNoteDe.trim();
 
     const item: MenuItem = { name: nameEs };
-    if (descEs) item.description = descEs;
-    if (noteEs) item.note = noteEs;
-    if (this.addHighlight) item.highlight = true;
-    if (this.addAllergens.length) item.allergens = [...this.addAllergens];
-
     const sid = this.addSectionId;
-    const sec = this.sections().find(s => s.id === sid);
-    const triple = !!sec?.hasTriplePricing && this.addUseTriple;
-    if (triple) {
-      item.triplePrice = {
-        tapa: this.addTapa.trim() || '—',
-        media: this.addMedia.trim() || '—',
-        racion: this.addRacion.trim() || '—',
-      };
+
+    if (this.isDrinks()) {
+      item.price = this.addSingle.trim() || '0,00€';
     } else {
-      item.price = this.addSingle.trim() || '—';
+      if (descEs) item.description = descEs;
+      if (noteEs) item.note = noteEs;
+      if (this.addHighlight) item.highlight = true;
+      if (this.addAllergens.length) item.allergens = [...this.addAllergens];
+
+      const sec = this.sections().find(s => s.id === sid);
+      const triple = !!sec?.hasTriplePricing && this.addUseTriple;
+      if (triple) {
+        item.triplePrice = {
+          tapa: this.addTapa.trim() || '—',
+          media: this.addMedia.trim() || '—',
+          racion: this.addRacion.trim() || '—',
+        };
+      } else {
+        item.price = this.addSingle.trim() || '—';
+      }
     }
 
     let newIndex = 0;
@@ -379,14 +483,18 @@ export class MenuEditorLocalPageComponent implements OnInit {
       return next;
     });
 
-    this.patchCatalogTriplet(sid, newIndex, {
-      es: { name: nameEs, description: descEs, note: noteEs },
-      en: { name: nameEn, description: descEn, note: noteEn },
-      de: { name: nameDe, description: descDe, note: noteDe },
-    });
+    if (!this.isDrinks()) {
+      this.patchCatalogTriplet(sid, newIndex, {
+        es: { name: nameEs, description: descEs, note: noteEs },
+        en: { name: nameEn, description: descEn, note: noteEn },
+        de: { name: nameDe, description: descDe, note: noteDe },
+      });
+    }
 
     this.flash(
-      'Plato añadido. Puedes seguir editando; al terminar descarga menu.zip y los catalog.*.json que necesites.',
+      this.isDrinks()
+        ? 'Bebida añadida. Al terminar descarga drinks.zip.'
+        : 'Plato añadido. Puedes seguir editando; al terminar descarga menu.zip y los catalog.*.json que necesites.',
     );
     this.addNameEs = '';
     this.addNameEn = '';
@@ -416,17 +524,19 @@ export class MenuEditorLocalPageComponent implements OnInit {
     }
     const section: MenuSection = {
       id,
-      icon: this.newIcon.trim() || '🍽️',
+      icon: this.newIcon.trim() || (this.isDrinks() ? '🍹' : '🍽️'),
       title,
       items: [],
-      hasTriplePricing: this.newHasTriple,
+      hasTriplePricing: this.isDrinks() ? false : this.newHasTriple,
     };
     const sub = this.newSubtitle.trim();
     if (sub) section.subtitle = sub;
 
     this.sections.update(list => [...cloneSections(list), section]);
     this.flash(
-      `Categoría «${id}» creada. Importa el JSON en menu.data.ts y añade entradas en catalog.*. El archivo ${id}.json va dentro de menu.zip al descargar.`,
+      this.isDrinks()
+        ? `Categoría «${id}» creada. Añádela en drinks.data.ts. El archivo ${id}.json va dentro de drinks.zip al descargar.`
+        : `Categoría «${id}» creada. Importa el JSON en menu.data.ts y añade entradas en catalog.*. El archivo ${id}.json va dentro de menu.zip al descargar.`,
     );
     this.newId = '';
     this.newTitle = '';
@@ -434,9 +544,14 @@ export class MenuEditorLocalPageComponent implements OnInit {
   }
 
   async downloadMenuFolderZip(): Promise<void> {
+    const drinks = this.isDrinks();
+    const folderName = drinks ? 'drinks' : 'menu';
+    const zipName = drinks ? 'drinks.zip' : 'menu.zip';
+    const targetPath = drinks ? 'src/app/data/drinks/' : 'src/app/data/menu/';
+
     try {
       const zip = new JSZip();
-      const folder = zip.folder('menu');
+      const folder = zip.folder(folderName);
       if (!folder) {
         this.flash('No se pudo crear el ZIP.');
         return;
@@ -447,14 +562,14 @@ export class MenuEditorLocalPageComponent implements OnInit {
       const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'menu.zip';
+      a.download = zipName;
       a.click();
       URL.revokeObjectURL(a.href);
       this.flash(
-        'Descargado: menu.zip — dentro está la carpeta «menu» con todos los .json. Sustituye src/app/data/menu/ por su contenido (o copia solo los ficheros).',
+        `Descargado: ${zipName} — dentro está la carpeta «${folderName}». Sustituye ${targetPath} por su contenido.`,
       );
     } catch {
-      this.flash('Error al generar el ZIP del menú.');
+      this.flash('Error al generar el ZIP.');
     }
   }
 

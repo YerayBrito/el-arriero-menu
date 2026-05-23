@@ -39,6 +39,47 @@
   font-weight: 600;
 }
 
+.editor-print-link {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--navy, #3d2918);
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.carta-switch-editor {
+  display: inline-flex;
+  border: 1px solid rgba(61, 41, 24, 0.22);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.carta-switch-editor-btn {
+  border: none;
+  background: rgba(250, 246, 240, 0.9);
+  color: var(--muted, #5c5048);
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  cursor: pointer;
+
+  &.active {
+    background: var(--navy, #3d2918);
+    color: #fffaf5;
+  }
+
+  &:hover:not(.active) {
+    background: rgba(184, 137, 46, 0.12);
+  }
+}
+
 .editor-toast {
   padding: 10px 14px;
   border-radius: 10px;

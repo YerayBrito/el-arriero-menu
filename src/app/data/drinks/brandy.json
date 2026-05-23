@@ -1,0 +1,11 @@
+{
+  "id": "brandy",
+  "icon": "🥃",
+  "title": "Brandy",
+  "items": [
+    { "name": "Veterano", "price": "0,00€" },
+    { "name": "Magno", "price": "0,00€" },
+    { "name": "Carlos III", "price": "0,00€" },
+    { "name": "Carlos I", "price": "0,00€" }
+  ]
+}

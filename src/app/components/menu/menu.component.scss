@@ -43,6 +43,62 @@ $text-muted: #5c5048;
   gap: 10px;
 }
 
+.carta-switch {
+  display: inline-flex;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lang-switch-btn {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  padding: 5px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &.active {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+  }
+
+  &:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.carta-switch-btn {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+
+  &.active {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+  }
+
+  &:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
 .btn-print {
   background: $gold;
   color: #fff;
@@ -190,6 +246,28 @@ $text-muted: #5c5048;
   grid-template-columns: 1fr 1fr;
   gap: 0 6mm;
   margin-top: 1.5mm;
+}
+
+.page--drinks {
+  .brand-logo {
+    max-height: 22mm;
+  }
+
+  .header {
+    margin-bottom: 0;
+  }
+
+  ::ng-deep .section {
+    margin-bottom: 2mm;
+  }
+
+  ::ng-deep .item-name {
+    font-size: 7.8px;
+  }
+
+  ::ng-deep .item-price {
+    font-size: 8.2px;
+  }
 }
 
 // ── Allergen legend ───────────────────────────────────────────

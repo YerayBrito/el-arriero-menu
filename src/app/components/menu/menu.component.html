@@ -1,14 +1,53 @@
 <div class="screen-toolbar no-print">
-  <div class="toolbar-brand">
-    {{ isPrintView() ? 'Las Salinas — Carta (Imprimir)' : 'Las Salinas — Editor de Carta' }}
-  </div>
+  <div class="toolbar-brand">{{ toolbarTitle() }}</div>
   <div class="toolbar-actions">
-    <a *ngIf="!isPrintView()" class="btn-secondary" routerLink="/carta/imprimir">Ver vista de impresión</a>
-    <button *ngIf="isPrintView()" type="button" class="btn-print" (click)="printMenu()">🖨️ Imprimir / Guardar PDF</button>
+    @if (isPrintView()) {
+      <div class="carta-switch" role="tablist" aria-label="Elegir carta a imprimir">
+        <button
+          type="button"
+          class="carta-switch-btn"
+          role="tab"
+          [class.active]="!isDrinks()"
+          [attr.aria-selected]="!isDrinks()"
+          (click)="setCartaKind('comida')"
+        >Comida</button>
+        <button
+          type="button"
+          class="carta-switch-btn"
+          role="tab"
+          [class.active]="isDrinks()"
+          [attr.aria-selected]="isDrinks()"
+          (click)="setCartaKind('bebidas')"
+        >Bebidas</button>
+      </div>
+      <a
+        class="btn-secondary"
+        routerLink="/editor-carta"
+        [queryParams]="editorLinkQuery()"
+      >Editar precios</a>
+      <div class="lang-switch" role="group" aria-label="Idioma del PDF">
+        <button
+          type="button"
+          class="lang-switch-btn"
+          [class.active]="!isEnglish()"
+          (click)="setPrintLang('es')"
+        >🇪🇸 Español</button>
+        <button
+          type="button"
+          class="lang-switch-btn"
+          [class.active]="isEnglish()"
+          (click)="setPrintLang('en')"
+        >🇬🇧 English</button>
+      </div>
+      <button type="button" class="btn-print" (click)="printMenu()">🖨️ Imprimir / Guardar PDF</button>
+    } @else {
+      <a class="btn-secondary" routerLink="/carta/imprimir">Ver vista de impresión</a>
+      <a class="btn-secondary" routerLink="/editor-carta">Editar carta</a>
+    }
   </div>
 </div>
 
-<div class="page">
+<div class="page" [class.page--drinks]="isDrinks()">
   <div class="border-outer"></div>
   <div class="border-inner"></div>
   <span class="corner c-tl">✦</span>
@@ -16,7 +55,6 @@
   <span class="corner c-bl">✦</span>
   <span class="corner c-br">✦</span>
 
-  <!-- HEADER -->
   <div class="header">
     <div class="wave">〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰</div>
     <img
@@ -25,7 +63,7 @@
       alt="Las Salinas"
       loading="eager"
     />
-    <div class="tagline">{{ tagline }}</div>
+    <div class="tagline">{{ tagline() }}</div>
     <div class="tagline tagline-addr">{{ addressLine }}</div>
     <div class="divider">
       <div class="line line-l"></div>
@@ -34,45 +72,38 @@
     </div>
   </div>
 
-  <!-- TWO COLUMN LAYOUT -->
-  <div class="two-col">
-
-    <!-- LEFT COLUMN -->
+  <div class="two-col" [class.two-col--compact]="isDrinks()">
     <div class="col">
-      <app-menu-section
-        *ngFor="let section of leftSections"
-        [section]="section"
-      ></app-menu-section>
+      @for (section of leftSections(); track section.id) {
+        <app-menu-section [section]="section" [pricingLabels]="pricingLabels()"></app-menu-section>
+      }
     </div>
 
-    <!-- RIGHT COLUMN -->
     <div class="col">
-      <app-menu-section
-        *ngFor="let section of rightSections"
-        [section]="section"
-      ></app-menu-section>
+      @for (section of rightSections(); track section.id) {
+        <app-menu-section [section]="section" [pricingLabels]="pricingLabels()"></app-menu-section>
+      }
     </div>
-
   </div>
 
-  <!-- ALLERGEN LEGEND -->
-  <div class="legend">
-    <div class="legend-title">⚠ Alérgenos — Reglamento UE 1169/2011</div>
-    <div class="legend-row">
-      <div class="legend-item" *ngFor="let item of legend">
-        <app-allergen-icon [code]="item.code"></app-allergen-icon>
-        <span class="legend-text">{{ item.label }}</span>
+  @if (!isDrinks()) {
+    <div class="legend">
+      <div class="legend-title">{{ legendTitle() }}</div>
+      <div class="legend-row">
+        @for (item of legend(); track item.code) {
+          <div class="legend-item">
+            <app-allergen-icon [code]="item.code"></app-allergen-icon>
+            <span class="legend-text">{{ item.label }}</span>
+          </div>
+        }
       </div>
     </div>
-  </div>
+  }
 
-  <!-- FOOTER -->
   <div class="footer">
-    <div class="footer-note">
-      Precios con IGIC incluido · Producto fresco de temporada · Consulte la carta de bebidas con el personal
-    </div>
-    <div class="footer-warn">
-      ⚠ Informe al personal si padece alguna alergia o intolerancia · {{ addressLine }}
-    </div>
+    <div class="footer-note">{{ footerNote() }}</div>
+    @if (!isDrinks()) {
+      <div class="footer-warn">{{ footerWarn() }}</div>
+    }
   </div>
 </div>

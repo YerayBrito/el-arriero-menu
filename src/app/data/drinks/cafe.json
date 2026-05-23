@@ -1,0 +1,15 @@
+{
+  "id": "cafe",
+  "icon": "☕",
+  "title": "Café",
+  "items": [
+    { "name": "Café solo", "price": "0,00€" },
+    { "name": "Café con leche", "price": "0,00€" },
+    { "name": "Café cortado", "price": "0,00€" },
+    { "name": "Cortado largo", "price": "0,00€" },
+    { "name": "Barraquito", "price": "0,00€" },
+    { "name": "Bombón", "price": "0,00€" },
+    { "name": "Capuchino", "price": "0,00€" },
+    { "name": "Infusiones", "price": "0,00€" }
+  ]
+}

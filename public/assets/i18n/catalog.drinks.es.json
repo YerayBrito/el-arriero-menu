@@ -1,0 +1,125 @@
+{
+  "sections": {
+    "refrescos": "Refrescos",
+    "zumos": "Zumos",
+    "cafe": "Café",
+    "licores": "Licores",
+    "chupitos": "Chupitos",
+    "cocteles": "Cócteles",
+    "cervezas": "Cervezas",
+    "vodka": "Vodka",
+    "aperitivos": "Aperitivos",
+    "rones": "Rones",
+    "brandy": "Brandy",
+    "ginebra": "Ginebra",
+    "whisky": "Whisky"
+  },
+  "items": {
+    "refrescos": {
+      "0": { "name": "Agua" },
+      "1": { "name": "Coca-Cola" },
+      "2": { "name": "Coca-Cola Zero" },
+      "3": { "name": "Clipper" },
+      "4": { "name": "Fanta Limón" },
+      "5": { "name": "Fanta Naranja" },
+      "6": { "name": "Tónica" },
+      "7": { "name": "Aquarius" },
+      "8": { "name": "7 Up" },
+      "9": { "name": "Licor 43" }
+    },
+    "zumos": {
+      "0": { "name": "Zumo de naranja" },
+      "1": { "name": "Zumo variado" }
+    },
+    "cafe": {
+      "0": { "name": "Café solo" },
+      "1": { "name": "Café con leche" },
+      "2": { "name": "Café cortado" },
+      "3": { "name": "Cortado largo" },
+      "4": { "name": "Barraquito" },
+      "5": { "name": "Bombón" },
+      "6": { "name": "Capuchino" },
+      "7": { "name": "Infusiones" }
+    },
+    "licores": {
+      "0": { "name": "Triple Sec" },
+      "1": { "name": "Amaretto" },
+      "2": { "name": "Licor de café" },
+      "3": { "name": "Baileys" },
+      "4": { "name": "Tía María" },
+      "5": { "name": "Crema de orujo" },
+      "6": { "name": "Jägermeister" },
+      "7": { "name": "Frangelico" }
+    },
+    "chupitos": {
+      "0": { "name": "Chupitos" },
+      "1": { "name": "Premium" },
+      "2": { "name": "Invitación" }
+    },
+    "cocteles": {
+      "0": { "name": "Mojito" },
+      "1": { "name": "Mojito de fresa" },
+      "2": { "name": "Piña colada" },
+      "3": { "name": "Sex on the Beach" },
+      "4": { "name": "Daiquiri" },
+      "5": { "name": "Aperol Spritz" },
+      "6": { "name": "Daiquiri de fresa" },
+      "7": { "name": "Espresso Martini" }
+    },
+    "cervezas": {
+      "0": { "name": "Caña" },
+      "1": { "name": "Jarra" },
+      "2": { "name": "Cerveza 0,0" },
+      "3": { "name": "Sin gluten" },
+      "4": { "name": "Con limón" },
+      "5": { "name": "Botellín" },
+      "6": { "name": "Lata" }
+    },
+    "vodka": {
+      "0": { "name": "Smirnoff" },
+      "1": { "name": "Absolut" }
+    },
+    "aperitivos": {
+      "0": { "name": "Martini" },
+      "1": { "name": "Aperol" },
+      "2": { "name": "Campari" },
+      "3": { "name": "Tío Pepe" }
+    },
+    "rones": {
+      "0": { "name": "Arehucas Blanco" },
+      "1": { "name": "Arehucas Gold" },
+      "2": { "name": "Bacardí" },
+      "3": { "name": "Brugal Añejo" },
+      "4": { "name": "Havana 3" },
+      "5": { "name": "Havana 7" },
+      "6": { "name": "Diplomático" },
+      "7": { "name": "Ron Telde" },
+      "8": { "name": "Ron miel" }
+    },
+    "brandy": {
+      "0": { "name": "Veterano" },
+      "1": { "name": "Magno" },
+      "2": { "name": "Carlos III" },
+      "3": { "name": "Carlos I" }
+    },
+    "ginebra": {
+      "0": { "name": "Beefeater" },
+      "1": { "name": "Bombay" },
+      "2": { "name": "Tanqueray" },
+      "3": { "name": "Gordon's" },
+      "4": { "name": "Martin Miller's" },
+      "5": { "name": "Puerto de Indias" }
+    },
+    "whisky": {
+      "0": { "name": "Haig" },
+      "1": { "name": "J&B" },
+      "2": { "name": "100 Pipers" },
+      "3": { "name": "J.W. Red Label" },
+      "4": { "name": "J.W. Black Label" },
+      "5": { "name": "Chivas Regal" },
+      "6": { "name": "Ballantine's" },
+      "7": { "name": "Jack Daniel's" },
+      "8": { "name": "Jameson" }
+    }
+  }
+}

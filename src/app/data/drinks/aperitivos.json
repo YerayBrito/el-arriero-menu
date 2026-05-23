@@ -1,0 +1,11 @@
+{
+  "id": "aperitivos",
+  "icon": "🍷",
+  "title": "Aperitivos",
+  "items": [
+    { "name": "Martini", "price": "0,00€" },
+    { "name": "Aperol", "price": "0,00€" },
+    { "name": "Campari", "price": "0,00€" },
+    { "name": "Tío Pepe", "price": "0,00€" }
+  ]
+}

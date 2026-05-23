@@ -1,30 +1,55 @@
 <div class="editor">
   <header class="editor-head">
     <a routerLink="/" class="editor-back">← Inicio</a>
-    <h1>Editor de carta <span class="tag">solo local</span></h1>
+    <h1>{{ editorTitle() }} <span class="tag">solo local</span></h1>
+    <a class="editor-print-link" [routerLink]="['/carta/imprimir']" [queryParams]="printLinkQuery()">Vista imprimir →</a>
   </header>
+
+  <div class="carta-switch-editor" role="tablist" aria-label="Tipo de carta">
+    <button
+      type="button"
+      class="carta-switch-editor-btn"
+      role="tab"
+      [class.active]="!isDrinks()"
+      (click)="setCartaKind('comida')"
+    >Comida</button>
+    <button
+      type="button"
+      class="carta-switch-editor-btn"
+      role="tab"
+      [class.active]="isDrinks()"
+      (click)="setCartaKind('bebidas')"
+    >Bebidas</button>
+  </div>
 
   @if (lastMessage) {
     <div class="editor-toast" role="status">{{ lastMessage }}</div>
   }
 
-  @if (!catalogsReady()) {
+  @if (!isDrinks() && !catalogsReady()) {
     <p class="hint">Cargando textos de catálogo (ES / EN / DE)…</p>
   }
 
   <div class="downloads-toolbar">
-    <div class="menu-downloads" aria-label="Descargar carpeta menu como ZIP">
-      <span class="menu-downloads-label">Carpeta del menú (todos los JSON de categorías):</span>
+    <div class="menu-downloads" [attr.aria-label]="isDrinks() ? 'Descargar carpeta drinks' : 'Descargar carpeta menu'">
+      <span class="menu-downloads-label">
+        {{ isDrinks() ? 'Carpeta de bebidas (JSON por categoría):' : 'Carpeta del menú (todos los JSON de categorías):' }}
+      </span>
       <div class="menu-downloads-row">
-        <button type="button" class="btn secondary" (click)="downloadMenuFolderZip()">Descargar menu.zip</button>
+        <button type="button" class="btn secondary" (click)="downloadMenuFolderZip()">
+          {{ isDrinks() ? 'Descargar drinks.zip' : 'Descargar menu.zip' }}
+        </button>
       </div>
       <p class="hint tiny">
-        Dentro del ZIP va la carpeta <code>menu/</code> con <code>entrantes.json</code>, <code>pescados.json</code>, etc. Descomprime y sustituye
-        <code>src/app/data/menu/</code> por esos archivos (o la carpeta entera).
+        @if (isDrinks()) {
+          Dentro del ZIP va la carpeta <code>drinks/</code>. Sustituye <code>src/app/data/drinks/</code>.
+        } @else {
+          Dentro del ZIP va la carpeta <code>menu/</code>. Sustituye <code>src/app/data/menu/</code>.
+        }
       </p>
     </div>
 
-    @if (catalogsReady()) {
+    @if (!isDrinks() && catalogsReady()) {
       <div class="catalog-downloads" aria-label="Descargar catálogos completos">
         <span class="catalog-downloads-label">Catálogos i18n (uno por idioma, descarga manual):</span>
         <div class="catalog-downloads-row">
@@ -43,14 +68,14 @@
       [attr.aria-selected]="tab() === 'precios'"
       [class.active]="tab() === 'precios'"
       (click)="setTab('precios')"
-    >Editar precios / plato</button>
+    >{{ isDrinks() ? 'Editar precio / bebida' : 'Editar precios / plato' }}</button>
     <button
       type="button"
       role="tab"
       [attr.aria-selected]="tab() === 'plato'"
       [class.active]="tab() === 'plato'"
       (click)="setTab('plato')"
-    >Añadir plato</button>
+    >{{ isDrinks() ? 'Añadir bebida' : 'Añadir plato' }}</button>
     <button
       type="button"
       role="tab"
@@ -72,7 +97,7 @@
   @switch (tab()) {
     @case ('precios') {
       <section class="panel" aria-labelledby="tit-precios">
-        <h2 id="tit-precios">Editar plato existente</h2>
+        <h2 id="tit-precios">{{ isDrinks() ? 'Editar bebida existente' : 'Editar plato existente' }}</h2>
         <div class="grid2">
           <label>
             Categoría
@@ -80,7 +105,7 @@
               name="priceSec"
               [(ngModel)]="priceSectionId"
               (ngModelChange)="onPriceSectionChange()"
-              [disabled]="!catalogsReady()"
+              [disabled]="!isDrinks() && !catalogsReady()"
             >
               @for (s of sections(); track s.id) {
                 <option [value]="s.id">{{ s.icon }} {{ s.title }} ({{ s.id }})</option>
@@ -88,12 +113,12 @@
             </select>
           </label>
           <label>
-            Plato (lista en español)
+            {{ isDrinks() ? 'Bebida' : 'Plato' }} (lista en español)
             <select
               name="priceDish"
               [(ngModel)]="priceItemIndex"
               (ngModelChange)="onPriceDishSelectChange()"
-              [disabled]="!catalogsReady() || !(getPriceSection()?.items?.length)"
+              [disabled]="(!isDrinks() && !catalogsReady()) || !(getPriceSection()?.items?.length)"
             >
               @for (it of getPriceSection()?.items ?? []; track $index) {
                 <option [ngValue]="$index">{{ $index + 1 }}. {{ it.name }}</option>
@@ -101,8 +126,12 @@
             </select>
           </label>
         </div>
-        <p class="hint">Fichero de categoría: <code>{{ fileHint[priceSectionId] || '…' }}</code></p>
+        <p class="hint">Fichero de categoría: <code>{{ getFileHint(priceSectionId) }}</code></p>
 
+        @if (isDrinks()) {
+          <label>Nombre <input type="text" [(ngModel)]="editNameEs" name="eNameEs" /></label>
+          <label>Precio por unidad <input type="text" [(ngModel)]="editPriceSingle" name="ep" placeholder="3,50€" /></label>
+        } @else {
         <div class="lang-blocks">
           <div class="lang-block">
             <h3 class="lang-block-title">Español (canónico en el JSON del menú)</h3>
@@ -124,6 +153,9 @@
           </div>
         </div>
 
+        }
+
+        @if (!isDrinks()) {
         <div class="fieldset">
           <label class="check"><input type="checkbox" [(ngModel)]="editHighlight" name="eh" /> Destacado (especial)</label>
 
@@ -153,23 +185,30 @@
             </div>
           </fieldset>
         </div>
+        }
       </section>
     }
     @case ('plato') {
       <section class="panel" aria-labelledby="tit-plato">
-        <h2 id="tit-plato">Añadir plato a una categoría</h2>
+        <h2 id="tit-plato">{{ isDrinks() ? 'Añadir bebida a una categoría' : 'Añadir plato a una categoría' }}</h2>
         <label>
           Categoría
-          <select name="addSec" [(ngModel)]="addSectionId" [disabled]="!catalogsReady()">
+          <select name="addSec" [(ngModel)]="addSectionId" [disabled]="!isDrinks() && !catalogsReady()">
             @for (s of sections(); track s.id) {
               <option [value]="s.id">{{ s.icon }} {{ s.title }}</option>
             }
           </select>
         </label>
+        @if (!isDrinks()) {
         <p class="hint">
           Si la categoría tiene precio triple en carta, puedes usar tres precios; si no, desmarca y usa precio único.
         </p>
+        }
 
+        @if (isDrinks()) {
+          <label>Nombre <input type="text" [(ngModel)]="addNameEs" name="aNameEs" /></label>
+          <label>Precio por unidad <input type="text" [(ngModel)]="addSingle" name="as" placeholder="3,50€" /></label>
+        } @else {
         <div class="lang-blocks">
           <div class="lang-block">
             <h3 class="lang-block-title">Español (obligatorio nombre)</h3>
@@ -191,6 +230,9 @@
           </div>
         </div>
 
+        }
+
+        @if (!isDrinks()) {
         <div class="fieldset">
           <label class="check"><input type="checkbox" [(ngModel)]="addHighlight" name="ah" /> Destacado</label>
 
@@ -225,6 +267,7 @@
             </div>
           </fieldset>
         </div>
+        }
       </section>
     }
     @case ('categoria') {
@@ -235,10 +278,16 @@
           <label>Icono (emoji) <input type="text" [(ngModel)]="newIcon" name="nic" /></label>
           <label>Título <input type="text" [(ngModel)]="newTitle" name="nt" /></label>
           <label>Subtítulo (opcional) <input type="text" [(ngModel)]="newSubtitle" name="ns" /></label>
-          <label class="check"><input type="checkbox" [(ngModel)]="newHasTriple" name="nht" /> Categoría con precio triple (tapa / ½ / ración)</label>
+          @if (!isDrinks()) {
+            <label class="check"><input type="checkbox" [(ngModel)]="newHasTriple" name="nht" /> Categoría con precio triple (tapa / ½ / ración)</label>
+          }
         </div>
         <p class="hint warn">
-          Después: importa el nuevo JSON en <code>menu.data.ts</code>, añade la sección en <code>catalog.*.json</code> y descarga <code>menu.zip</code> para tener todos los ficheros de <code>menu/</code>.
+          @if (isDrinks()) {
+            Después: importa el JSON en <code>drinks.data.ts</code> y en <code>CARTA_SHEET_IDS.bebidas</code>. Descarga <code>drinks.zip</code>.
+          } @else {
+            Después: importa el nuevo JSON en <code>menu.data.ts</code>, añade la sección en <code>catalog.*.json</code> y descarga <code>menu.zip</code>.
+          }
         </p>
       </section>
     }

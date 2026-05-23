@@ -1,0 +1,10 @@
+{
+  "id": "chupitos",
+  "icon": "🥂",
+  "title": "Chupitos",
+  "items": [
+    { "name": "Chupitos", "price": "0,00€" },
+    { "name": "Premium", "price": "0,00€" },
+    { "name": "Invitación", "price": "0,00€" }
+  ]
+}

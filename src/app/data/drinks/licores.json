@@ -1,0 +1,15 @@
+{
+  "id": "licores",
+  "icon": "🥃",
+  "title": "Licores",
+  "items": [
+    { "name": "Triple Sec", "price": "0,00€" },
+    { "name": "Amaretto", "price": "0,00€" },
+    { "name": "Licor de café", "price": "0,00€" },
+    { "name": "Baileys", "price": "0,00€" },
+    { "name": "Tía María", "price": "0,00€" },
+    { "name": "Crema de orujo", "price": "0,00€" },
+    { "name": "Jägermeister", "price": "0,00€" },
+    { "name": "Frangelico", "price": "0,00€" }
+  ]
+}

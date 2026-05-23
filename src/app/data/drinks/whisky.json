@@ -1,0 +1,16 @@
+{
+  "id": "whisky",
+  "icon": "🥃",
+  "title": "Whisky",
+  "items": [
+    { "name": "Haig", "price": "0,00€" },
+    { "name": "J&B", "price": "0,00€" },
+    { "name": "100 Pipers", "price": "0,00€" },
+    { "name": "J.W. Red Label", "price": "0,00€" },
+    { "name": "J.W. Black Label", "price": "0,00€" },
+    { "name": "Chivas Regal", "price": "0,00€" },
+    { "name": "Ballantine's", "price": "0,00€" },
+    { "name": "Jack Daniel's", "price": "0,00€" },
+    { "name": "Jameson", "price": "0,00€" }
+  ]
+}

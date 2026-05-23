@@ -2,11 +2,12 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuSection } from '../../models/menu.model';
 import { AllergenIconComponent } from '../allergen-icon/allergen-icon.component';
+import { TranslatePipe } from '../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-menu-section',
   standalone: true,
-  imports: [CommonModule, AllergenIconComponent],
+  imports: [CommonModule, AllergenIconComponent, TranslatePipe],
   template: `
     <div class="section">
       <div class="section-header">
@@ -17,9 +18,15 @@ import { AllergenIconComponent } from '../allergen-icon/allergen-icon.component'
 
       <!-- Triple price header for entrantes -->
       <div class="price-header" *ngIf="section.hasTriplePricing">
-        <span class="ph-label">Tapa</span>
-        <span class="ph-label">½ Rac.</span>
-        <span class="ph-label">Rac.</span>
+        @if (pricingLabels) {
+          <span class="ph-label">{{ pricingLabels.tapa }}</span>
+          <span class="ph-label">{{ pricingLabels.half }}</span>
+          <span class="ph-label">{{ pricingLabels.racion }}</span>
+        } @else {
+          <span class="ph-label">{{ 'menu.pricing.tapa' | t }}</span>
+          <span class="ph-label">{{ 'menu.pricing.half' | t }}</span>
+          <span class="ph-label">{{ 'menu.pricing.racion' | t }}</span>
+        }
       </div>
 
       <!-- Pill items (salsas) -->
@@ -72,4 +79,5 @@ import { AllergenIconComponent } from '../allergen-icon/allergen-icon.component'
 })
 export class MenuSectionComponent {
   @Input() section!: MenuSection;
+  @Input() pricingLabels: { tapa: string; half: string; racion: string } | null = null;
 }

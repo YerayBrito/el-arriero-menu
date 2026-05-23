@@ -1,0 +1,16 @@
+{
+  "id": "rones",
+  "icon": "🥃",
+  "title": "Rones",
+  "items": [
+    { "name": "Arehucas Blanco", "price": "0,00€" },
+    { "name": "Arehucas Gold", "price": "0,00€" },
+    { "name": "Bacardí", "price": "0,00€" },
+    { "name": "Brugal Añejo", "price": "0,00€" },
+    { "name": "Havana 3", "price": "0,00€" },
+    { "name": "Havana 7", "price": "0,00€" },
+    { "name": "Diplomático", "price": "0,00€" },
+    { "name": "Ron Telde", "price": "0,00€" },
+    { "name": "Ron miel", "price": "0,00€" }
+  ]
+}

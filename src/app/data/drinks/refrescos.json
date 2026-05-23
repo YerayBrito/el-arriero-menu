@@ -1,0 +1,17 @@
+{
+  "id": "refrescos",
+  "icon": "🥤",
+  "title": "Refrescos",
+  "items": [
+    { "name": "Agua", "price": "0,00€" },
+    { "name": "Coca-Cola", "price": "0,00€" },
+    { "name": "Coca-Cola Zero", "price": "0,00€" },
+    { "name": "Clipper", "price": "0,00€" },
+    { "name": "Fanta Limón", "price": "0,00€" },
+    { "name": "Fanta Naranja", "price": "0,00€" },
+    { "name": "Tónica", "price": "0,00€" },
+    { "name": "Aquarius", "price": "0,00€" },
+    { "name": "7 Up", "price": "0,00€" },
+    { "name": "Licor 43", "price": "0,00€" }
+  ]
+}

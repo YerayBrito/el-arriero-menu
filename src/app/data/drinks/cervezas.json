@@ -1,0 +1,14 @@
+{
+  "id": "cervezas",
+  "icon": "🍺",
+  "title": "Cervezas",
+  "items": [
+    { "name": "Caña", "price": "0,00€" },
+    { "name": "Jarra", "price": "0,00€" },
+    { "name": "Cerveza 0,0", "price": "0,00€" },
+    { "name": "Sin gluten", "price": "0,00€" },
+    { "name": "Con limón", "price": "0,00€" },
+    { "name": "Botellín", "price": "0,00€" },
+    { "name": "Lata", "price": "0,00€" }
+  ]
+}

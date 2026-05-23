@@ -1,0 +1,9 @@
+{
+  "id": "vodka",
+  "icon": "🍸",
+  "title": "Vodka",
+  "items": [
+    { "name": "Smirnoff", "price": "0,00€" },
+    { "name": "Absolut", "price": "0,00€" }
+  ]
+}
