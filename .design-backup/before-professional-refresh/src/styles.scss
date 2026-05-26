@@ -1,0 +1,104 @@
+@use './app/styles/view-motion.scss';
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html, body {
+  /* Altura aproximada del header fijo (sticky) para barras fixed debajo */
+  --site-header-h: 60px;
+  /* Paleta bar de madera / Arinaga */
+  --gold: #b8892e;
+  --terracotta: #a65d3f;
+  --navy: #3d2918;
+  --cream: #faf6f0;
+  --text: #2a221c;
+  --muted: #5c5048;
+
+  background:
+    radial-gradient(1000px 640px at 10% 0%, rgba(201, 165, 74, 0.12), transparent 55%),
+    radial-gradient(900px 520px at 92% 12%, rgba(166, 93, 63, 0.1), transparent 50%),
+    radial-gradient(800px 480px at 50% 100%, rgba(90, 56, 38, 0.06), transparent 55%),
+    linear-gradient(168deg, #faf6f0 0%, #f3e8dc 42%, #ebe0d4 100%);
+  min-height: 100vh;
+  color: var(--text);
+}
+
+// Sticky footer layout (footer al final de la ventana cuando falta contenido)
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex: 1;
+}
+
+app-site-header,
+app-site-footer {
+  flex-shrink: 0;
+}
+
+.site-main {
+  flex: 1;
+  min-height: 0;
+}
+
+@media print {
+  html, body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Vista carta/imprimir: solo la hoja del menú, sin cabecera/pie del sitio */
+  html.print-sheet-only,
+  body.print-sheet-only {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  body.print-sheet-only app-site-header,
+  body.print-sheet-only app-site-footer {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  body.print-sheet-only app-root {
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  body.print-sheet-only .site-main {
+    display: block !important;
+    min-height: 0 !important;
+    flex: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  body.print-sheet-only app-menu {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.print-sheet-only {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}

@@ -2,21 +2,20 @@
   "id": "carnes",
   "icon": "🥩",
   "title": "Carnes",
+  "hasTriplePricing": true,
+  "halfRacionOnly": true,
   "items": [
     {
       "name": "Vuelta de ternera a la plancha",
-      "description": "Con guarnición de la casa",
-      "price": "00,00€",
-      "allergens": ["mostaza"]
+      "price": "11,80€"
     },
     {
       "name": "Pechuga de pollo a la plancha",
-      "price": "00,00€"
+      "price": "10,80€"
     },
     {
       "name": "Carne de cerdo frita",
-      "description": "Con papas arrugadas y mojo",
-      "price": "00,00€"
+      "triplePrice": { "media": "8,90€", "racion": "10,80€" }
     }
   ]
 }

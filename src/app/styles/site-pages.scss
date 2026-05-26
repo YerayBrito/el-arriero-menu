@@ -1,0 +1,183 @@
+/* Estilos compartidos: carta y contacto (alineados con la portada) */
+
+.page-shell {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(16px, 3vw, 28px) 16px clamp(44px, 6vw, 60px);
+
+  /* Toque de foto del local, muy suave (como en inicio, sin blanquear) */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    max-width: 1400px;
+    height: min(42vh, 320px);
+    background: url('/assets/photos/hero-bar.png') center 40% / cover no-repeat;
+    opacity: 0.16;
+    mask-image: linear-gradient(180deg, #000 0%, transparent 92%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.page-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(62, 44, 34, 0.12);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: min(140px, 32%);
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--gold), rgba(184, 137, 46, 0.15));
+  }
+}
+
+.page-hero-copy {
+  min-width: 0;
+}
+
+.page-hero-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  img {
+    display: block;
+    width: min(176px, 28vw);
+    height: auto;
+    max-height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 22px rgba(42, 28, 20, 0.12));
+  }
+}
+
+.page-title {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-size: clamp(22px, 3.8vw, 28px);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.page-lead {
+  margin-top: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.3vw, 21px);
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 44ch;
+}
+
+/* Paneles ligeros: borde sutil, poco fondo (no caja blanca opaca) */
+.surface-panel {
+  border: 1px solid rgba(184, 137, 46, 0.22);
+  background: rgba(255, 252, 248, 0.38);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: 0 8px 32px rgba(42, 28, 20, 0.06);
+}
+
+.surface-panel--inner {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(62, 44, 34, 0.08);
+  border-radius: 12px;
+}
+
+/* Botones tipo portada */
+.page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.page-btn--primary {
+  background: linear-gradient(145deg, #4a3228 0%, var(--navy) 55%, #2e1f14 100%);
+  color: #fffaf5;
+  border: 1px solid rgba(45, 32, 22, 0.9);
+  box-shadow: 0 4px 16px rgba(42, 28, 20, 0.2);
+}
+
+.page-btn--outline {
+  background: rgba(255, 250, 244, 0.55);
+  color: var(--navy);
+  border: 1px solid rgba(184, 137, 46, 0.4);
+
+  &:hover {
+    background: rgba(255, 252, 248, 0.85);
+    border-color: rgba(184, 137, 46, 0.6);
+  }
+}
+
+@media (max-width: 720px) {
+  .page-shell::before {
+    height: min(36vh, 260px);
+    opacity: 0.12;
+  }
+
+  .page-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 18px;
+
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .page-hero-logo {
+    justify-content: center;
+
+    img {
+      width: min(190px, 58vw);
+    }
+  }
+
+  .page-lead {
+    margin-inline: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-btn:hover {
+    transform: none;
+  }
+}

@@ -1,22 +1,32 @@
 {
   "sections": {
     "entrantes": "Entrantes",
+    "ensaladas": "Ensaladas",
     "salsas": "Salsas",
-    "pescados": "Pescados del Atlántico",
+    "pescados": "Productos del Mar",
     "carnes": "Carnes",
+    "bocadillos": "Bocadillos",
     "postres": "Postres Caseros",
     "domingos": "Especiales Domingos",
     "encargo": "Por Encargo"
   },
-  "pills": {
-    "salsas": {
-      "0": "Alioli",
-      "1": "Mojo Rojo",
-      "2": "Mojo Verde",
-      "3": "Salsa de arándanos"
-    }
-  },
   "items": {
+    "salsas": {
+      "0": { "name": "Alioli", "description": "Mayonesa, ajo, perejil" },
+      "1": { "name": "Mojo rojo" },
+      "2": { "name": "Mojo verde" },
+      "3": { "name": "Salsa de arándanos" }
+    },
+    "ensaladas": {
+      "0": {
+        "name": "Ensalada mixta",
+        "description": "Lechuga, zanahoria, aceitunas, cebolla, atún, pepino, tomate"
+      },
+      "1": {
+        "name": "Ensaladilla rusa",
+        "description": "Patata, huevo, pescado y cebolla"
+      }
+    },
     "entrantes": {
       "0": {
         "name": "Papas arrugadas",
@@ -24,137 +34,123 @@
       },
       "1": {
         "name": "Queso canario",
-        "description": "Queso tierno y queso semiduro"
+        "description": "Queso semiduro"
       },
       "2": {
-        "name": "Queso frito con mermelada de arándanos"
+        "name": "Queso frito con mermelada de arándanos",
+        "description": "Lácteos, harina de trigo, pan y huevo"
       },
       "3": {
-        "name": "Pimientos de padrón"
+        "name": "Croquetas de pescado",
+        "description": "Mantequilla, harina de trigo, pan, sal, pimienta, nuez moscada"
       },
       "4": {
-        "name": "Ensalada mixta",
-        "description": "Lechuga, tomate, cebolla, aceitunas, huevo"
+        "name": "Pimientos de padrón"
       },
       "5": {
-        "name": "Ensaladilla rusa"
+        "name": "Gambas al ajillo",
+        "description": "Ajo, guindilla, sal, perejil y aceite de oliva"
       },
       "6": {
-        "name": "Gambas al ajillo",
-        "description": "Aceite de oliva, ajo, guindilla"
+        "name": "Pulpo a la gallega",
+        "description": "Sal, pimentón dulce o picante y aceite de oliva"
       },
       "7": {
-        "name": "Pulpo a la vinagreta"
+        "name": "Gofio escaldado",
+        "description": "Caldo de pescado y gofio"
       },
       "8": {
-        "name": "Pulpo a la gallega",
-        "description": "Pimentón, aceite de oliva, patata"
+        "name": "Puntitas de calamar",
+        "description": "Harina de trigo, sal"
       },
       "9": {
-        "name": "Gofio escaldado"
+        "name": "Longorones",
+        "description": "Harina de trigo, sal, pimienta"
       },
       "10": {
-        "name": "Puntitas de calamar"
-      },
-      "11": {
-        "name": "Mejillones a la vinagreta"
-      },
-      "12": {
-        "name": "Gambas a la gabardina",
-        "description": "Rebozadas, crujientes"
-      },
-      "13": {
         "name": "Pan"
       }
     },
     "pescados": {
       "0": {
-        "name": "Pescado a la plancha",
-        "description": "Según disponibilidad del día"
+        "name": "Pescado fresco"
       },
       "1": {
-        "name": "Pescado empanado"
+        "name": "Filetes de merluza a la plancha",
+        "description": "Ajo, perejil y aceite"
       },
       "2": {
-        "name": "Tacos de pescado",
-        "description": "A la plancha, con guarnición"
+        "name": "Tacos de pescado con mojo verde",
+        "description": "Pescado, harina de trigo, ajo, perejil, cilantro, orégano, comino, vinagre y aceite"
       },
       "3": {
-        "name": "Croquetas de pescado caseras"
+        "name": "Chipirones a la plancha o fritos",
+        "description": "Sal y harina de trigo"
       },
       "4": {
-        "name": "Chipirones fritos"
+        "name": "Calamares fritos",
+        "description": "Sal y harina de trigo"
       },
       "5": {
-        "name": "Chipirones a la plancha"
+        "name": "Chocos fritos",
+        "description": "Sal y harina de trigo"
       },
       "6": {
-        "name": "Calamares fritos"
+        "name": "Pulpo frito con mojo verde",
+        "description": "Ajo, cilantro, pimiento, orégano y comino"
       },
       "7": {
-        "name": "Calamares a la plancha"
-      },
-      "8": {
-        "name": "★ Combo Las Salinas",
-        "description": "Tacos de pescado, choco, pulpo frito, papas arrugadas y ensalada de col"
-      },
-      "9": {
-        "name": "Chocos fritos"
-      },
-      "10": {
-        "name": "Morena frita"
-      },
-      "11": {
-        "name": "Churros de pescado"
-      },
-      "12": {
-        "name": "Pescado frito al peso",
-        "description": "Precio por 100g"
-      },
-      "13": {
-        "name": "Atún a la plancha"
+        "name": "★ Combo Las Salinas Arinaga",
+        "description": "Tacos de pescado, choco frito, croquetas y papas arrugadas"
       }
     },
     "carnes": {
       "0": {
-        "name": "Vuelta de ternera a la plancha",
-        "description": "Con guarnición de la casa"
+        "name": "Vuelta de ternera a la plancha"
       },
       "1": {
         "name": "Pechuga de pollo a la plancha"
       },
       "2": {
-        "name": "Carne de cerdo frita",
-        "description": "Con papas arrugadas y mojo"
+        "name": "Carne de cerdo frita"
+      }
+    },
+    "bocadillos": {
+      "0": {
+        "name": "Bocadillo de choco",
+        "description": "Ensalada de col y alioli"
+      },
+      "1": {
+        "name": "Bocadillo de chipirones",
+        "description": "Ensalada de col y alioli"
+      },
+      "2": {
+        "name": "Bocadillo de pechuga",
+        "description": "Lechuga, tomate y alioli"
+      },
+      "3": {
+        "name": "Bocadillo de vuelta",
+        "description": "Lechuga, tomate y alioli"
+      },
+      "4": {
+        "name": "Extras",
+        "note": "Si desea algún extra (jamón, queso, huevo): +0,80€ cada uno"
       }
     },
     "postres": {
       "0": {
-        "name": "Mousse de chocolate"
-      },
-      "1": {
-        "name": "Natillas"
-      },
-      "2": {
-        "name": "Arroz con leche"
-      },
-      "3": {
-        "name": "Porción de tarta",
-        "description": "Preguntar disponibilidad"
-      },
-      "4": {
-        "name": "Polvito uruguayo",
-        "description": "Galleta y dulce de leche"
+        "name": "Postres caseros",
+        "description": "Según disponibilidad del día · Pregunte en barra"
       }
     },
     "domingos": {
       "0": {
         "name": "🥘 Paella",
-        "description": "De marisco o mixta · Solo domingos"
+        "description": "De marisco o mixta · Solo domingos · Por ración"
       },
       "1": {
         "name": "🍲 Sancocho canario",
-        "description": "Cherne, papas, mojo y gofio · Solo domingos"
+        "description": "Cherne, papas, mojo y gofio · Solo domingos · Por ración"
       }
     },
     "encargo": {

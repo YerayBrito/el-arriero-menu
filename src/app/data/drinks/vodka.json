@@ -3,7 +3,7 @@
   "icon": "🍸",
   "title": "Vodka",
   "items": [
-    { "name": "Smirnoff", "price": "0,00€" },
-    { "name": "Absolut", "price": "0,00€" }
+    { "name": "Smirnoff", "price": "2,80€" },
+    { "name": "Absolut", "price": "2,50€" }
   ]
 }

@@ -1,161 +1,156 @@
 {
   "sections": {
     "entrantes": "Vorspeisen",
+    "ensaladas": "Salate",
     "salsas": "Soßen",
-    "pescados": "Atlantikfisch",
+    "pescados": "Meeresprodukte",
     "carnes": "Fleischgerichte",
+    "bocadillos": "Bocadillos",
     "postres": "Hausgemachte Desserts",
     "domingos": "Sonntagsspezialitäten",
     "encargo": "Auf Vorbestellung"
   },
-  "pills": {
-    "salsas": {
-      "0": "Knoblauch-Aioli",
-      "1": "Rotes Mojo",
-      "2": "Grünes Mojo",
-      "3": "Heidelbeersoße"
-    }
-  },
   "items": {
+    "salsas": {
+      "0": { "name": "Knoblauch-Aioli", "description": "Mayonnaise, Knoblauch, Petersilie" },
+      "1": { "name": "Rotes Mojo" },
+      "2": { "name": "Grünes Mojo" },
+      "3": { "name": "Heidelbeersoße" }
+    },
+    "ensaladas": {
+      "0": {
+        "name": "Gemischter Salat",
+        "description": "Salat, Karotte, Oliven, Zwiebel, Thunfisch, Gurke, Tomate"
+      },
+      "1": {
+        "name": "Russischer Salat",
+        "description": "Kartoffel, Ei, Fisch und Zwiebel"
+      }
+    },
     "entrantes": {
       "0": {
         "name": "Runzelige Salzkartoffeln",
         "description": "Mit rotem oder grünem Mojo"
       },
       "1": {
-        "name": "Kanarische Käseplatte",
-        "description": "Frischkäse und halbgereifter Käse aus der Region"
+        "name": "Kanarischer Käse",
+        "description": "Halbgereifter Käse"
       },
       "2": {
-        "name": "Gebratener Käse mit Heidelbeer-Konfitüre"
+        "name": "Gebratener Käse mit Heidelbeer-Konfitüre",
+        "description": "Milchprodukte, Weizenmehl, Brot und Ei"
       },
       "3": {
-        "name": "Padrón-Paprika"
+        "name": "Fischkroketten",
+        "description": "Butter, Weizenmehl, Semmelbrösel, Salz, Pfeffer, Muskatnuss"
       },
       "4": {
-        "name": "Gemischter Salat",
-        "description": "Blattsalat, Tomate, Zwiebel, Oliven, Ei"
+        "name": "Padrón-Paprika"
       },
       "5": {
-        "name": "Kartoffelsalat nach Art des Hauses"
+        "name": "Garnelen in Knoblauchöl",
+        "description": "Knoblauch, Peperoni, Salz, Petersilie und Olivenöl"
       },
       "6": {
-        "name": "Garnelen in Knoblauchöl",
-        "description": "Olivenöl, Knoblauch, Peperoni"
+        "name": "Oktopus nach galicischer Art",
+        "description": "Salz, süßes oder scharfes Paprika und Olivenöl"
       },
       "7": {
-        "name": "Oktopus-Vinaigrette"
+        "name": "Gofio escaldado",
+        "description": "Fischbrühe und Gofio"
       },
       "8": {
-        "name": "Oktopus nach galicischer Art",
-        "description": "Paprika, Olivenöl, Kartoffel"
+        "name": "Knusprige Tintenfischstreifen",
+        "description": "Weizenmehl, Salz"
       },
       "9": {
-        "name": "Gofio escaldado",
-        "description": "Traditioneller kanarischer Getreidebrei mit Fischbrühe"
+        "name": "Longorones",
+        "description": "Weizenmehl, Salz, Pfeffer"
       },
       "10": {
-        "name": "Knusprige Tintenfischstreifen"
-      },
-      "11": {
-        "name": "Miesmuscheln in Vinaigrette"
-      },
-      "12": {
-        "name": "Garnelen im Bierteig",
-        "description": "Knusprig ausgebacken"
-      },
-      "13": {
         "name": "Brot"
       }
     },
     "pescados": {
       "0": {
-        "name": "Gegrillter Tagesfisch",
-        "description": "Bitte beim Personal nach dem Tagesangebot fragen"
+        "name": "Frischer Fisch"
       },
       "1": {
-        "name": "Paniertes Fischfilet"
+        "name": "Seehechtfilets vom Grill",
+        "description": "Knoblauch, Petersilie und Öl"
       },
       "2": {
-        "name": "Fischstücke vom Grill",
-        "description": "Mit Beilage nach Wahl"
+        "name": "Fisch-Tacos mit grünem Mojo",
+        "description": "Fisch, Weizenmehl, Knoblauch, Petersilie, Koriander, Oregano, Kreuzkümmel, Essig und Öl"
       },
       "3": {
-        "name": "Hausgemachte Fischkroketten"
+        "name": "Baby-Tintenfische vom Grill oder frittiert",
+        "description": "Salz und Weizenmehl"
       },
       "4": {
-        "name": "Frittierte Baby-Tintenfische"
+        "name": "Frittierte Calamari-Ringe",
+        "description": "Salz und Weizenmehl"
       },
       "5": {
-        "name": "Baby-Tintenfische vom Grill"
+        "name": "Frittierte Sepia",
+        "description": "Salz und Weizenmehl"
       },
       "6": {
-        "name": "Frittierte Calamari-Ringe"
+        "name": "Frittierter Oktopus mit grünem Mojo",
+        "description": "Knoblauch, Koriander, Paprika, Oregano und Kreuzkümmel"
       },
       "7": {
-        "name": "Calamari vom Grill"
-      },
-      "8": {
-        "name": "★ Las Salinas Teller",
-        "description": "Fischstücke, Sepia, gebratener Oktopus, Salzkartoffeln und Krautsalat"
-      },
-      "9": {
-        "name": "Frittierte Sepia"
-      },
-      "10": {
-        "name": "Frittierte Muräne"
-      },
-      "11": {
-        "name": "Fisch-Goujons"
-      },
-      "12": {
-        "name": "Frittierter Fisch nach Gewicht",
-        "description": "Preis pro 100g"
-      },
-      "13": {
-        "name": "Thunfischsteak vom Grill"
+        "name": "★ Las Salinas Arinaga Teller",
+        "description": "Fisch-Tacos, frittierte Sepia, Kroketten und runzelige Kartoffeln"
       }
     },
     "carnes": {
       "0": {
-        "name": "Rinderfilet vom Grill",
-        "description": "Mit Beilage des Hauses"
+        "name": "Rinderfilet vom Grill"
       },
       "1": {
         "name": "Hähnchenbrust vom Grill"
       },
       "2": {
-        "name": "Gebratenes Schweinefleisch",
-        "description": "Mit Salzkartoffeln und Mojo"
+        "name": "Gebratenes Schweinefleisch"
+      }
+    },
+    "bocadillos": {
+      "0": {
+        "name": "Sepia-Bocadillo",
+        "description": "Krautsalat und Alioli"
+      },
+      "1": {
+        "name": "Baby-Tintenfisch-Bocadillo",
+        "description": "Krautsalat und Alioli"
+      },
+      "2": {
+        "name": "Hähnchenbrust-Bocadillo",
+        "description": "Salat, Tomate und Alioli"
+      },
+      "3": {
+        "name": "Rinderfilet-Bocadillo",
+        "description": "Salat, Tomate und Alioli"
+      },
+      "4": {
+        "name": "Extras",
+        "note": "Zusatz optional (Schinken, Käse, Ei): +0,80€ pro Stück"
       }
     },
     "postres": {
       "0": {
-        "name": "Schokoladenmousse"
-      },
-      "1": {
-        "name": "Vanillecreme"
-      },
-      "2": {
-        "name": "Milchreis"
-      },
-      "3": {
-        "name": "Kuchenstück",
-        "description": "Bitte nach dem heutigen Angebot fragen"
-      },
-      "4": {
-        "name": "Polvito uruguayo",
-        "description": "Kekskrümel mit Dulce de leche"
+        "name": "Hausgemachte Desserts",
+        "description": "Je nach Tagesangebot · Bitte an der Bar fragen"
       }
     },
     "domingos": {
       "0": {
         "name": "🥘 Paella",
-        "description": "Mit Meeresfrüchten oder gemischt · nur sonntags"
+        "description": "Mit Meeresfrüchten oder gemischt · nur sonntags · Pro Portion"
       },
       "1": {
         "name": "🍲 Kanarischer Sancocho",
-        "description": "Gesalzener Zackenbarsch, Kartoffeln, Mojo und Gofio · nur sonntags"
+        "description": "Gesalzener Zackenbarsch, Kartoffeln, Mojo und Gofio · nur sonntags · Pro Portion"
       }
     },
     "encargo": {

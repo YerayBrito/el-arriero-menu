@@ -1,0 +1,9 @@
+{
+  "id": "vinos",
+  "icon": "🍷",
+  "title": "Vinos",
+  "items": [
+    { "name": "Vino tinto de la casa", "price": "2,50€" },
+    { "name": "Vino blanco de la casa", "price": "2,50€" }
+  ]
+}

@@ -4,6 +4,7 @@
 $gold:     #b8892e;
 $navy:     #3d2918;
 $navy-mid: #6b4423;
+$sheet-bg-solid: #f2e6da;
 $sheet-bg: linear-gradient(168deg, #faf6f0 0%, #f2e6da 45%, #e8ddd2 100%);
 $sheet-bg-layers:
   radial-gradient(1000px 640px at 8% 0%, rgba(201, 165, 74, 0.14), transparent 55%),
@@ -41,6 +42,19 @@ $text-muted: #5c5048;
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.print-chrome-hint {
+  flex: 1 1 100%;
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.72);
+  text-align: right;
+  line-height: 1.3;
 }
 
 .carta-switch {
@@ -135,16 +149,50 @@ $text-muted: #5c5048;
 }
 
 // ── Page ───────────────────────────────────────────────────────
+// Pie anclado abajo: idéntico en /carta/imprimir y al imprimir (grid falla en Chrome print).
 .page {
+  --sheet-foot-bottom: 13mm;
+
+  display: flex;
+  flex-direction: column;
   width: 210mm;
+  height: 297mm;
   min-height: 297mm;
   /* Header del sitio + barra de herramientas de la carta */
   margin: calc(var(--site-header-h, 60px) + 52px) auto 40px;
-  padding: 8mm 11mm 6mm;
+  padding: 8mm 11mm var(--sheet-foot-bottom);
   position: relative;
-  background-color: #dbeaf2;
+  box-sizing: border-box;
+  background-color: $sheet-bg-solid;
   background-image: $sheet-bg-layers;
   box-shadow: 0 4px 30px rgba(0,0,0,.15);
+}
+
+.page-layout {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.page-body {
+  width: 100%;
+}
+
+.page-body-inner {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Dentro del padding de .page: mismo ancho que el menú (Chrome print) */
+.page > .page-sheet-foot {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: auto;
+  background: transparent;
+  overflow: hidden;
 }
 
 // ── Decorative border ─────────────────────────────────────────
@@ -172,7 +220,7 @@ $text-muted: #5c5048;
 .c-br { bottom: 4mm; right: 4mm;  }
 
 // ── Header ────────────────────────────────────────────────────
-.header {
+.page-layout > .header {
   text-align: center;
   padding-bottom: 1.5mm;
 }
@@ -258,74 +306,134 @@ $text-muted: #5c5048;
   }
 
   ::ng-deep .section {
-    margin-bottom: 2mm;
+    margin-bottom: 1.7mm;
+  }
+
+  ::ng-deep .section-title {
+    font-size: 9px;
+    letter-spacing: 1.6px;
   }
 
   ::ng-deep .item-name {
-    font-size: 7.8px;
+    font-size: 8.2px;
   }
 
   ::ng-deep .item-price {
-    font-size: 8.2px;
+    font-size: 8.6px;
+  }
+
+  .page-layout {
+    min-height: 0;
+  }
+
+  .page-sheet-foot {
+    border-top: none;
+    padding-top: 0;
+    flex-shrink: 0;
+  }
+
+  .footer {
+    border-top: none;
+    padding-top: 0;
   }
 }
 
-// ── Allergen legend ───────────────────────────────────────────
+// ── Allergen legend + pie de hoja (siempre abajo en A4) ───────
+.page-sheet-foot {
+  padding-top: 1mm;
+  border-top: .5px solid rgba(184, 147, 62, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-sizing: border-box;
+}
+
 .legend {
-  margin-top: 1.5mm;
-  padding-top: 1.5mm;
-  border-top: .5px solid rgba(184,147,62,.25);
+  margin: 0;
+  padding: 0;
+  border-top: none;
 }
 
 .legend-title {
   font-family: 'Cinzel', serif;
-  font-size: 6.8px;
-  letter-spacing: 1.4px;
+  font-size: 5.8px;
+  letter-spacing: 0.8px;
   color: $text-body;
   text-transform: uppercase;
-  margin-bottom: 2px;
+  margin: 0 0 1mm;
 }
 
 .legend-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 2px 8px;
+  gap: 0 5px;
+  margin: 0;
+  line-height: 1.1;
+  max-width: 100%;
 }
 
 .legend-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 1px;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .legend-text {
-  font-size: 6.6px;
-  line-height: 1.25;
+  font-size: 5.5px;
+  line-height: 1.1;
   color: $text-body;
+  overflow-wrap: anywhere;
+}
+
+.page-sheet-foot ::ng-deep .allergen-icon {
+  width: 8px;
+  height: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 // ── Footer ────────────────────────────────────────────────────
 .footer {
   text-align: center;
-  margin-top: 1.5mm;
-  padding-top: 1.5mm;
-  border-top: .5px solid rgba(184,147,62,.3);
+  margin: 0;
+  padding: 0.6mm 0 0;
+  border-top: .5px solid rgba(184, 147, 62, 0.3);
 }
 
 .footer-note {
-  font-size: 7px;
+  font-size: 5.8px;
+  max-width: 100%;
   font-style: italic;
-  line-height: 1.25;
+  line-height: 1.2;
   color: $text-muted;
+}
+
+.footer-takeaway {
+  display: inline-block;
+  margin-top: 0.8mm;
+  padding: 1.4mm 3.2mm;
+  border-radius: 999px;
+  border: 0.6px solid rgba(184, 137, 46, 0.55);
+  background: rgba(255, 255, 255, 0.82);
+  color: $navy;
+  font-family: 'Cinzel', serif;
+  font-size: 7.6px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.1;
 }
 
 .footer-warn {
   font-family: 'Cinzel', serif;
-  font-size: 6.3px;
-  letter-spacing: .75px;
-  line-height: 1.25;
+  font-size: 5.5px;
+  letter-spacing: 0.4px;
+  max-width: 100%;
+  line-height: 1.2;
   color: $text-body;
-  margin-top: 1px;
+  margin-top: 0.5px;
   opacity: .92;
 }
 
@@ -339,31 +447,146 @@ $text-muted: #5c5048;
   .no-print { display: none !important; }
 
   html, body {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   body {
-    background: white !important;
+    background: $sheet-bg-solid !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
   .page {
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
     margin: 0 !important;
     box-shadow: none !important;
     width: 210mm !important;
     min-height: 297mm !important;
-    height: auto !important;
-    overflow: visible !important;
-    background-color: #dbeaf2 !important;
-    background-image: $sheet-bg-layers !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+    padding: 8mm 11mm var(--sheet-foot-bottom) !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    page-break-after: avoid;
+    break-after: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    background-color: $sheet-bg-solid !important;
+    background-image: none !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  .menu-item,
-  .section {
+  .page-layout {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .page-body {
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .page > .page-sheet-foot {
+    position: static !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .page-sheet-foot ::ng-deep .allergen-icon {
+    width: 8px !important;
+    height: 8px !important;
+    visibility: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .legend-title {
+    font-size: 5.8px !important;
+  }
+
+  .legend-text {
+    font-size: 5.5px !important;
+  }
+
+  .footer-note {
+    font-size: 6px !important;
+  }
+
+  .footer-takeaway {
+    font-size: 8.2px !important;
+    border-width: 0.6px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .footer-warn {
+    font-size: 5.8px !important;
+  }
+
+  .page--drinks .page-sheet-foot,
+  .page--drinks .footer {
+    border-top: none !important;
+    padding-top: 0 !important;
+  }
+
+  /* Bebidas: un poco más grande que antes; pie protegido */
+  .page--drinks {
+    .page-layout {
+      flex: 1 1 auto !important;
+      min-height: 0 !important;
+      overflow: hidden !important;
+      zoom: 1.03;
+    }
+
+    .page-body-inner {
+      padding-bottom: 2mm;
+    }
+
+    ::ng-deep .section {
+      margin-bottom: 1.5mm !important;
+    }
+
+    ::ng-deep .section-title {
+      font-size: 9.2px !important;
+    }
+
+    ::ng-deep .item-name {
+      font-size: 8.4px !important;
+    }
+
+    ::ng-deep .item-price {
+      font-size: 8.8px !important;
+    }
+
+    ::ng-deep .menu-item {
+      padding: 1px 0 !important;
+    }
+
+    > .page-sheet-foot {
+      margin-top: auto !important;
+      flex: 0 0 auto !important;
+      position: relative !important;
+      z-index: 5 !important;
+      background-color: $sheet-bg-solid !important;
+    }
+
+    .footer-note {
+      font-size: 6.2px !important;
+    }
+  }
+
+  ::ng-deep .menu-item {
     break-inside: avoid;
     page-break-inside: avoid;
   }
@@ -373,9 +596,24 @@ $text-muted: #5c5048;
 @media screen and (max-width: 900px) {
   .page {
     width: auto;
+    height: auto;
     min-height: auto;
     margin: calc(var(--site-header-h, 60px) + 50px) 12px 24px;
     padding: 18px 14px 16px;
+  }
+
+  .page {
+    display: block;
+    height: auto;
+  }
+
+  .page-layout {
+    flex: none;
+    height: auto;
+  }
+
+  .page > .page-sheet-foot {
+    margin-top: 12px;
   }
 
   .two-col {

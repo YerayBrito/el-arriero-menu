@@ -160,11 +160,18 @@
           <label class="check"><input type="checkbox" [(ngModel)]="editHighlight" name="eh" /> Destacado (especial)</label>
 
           @if (getPriceItem()?.triplePrice) {
-            <div class="grid3">
-              <label>Tapa <input type="text" [(ngModel)]="editTapa" name="et" /></label>
-              <label>½ ración <input type="text" [(ngModel)]="editMedia" name="em" /></label>
-              <label>Ración <input type="text" [(ngModel)]="editRacion" name="er" /></label>
-            </div>
+            @if (sectionHalfRacionOnly(priceSectionId)) {
+              <div class="grid2">
+                <label>½ ración <input type="text" [(ngModel)]="editMedia" name="em" /></label>
+                <label>Ración <input type="text" [(ngModel)]="editRacion" name="er" /></label>
+              </div>
+            } @else {
+              <div class="grid3">
+                <label>Tapa <input type="text" [(ngModel)]="editTapa" name="et" /></label>
+                <label>½ ración <input type="text" [(ngModel)]="editMedia" name="em" /></label>
+                <label>Ración <input type="text" [(ngModel)]="editRacion" name="er" /></label>
+              </div>
+            }
           } @else {
             <label>Precio único <input type="text" [(ngModel)]="editPriceSingle" name="ep" placeholder="8,50€" /></label>
           }
@@ -201,7 +208,7 @@
         </label>
         @if (!isDrinks()) {
         <p class="hint">
-          Si la categoría tiene precio triple en carta, puedes usar tres precios; si no, desmarca y usa precio único.
+          Si la categoría tiene precio por formatos en carta, marca la casilla; entrantes solo usan ½ y ración.
         </p>
         }
 
@@ -238,15 +245,26 @@
 
           <label class="check">
             <input type="checkbox" [(ngModel)]="addUseTriple" name="at" [disabled]="!getSectionById(addSectionId)?.hasTriplePricing" />
-            Usar tapa / ½ / ración (solo si la categoría lo usa)
+            @if (sectionHalfRacionOnly(addSectionId)) {
+              Usar ½ / ración (entrantes)
+            } @else {
+              Usar tapa / ½ / ración (solo si la categoría lo usa)
+            }
           </label>
 
           @if (getSectionById(addSectionId)?.hasTriplePricing && addUseTriple) {
-            <div class="grid3">
-              <label>Tapa <input type="text" [(ngModel)]="addTapa" name="atp" /></label>
-              <label>½ <input type="text" [(ngModel)]="addMedia" name="am" /></label>
-              <label>Ración <input type="text" [(ngModel)]="addRacion" name="ar" /></label>
-            </div>
+            @if (sectionHalfRacionOnly(addSectionId)) {
+              <div class="grid2">
+                <label>½ ración <input type="text" [(ngModel)]="addMedia" name="am" /></label>
+                <label>Ración <input type="text" [(ngModel)]="addRacion" name="ar" /></label>
+              </div>
+            } @else {
+              <div class="grid3">
+                <label>Tapa <input type="text" [(ngModel)]="addTapa" name="atp" /></label>
+                <label>½ <input type="text" [(ngModel)]="addMedia" name="am" /></label>
+                <label>Ración <input type="text" [(ngModel)]="addRacion" name="ar" /></label>
+              </div>
+            }
           } @else {
             <label>Precio <input type="text" [(ngModel)]="addSingle" name="as" /></label>
           }

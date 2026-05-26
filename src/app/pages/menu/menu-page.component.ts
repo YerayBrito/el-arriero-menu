@@ -1,7 +1,11 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs/operators';
 import { MENU_SECTIONS } from '../../data/menu.data';
-import { MenuItem, MenuSection } from '../../models/menu.model';
+import { CartaKind, DRINKS_SECTIONS } from '../../data/drinks.data';
+import { MenuSection } from '../../models/menu.model';
 import { AllergenIconComponent } from '../../components/allergen-icon/allergen-icon.component';
 import { TranslatePipe } from '../../i18n/translate.pipe';
 import { I18nService } from '../../i18n/i18n.service';
@@ -28,13 +32,19 @@ const LEGEND_CODES = [
   standalone: true,
   imports: [CommonModule, AllergenIconComponent, TranslatePipe],
   template: `
-    <div class="wrap">
-      <div class="top">
-        <div class="top-copy">
-          <h2>{{ 'menu.title' | t }}</h2>
-          <p class="lead">{{ 'menu.lead' | t }}</p>
+    <div class="page-shell menu-page">
+      <header class="page-hero">
+        <div class="page-hero-copy">
+          <h1 class="page-title">{{ 'menu.title' | t }}</h1>
+          <p class="page-lead">
+            @if (isDrinks()) {
+              {{ 'menu.leadDrinks' | t }}
+            } @else {
+              {{ 'menu.lead' | t }}
+            }
+          </p>
         </div>
-        <div class="top-logo">
+        <div class="page-hero-logo">
           <img
             src="/assets/brand/logo-las-salinas.png"
             [attr.alt]="'menu.logoAlt' | t"
@@ -43,151 +53,241 @@ const LEGEND_CODES = [
             loading="lazy"
           />
         </div>
-      </div>
+      </header>
 
-      <div class="controls">
-        <input
-          class="search"
-          type="search"
-          [attr.placeholder]="'menu.searchPlaceholder' | t"
-          [value]="query()"
-          (input)="query.set(($any($event.target).value || '').trim())"
-        />
-
-        <div class="chips">
+      <div class="menu-carta-toolbar">
+        <div class="menu-carta-switch" role="tablist" [attr.aria-label]="'menu.cartaSwitchLabel' | t">
           <button
             type="button"
-            class="chip"
-            [class.active]="activeSectionId() === 'todas'"
-            (click)="activeSectionId.set('todas')"
-          >{{ 'menu.filterAll' | t }}</button>
+            class="menu-carta-switch-btn"
+            role="tab"
+            [attr.aria-selected]="!isDrinks()"
+            [class.active]="!isDrinks()"
+            (click)="setCartaKind('comida')"
+          >{{ 'menu.cartaComida' | t }}</button>
           <button
             type="button"
-            class="chip"
-            *ngFor="let s of sections"
-            [class.active]="activeSectionId() === s.id"
-            (click)="activeSectionId.set(s.id)"
-          >{{ secTitle(s) }}</button>
+            class="menu-carta-switch-btn"
+            role="tab"
+            [attr.aria-selected]="isDrinks()"
+            [class.active]="isDrinks()"
+            (click)="setCartaKind('bebidas')"
+          >{{ 'menu.cartaBebidas' | t }}</button>
         </div>
+
+        @if (!isDrinks()) {
+          <div class="menu-takeaway-badge">{{ 'menu.takeawayNote' | t }}</div>
+        }
       </div>
 
-      <div class="sections">
-        <section class="section" *ngFor="let s of filteredSections()">
-          <div class="section-head" [class.section-head-triple]="s.hasTriplePricing">
-            <div class="left">
-              <span class="emoji">{{ s.icon }}</span>
-              <span class="title">{{ secTitle(s) }}</span>
-            </div>
-            <div class="pricing" *ngIf="s.hasTriplePricing">
-              <span>{{ 'menu.pricing.tapa' | t }}</span>
-              <span>{{ 'menu.pricing.half' | t }}</span>
-              <span>{{ 'menu.pricing.racion' | t }}</span>
-            </div>
-          </div>
+      <div class="menu-layout surface-panel">
+        <nav class="menu-nav" [attr.aria-label]="'menu.navLabel' | t" role="tablist">
+          @for (s of sections(); track s.id) {
+            <button
+              type="button"
+              class="nav-item"
+              role="tab"
+              [attr.aria-selected]="activeSectionId() === s.id"
+              [class.active]="activeSectionId() === s.id"
+              (click)="selectSection(s.id)"
+            >
+              <span class="nav-emoji" aria-hidden="true">{{ s.icon }}</span>
+              <span class="nav-label">{{ secTitle(s) }}</span>
+            </button>
+          }
+        </nav>
 
-          <div class="pills" *ngIf="s.pillItems?.length">
-            <span class="pill" *ngFor="let p of s.pillItems; let pi = index">{{ pillAt(s, pi, p) }}</span>
-          </div>
-
-          <div class="items">
-            <article class="item" *ngFor="let it of s.items; let i = index" [class.highlight]="it.highlight">
-              <div class="row" [class.row-triple]="s.hasTriplePricing">
-                <div class="name">
-                  {{ itemName(s, i, it.name) }}
-                  <span class="allergens" *ngIf="it.allergens?.length">
-                    <app-allergen-icon *ngFor="let code of it.allergens" [code]="code"></app-allergen-icon>
-                  </span>
+        @if (activeSection(); as s) {
+          <div
+            class="menu-content"
+            role="tabpanel"
+            [attr.aria-labelledby]="'nav-' + s.id"
+          >
+            <section
+              class="section"
+              [id]="'menu-' + s.id"
+              [class.section-dual-pricing]="s.halfRacionOnly"
+            >
+              <header class="section-head" [class.section-head-triple]="s.hasTriplePricing">
+                <div class="section-title-block">
+                  <span class="emoji" aria-hidden="true">{{ s.icon }}</span>
+                  <h2 class="title" [id]="'nav-' + s.id">{{ secTitle(s) }}</h2>
                 </div>
+                @if (s.hasTriplePricing) {
+                  <div class="pricing" role="row">
+                    @if (!s.halfRacionOnly) {
+                      <span>{{ 'menu.pricing.tapa' | t }}</span>
+                    }
+                    <span>{{ 'menu.pricing.half' | t }}</span>
+                    <span>{{ 'menu.pricing.racion' | t }}</span>
+                  </div>
+                }
+              </header>
 
-                <div class="prices" *ngIf="s.hasTriplePricing && it.triplePrice">
-                  <span>{{ it.triplePrice.tapa }}</span>
-                  <span>{{ it.triplePrice.media }}</span>
-                  <span>{{ it.triplePrice.racion }}</span>
-                </div>
+              <div class="items">
+                @for (it of s.items; track $index; let i = $index) {
+                  <article class="menu-item" [class.highlight]="it.highlight">
+                    @if (s.hasTriplePricing && it.triplePrice) {
+                      <div class="menu-item-row menu-item-row--triple">
+                        <div class="menu-item-name">
+                          {{ itemName(s, i, it.name) }}
+                          @if (it.allergens?.length) {
+                            <span class="allergens">
+                              @for (code of it.allergens; track code) {
+                                <app-allergen-icon [code]="code"></app-allergen-icon>
+                              }
+                            </span>
+                          }
+                        </div>
+                        <div class="prices">
+                          @if (!s.halfRacionOnly && it.triplePrice.tapa) {
+                            <span class="price-cell">{{ it.triplePrice.tapa }}</span>
+                          }
+                          <span class="price-cell">{{ it.triplePrice.media }}</span>
+                          <span class="price-cell">{{ it.triplePrice.racion }}</span>
+                        </div>
+                      </div>
+                    } @else if (s.hasTriplePricing && s.halfRacionOnly && it.price) {
+                      <div class="menu-item-row menu-item-row--triple menu-item-row--dual-single">
+                        <div class="menu-item-name">
+                          {{ itemName(s, i, it.name) }}
+                          @if (it.allergens?.length) {
+                            <span class="allergens">
+                              @for (code of it.allergens; track code) {
+                                <app-allergen-icon [code]="code"></app-allergen-icon>
+                              }
+                            </span>
+                          }
+                        </div>
+                        <div class="prices">
+                          <span class="price-cell price-cell--dash">—</span>
+                          <span class="price-cell">{{ it.price }}</span>
+                        </div>
+                      </div>
+                    } @else {
+                      <div class="menu-item-row">
+                        <div class="menu-item-name">
+                          {{ itemName(s, i, it.name) }}
+                          @if (it.allergens?.length) {
+                            <span class="allergens">
+                              @for (code of it.allergens; track code) {
+                                <app-allergen-icon [code]="code"></app-allergen-icon>
+                              }
+                            </span>
+                          }
+                        </div>
+                        <span class="menu-item-leader" aria-hidden="true"></span>
+                        @if (it.price) {
+                          <span class="menu-item-price">{{ it.price }}</span>
+                        }
+                      </div>
+                    }
 
-                <div class="price" *ngIf="!s.hasTriplePricing && it.price">
-                  {{ it.price }}
-                </div>
+                    @if (it.description) {
+                      <p class="desc">{{ itemDesc(s, i, it.description) }}</p>
+                    }
+                    @if (it.note) {
+                      <p class="note">{{ itemNote(s, i, it.note) }}</p>
+                    }
+                  </article>
+                }
               </div>
-
-              <div class="desc" *ngIf="it.description">{{ itemDesc(s, i, it.description) }}</div>
-              <div class="note" *ngIf="it.note">{{ itemNote(s, i, it.note) }}</div>
-            </article>
+            </section>
           </div>
-        </section>
+        }
       </div>
 
-      <details class="legend">
-        <summary>⚠ {{ 'menu.legendSummary' | t }}</summary>
-        <div class="legend-grid">
-          <div class="legend-item" *ngFor="let code of legendCodes">
-            <app-allergen-icon [code]="code"></app-allergen-icon>
-            <span>{{ ('menu.legend.' + code) | t }}</span>
+      @if (!isDrinks()) {
+        <details class="legend surface-panel">
+          <summary>⚠ {{ 'menu.legendSummary' | t }}</summary>
+          <div class="legend-grid">
+            @for (code of legendCodes; track code) {
+              <div class="legend-item">
+                <app-allergen-icon [code]="code"></app-allergen-icon>
+                <span>{{ ('menu.legend.' + code) | t }}</span>
+              </div>
+            }
           </div>
-        </div>
-      </details>
+        </details>
+      }
     </div>
   `,
   styleUrls: ['./menu-page.component.scss'],
 })
 export class MenuPageComponent {
   private readonly i18n = inject(I18nService);
+  private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
 
-  readonly sections: MenuSection[] = MENU_SECTIONS;
   readonly legendCodes = LEGEND_CODES;
 
-  readonly query = signal('');
-  readonly activeSectionId = signal<'todas' | string>('todas');
+  readonly cartaKind = toSignal(
+    this.route.queryParamMap.pipe(
+      map(params => (params.get('carta') === 'bebidas' ? 'bebidas' : 'comida') as CartaKind),
+    ),
+    { initialValue: 'comida' as CartaKind },
+  );
 
-  secTitle(s: MenuSection): string {
-    return this.i18n.catalog(`catalog.sections.${s.id}`, s.title);
+  readonly isDrinks = computed(() => this.cartaKind() === 'bebidas');
+
+  readonly sections = computed(() =>
+    this.isDrinks() ? DRINKS_SECTIONS : MENU_SECTIONS,
+  );
+
+  readonly activeSectionId = signal<string>('entrantes');
+
+  constructor() {
+    effect(() => {
+      const list = this.sections();
+      const id = this.activeSectionId();
+      if (!list.some(sec => sec.id === id)) {
+        this.activeSectionId.set(list[0]?.id ?? 'entrantes');
+      }
+    });
   }
 
-  pillAt(s: MenuSection, pi: number, fallback: string): string {
-    return this.i18n.catalog(`catalog.pills.${s.id}.${pi}`, fallback);
+  readonly activeSection = computed(() => {
+    this.i18n.lang();
+    this.cartaKind();
+    const list = this.sections();
+    const id = this.activeSectionId();
+    return list.find(sec => sec.id === id) ?? list[0];
+  });
+
+  private catalogRoot(): string {
+    return this.isDrinks() ? 'catalogDrinks' : 'catalog';
+  }
+
+  secTitle(s: MenuSection): string {
+    return this.i18n.catalog(`${this.catalogRoot()}.sections.${s.id}`, s.title);
   }
 
   itemName(s: MenuSection, i: number, fallback: string): string {
-    return this.i18n.catalog(`catalog.items.${s.id}.${i}.name`, fallback);
+    return this.i18n.catalog(`${this.catalogRoot()}.items.${s.id}.${i}.name`, fallback);
   }
 
   itemDesc(s: MenuSection, i: number, fallback: string | undefined): string {
     if (!fallback) return '';
-    return this.i18n.catalog(`catalog.items.${s.id}.${i}.description`, fallback);
+    return this.i18n.catalog(`${this.catalogRoot()}.items.${s.id}.${i}.description`, fallback);
   }
 
   itemNote(s: MenuSection, i: number, fallback: string | undefined): string {
     if (!fallback) return '';
-    return this.i18n.catalog(`catalog.items.${s.id}.${i}.note`, fallback);
+    return this.i18n.catalog(`${this.catalogRoot()}.items.${s.id}.${i}.note`, fallback);
   }
 
-  readonly filteredSections = computed(() => {
-    this.i18n.lang();
-    const q = this.query().toLowerCase();
-    const active = this.activeSectionId();
+  setCartaKind(kind: CartaKind): void {
+    const list = kind === 'bebidas' ? DRINKS_SECTIONS : MENU_SECTIONS;
+    this.activeSectionId.set(list[0]?.id ?? 'entrantes');
+    void this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: kind === 'bebidas' ? { carta: 'bebidas' } : { carta: null },
+      queryParamsHandling: 'merge',
+      replaceUrl: true,
+    });
+  }
 
-    const bySection =
-      active === 'todas' ? this.sections : this.sections.filter(s => s.id === active);
-
-    if (!q) return bySection;
-
-    return bySection
-      .map(s => ({
-        ...s,
-        items: s.items.filter((it, idx) => this.itemMatchesSearch(s, it, idx, q)),
-      }))
-      .filter(s => s.items.length > 0 || (s.pillItems?.length ?? 0) > 0);
-  });
-
-  private itemMatchesSearch(s: MenuSection, it: MenuItem, index: number, q: string): boolean {
-    const inEs =
-      (it.name || '').toLowerCase().includes(q) ||
-      (it.description || '').toLowerCase().includes(q) ||
-      (it.note || '').toLowerCase().includes(q);
-    if (inEs) return true;
-    const dn = this.itemName(s, index, it.name).toLowerCase();
-    const dd = it.description ? this.itemDesc(s, index, it.description).toLowerCase() : '';
-    const dn2 = it.note ? this.itemNote(s, index, it.note).toLowerCase() : '';
-    return dn.includes(q) || dd.includes(q) || dn2.includes(q);
+  selectSection(id: string): void {
+    this.activeSectionId.set(id);
   }
 }

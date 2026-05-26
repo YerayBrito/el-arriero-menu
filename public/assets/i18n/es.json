@@ -13,14 +13,24 @@
     "de": "DE"
   },
   "home": {
-    "ariaSplash": "Próxima apertura",
+    "ariaSplash": "Inicio — Bar Las Salinas Arinaga",
     "kicker": "Playa de Arinaga · Gran Canaria",
-    "logoAlt": "Bar Las Salinas",
-    "headline": "Próxima apertura",
-    "openDate": "27 de mayo de 2026",
-    "line1": "Muy pronto abrimos junto al mar.",
-    "line2": "Gracias por su paciencia.",
-    "photoCaption": "Las Salinas"
+    "logoAlt": "Bar Las Salinas Arinaga",
+    "headline": "Bienvenidos",
+    "tagline": "Del mar a la mesa.",
+    "ctaMenu": "Carta",
+    "ctaContact": "Contacto",
+    "photoCaption": "Las Salinas Arinaga",
+    "carouselLabel": "Galería del local",
+    "carouselPrev": "Imagen anterior",
+    "carouselNext": "Imagen siguiente",
+    "carouselGoTo": "Ver imagen",
+    "stripMenuTitle": "Nuestra carta",
+    "stripMenuText": "Platos, precios y alérgenos al detalle.",
+    "stripLocationTitle": "En Arinaga",
+    "stripLocationText": "Junto a la playa, fácil de encontrar.",
+    "stripSeaTitle": "Cocina de mar",
+    "stripSeaText": "Producto fresco y sabores canarios con carácter."
   },
   "order": {
     "backHome": "Volver al inicio",
@@ -50,10 +60,19 @@
   },
   "menu": {
     "title": "Carta",
-    "lead": "Platos, precios y alérgenos.",
-    "logoAlt": "Las Salinas",
-    "searchPlaceholder": "Buscar en la carta…",
+    "lead": "Precios e IGIC. Alérgenos en carta.",
+    "leadDrinks": "Precios con IGIC incluido · Precio por unidad",
+    "cartaSwitchLabel": "Tipo de carta",
+    "cartaComida": "Comida",
+    "cartaBebidas": "Bebidas",
+    "takeawayNote": "Para llevar: +0,80€",
+    "logoAlt": "Las Salinas Arinaga",
+    "searchPlaceholder": "Buscar plato, ingrediente…",
+    "searchClear": "Borrar búsqueda",
     "filterAll": "Todas",
+    "navLabel": "Categorías de la carta",
+    "resultsCount": "{{n}} platos encontrados",
+    "noResults": "No hay platos que coincidan. Prueba otra palabra o categoría.",
     "pricing": {
       "tapa": "Tapa",
       "half": "½",
@@ -80,25 +99,23 @@
   "contact": {
     "title": "Contacto",
     "lead": "Cómo llegar, horario y datos de contacto.",
-    "logoAlt": "Las Salinas",
+    "logoAlt": "Las Salinas Arinaga",
     "addressLabel": "Dirección",
     "openMaps": "Abrir en Google Maps",
-    "phoneLabel": "Teléfono",
-    "phoneHint": "Puedes cambiarlo por el número real.",
     "emailLabel": "Correo",
     "hoursLabel": "Horario",
-    "hoursHint": "Ajusta según temporada.",
+    "hoursValue": "Lunes: descanso\nMartes a sábado: 10:00–16:00 y 19:00–23:00\nDomingo: 10:00–16:00",
     "mapLabel": "Mapa",
     "mapHint": "También puedes abrirlo en Google Maps si lo prefieres.",
-    "mapRegion": "Mapa de Las Salinas",
-    "mapIframeTitle": "Mapa de Las Salinas"
+    "mapRegion": "Mapa de Las Salinas Arinaga",
+    "mapIframeTitle": "Mapa de Las Salinas Arinaga"
   },
   "footer": {
     "mapsLink": "Ver en Google Maps",
     "navMenu": "Carta",
     "navContact": "Contacto",
     "notice": "Precios con IGIC incluido · Consulte al personal si padece alergias o intolerancias",
-    "copyright": "Bar Las Salinas · Arinaga · Todos los derechos reservados.",
-    "legal": "Los contenidos de este sitio web (textos, diseño, carta e imágenes) son propiedad de Bar Las Salinas · Arinaga. Queda prohibida su copia, reproducción o uso comercial sin autorización previa por escrito."
+    "copyright": "Bar Las Salinas Arinaga · Todos los derechos reservados.",
+    "legal": "Los contenidos de este sitio web (textos, diseño, carta e imágenes) son propiedad de Bar Las Salinas Arinaga. Queda prohibida su copia, reproducción o uso comercial sin autorización previa por escrito."
   }
 }

@@ -16,14 +16,18 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
         <span class="section-deco">✦</span>
       </div>
 
-      <!-- Triple price header for entrantes -->
-      <div class="price-header" *ngIf="section.hasTriplePricing">
+      <!-- Precios: tapa+½+ración o solo ½+ración (entrantes) -->
+      <div class="price-header" *ngIf="section.hasTriplePricing" [class.price-header-dual]="section.halfRacionOnly">
         @if (pricingLabels) {
-          <span class="ph-label">{{ pricingLabels.tapa }}</span>
+          @if (!section.halfRacionOnly) {
+            <span class="ph-label">{{ pricingLabels.tapa }}</span>
+          }
           <span class="ph-label">{{ pricingLabels.half }}</span>
           <span class="ph-label">{{ pricingLabels.racion }}</span>
         } @else {
-          <span class="ph-label">{{ 'menu.pricing.tapa' | t }}</span>
+          @if (!section.halfRacionOnly) {
+            <span class="ph-label">{{ 'menu.pricing.tapa' | t }}</span>
+          }
           <span class="ph-label">{{ 'menu.pricing.half' | t }}</span>
           <span class="ph-label">{{ 'menu.pricing.racion' | t }}</span>
         }
@@ -41,11 +45,13 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
         [class.highlight]="item.highlight"
       >
         <!-- Row: name + price(s) -->
-        <div class="item-row">
+        <div
+          class="item-row"
+          [class.item-row--dual-single]="section.hasTriplePricing && section.halfRacionOnly && item.price && !item.triplePrice"
+        >
           <div class="item-left">
             <span class="item-name">{{ item.name }}</span>
 
-            <!-- Allergens inline, right after name -->
             <div class="allergens-inline" *ngIf="item.allergens?.length">
               <app-allergen-icon
                 *ngFor="let code of item.allergens"
@@ -54,15 +60,31 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
             </div>
           </div>
 
-          <!-- Triple price -->
-          <div class="prices-3" *ngIf="section.hasTriplePricing && item.triplePrice">
-            <span class="p3">{{ item.triplePrice.tapa }}</span>
+          <!-- ½ + ración (o tapa + ½ + ración) -->
+          <div
+            class="prices-3"
+            [class.prices-dual]="section.halfRacionOnly"
+            *ngIf="section.hasTriplePricing && item.triplePrice"
+          >
+            <span class="p3" *ngIf="!section.halfRacionOnly && item.triplePrice.tapa">{{ item.triplePrice.tapa }}</span>
             <span class="p3">{{ item.triplePrice.media }}</span>
             <span class="p3">{{ item.triplePrice.racion }}</span>
           </div>
 
-          <!-- Single price -->
-          <span class="item-price" *ngIf="!section.hasTriplePricing && item.price">
+          <!-- Plato único: «—» en ½ y precio en ración (p. ej. ensalada mixta) -->
+          <div
+            class="prices-3 prices-dual"
+            *ngIf="section.hasTriplePricing && section.halfRacionOnly && item.price && !item.triplePrice"
+          >
+            <span class="p3 p3--dash">—</span>
+            <span class="p3">{{ item.price }}</span>
+          </div>
+
+          <!-- Precio único (categorías sin ½/ración) -->
+          <span
+            class="item-price"
+            *ngIf="item.price && (!section.hasTriplePricing || !item.triplePrice) && !(section.hasTriplePricing && section.halfRacionOnly)"
+          >
             {{ item.price }}
           </span>
         </div>

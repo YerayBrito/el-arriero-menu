@@ -74,12 +74,13 @@ function setOrDelete(entry: Record<string, string>, key: string, value: string):
 
 const FOOD_FILE_HINT: Record<string, string> = {
   entrantes: 'src/app/data/menu/entrantes.json',
+  ensaladas: 'src/app/data/menu/ensaladas.json',
   salsas: 'src/app/data/menu/salsas.json',
   pescados: 'src/app/data/menu/pescados.json',
   carnes: 'src/app/data/menu/carnes.json',
+  bocadillos: 'src/app/data/menu/bocadillos.json',
   postres: 'src/app/data/menu/postres.json',
   domingos: 'src/app/data/menu/domingos.json',
-  encargo: 'src/app/data/menu/encargo.json',
 };
 
 const DRINKS_FILE_HINT: Record<string, string> = {
@@ -91,6 +92,7 @@ const DRINKS_FILE_HINT: Record<string, string> = {
   cervezas: 'src/app/data/drinks/cervezas.json',
   vodka: 'src/app/data/drinks/vodka.json',
   aperitivos: 'src/app/data/drinks/aperitivos.json',
+  vinos: 'src/app/data/drinks/vinos.json',
   rones: 'src/app/data/drinks/rones.json',
   brandy: 'src/app/data/drinks/brandy.json',
   ginebra: 'src/app/data/drinks/ginebra.json',
@@ -337,7 +339,7 @@ export class MenuEditorLocalPageComponent implements OnInit, OnDestroy {
     this.editHighlight = !!it.highlight;
     this.editAllergens = [...(it.allergens ?? [])];
     if (it.triplePrice) {
-      this.editTapa = it.triplePrice.tapa;
+      this.editTapa = it.triplePrice.tapa ?? '';
       this.editMedia = it.triplePrice.media;
       this.editRacion = it.triplePrice.racion;
       this.editPriceSingle = '';
@@ -411,11 +413,12 @@ export class MenuEditorLocalPageComponent implements OnInit, OnDestroy {
       else delete it.allergens;
 
       if (it.triplePrice) {
-        it.triplePrice = {
-          tapa: this.editTapa.trim() || '—',
-          media: this.editMedia.trim() || '—',
-          racion: this.editRacion.trim() || '—',
-        };
+        it.triplePrice = this.buildTriplePrice(
+          sec,
+          this.editTapa,
+          this.editMedia,
+          this.editRacion,
+        );
         delete it.price;
       } else {
         it.price = this.editPriceSingle.trim() || it.price;
@@ -462,11 +465,12 @@ export class MenuEditorLocalPageComponent implements OnInit, OnDestroy {
       const sec = this.sections().find(s => s.id === sid);
       const triple = !!sec?.hasTriplePricing && this.addUseTriple;
       if (triple) {
-        item.triplePrice = {
-          tapa: this.addTapa.trim() || '—',
-          media: this.addMedia.trim() || '—',
-          racion: this.addRacion.trim() || '—',
-        };
+        item.triplePrice = this.buildTriplePrice(
+          sec,
+          this.addTapa,
+          this.addMedia,
+          this.addRacion,
+        );
       } else {
         item.price = this.addSingle.trim() || '—';
       }
@@ -614,6 +618,24 @@ export class MenuEditorLocalPageComponent implements OnInit, OnDestroy {
 
   getSectionById(id: string): MenuSection | undefined {
     return this.sections().find(s => s.id === id);
+  }
+
+  sectionHalfRacionOnly(id: string): boolean {
+    return !!this.getSectionById(id)?.halfRacionOnly;
+  }
+
+  private buildTriplePrice(
+    section: MenuSection | undefined,
+    tapa: string,
+    media: string,
+    racion: string,
+  ): { media: string; racion: string; tapa?: string } {
+    const m = media.trim() || '—';
+    const r = racion.trim() || '—';
+    if (section?.halfRacionOnly) {
+      return { media: m, racion: r };
+    }
+    return { tapa: tapa.trim() || '—', media: m, racion: r };
   }
 
   private patchCatalogTriplet(

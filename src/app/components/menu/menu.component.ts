@@ -64,7 +64,7 @@ export class MenuComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly printCatalog = inject(MenuPrintCatalogService);
 
-  readonly restaurantName = 'LAS SALINAS';
+  readonly restaurantName = 'LAS SALINAS ARINAGA';
   readonly addressLine = 'C. Churruca, 40 · 35118 Arinaga · Las Palmas';
   readonly mapsUrl = 'https://maps.app.goo.gl/Jss47pXqB7tWmpqn7';
 
@@ -96,8 +96,8 @@ export class MenuComponent implements OnInit {
     const kind = this.isDrinks() ? 'Bebidas' : 'Comida';
     const lang = this.isEnglish() ? 'EN' : 'ES';
     return this.isPrintView()
-      ? `Las Salinas — Carta de ${kind} (${lang}) · Imprimir`
-      : 'Las Salinas — Editor de Carta';
+      ? `Las Salinas Arinaga — Carta de ${kind} (${lang}) · Imprimir`
+      : 'Las Salinas Arinaga — Editor de Carta';
   });
 
   readonly legendTitle = computed(() =>
@@ -107,6 +107,12 @@ export class MenuComponent implements OnInit {
   );
 
   readonly legend = computed(() => (this.isEnglish() ? LEGEND_EN : LEGEND_ES));
+
+  readonly takeawayNote = computed(() =>
+    this.isEnglish() ? 'Takeaway: +€0.80' : 'Para llevar: +0,80€'
+  );
+
+  readonly pdfTakeawayNote = computed(() => (this.isDrinks() ? null : this.takeawayNote()));
 
   readonly footerNote = computed(() => {
     if (this.isDrinks()) {

@@ -13,6 +13,7 @@ import brandyJson from './drinks/brandy.json';
 import ginebraJson from './drinks/ginebra.json';
 import whiskyJson from './drinks/whisky.json';
 import chupitosJson from './drinks/chupitos.json';
+import vinosJson from './drinks/vinos.json';
 
 export const DRINKS_SECTIONS: MenuSection[] = [
   coctelesJson as MenuSection,
@@ -23,6 +24,7 @@ export const DRINKS_SECTIONS: MenuSection[] = [
   cervezasJson as MenuSection,
   vodkaJson as MenuSection,
   aperitivosJson as MenuSection,
+  vinosJson as MenuSection,
   ronesJson as MenuSection,
   brandyJson as MenuSection,
   ginebraJson as MenuSection,
@@ -34,11 +36,11 @@ export type CartaKind = 'comida' | 'bebidas';
 
 export const CARTA_SHEET_IDS = {
   comida: {
-    left: ['entrantes', 'salsas', 'carnes', 'postres'],
-    right: ['pescados', 'domingos', 'encargo'],
+    left: ['entrantes', 'ensaladas', 'salsas'],
+    right: ['pescados', 'carnes', 'bocadillos', 'postres', 'domingos'],
   },
   bebidas: {
-    left: ['refrescos', 'zumos', 'cafe', 'licores', 'chupitos', 'cocteles'],
+    left: ['refrescos', 'zumos', 'cafe', 'licores', 'chupitos', 'cocteles', 'vinos'],
     right: ['cervezas', 'vodka', 'aperitivos', 'rones', 'brandy', 'ginebra', 'whisky'],
   },
 } as const;

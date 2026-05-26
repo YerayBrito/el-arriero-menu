@@ -15,7 +15,8 @@ export type AllergenCode =
   | 'cacahuetes';
 
 export interface TriplePrice {
-  tapa: string;
+  /** Solo categorías con tapa; entrantes usan media + ración */
+  tapa?: string;
   media: string;
   racion: string;
 }
@@ -39,5 +40,7 @@ export interface MenuSection {
   subtitle?: string;         // e.g. "Tapa · ½ Ración · Ración"
   items: MenuItem[];
   hasTriplePricing?: boolean;
+  /** Con hasTriplePricing: solo columnas ½ y ración (entrantes) */
+  halfRacionOnly?: boolean;
   pillItems?: string[];      // for salsas row
 }

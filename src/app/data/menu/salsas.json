@@ -2,7 +2,10 @@
   "id": "salsas",
   "icon": "🫙",
   "title": "Salsas",
-  "items": [],
-  "pillItems": ["Alioli", "Mojo Rojo", "Mojo Verde", "Salsa de arándanos"]
+  "items": [
+    { "name": "Alioli", "description": "Mayonesa, ajo, perejil", "price": "1,80€", "allergens": ["huevo", "mostaza"] },
+    { "name": "Mojo rojo", "price": "1,80€" },
+    { "name": "Mojo verde", "price": "1,80€" },
+    { "name": "Salsa de arándanos", "price": "2,50€" }
+  ]
 }
-

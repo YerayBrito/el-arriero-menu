@@ -56,6 +56,23 @@ export class I18nService {
     } catch {
       /* Sin catalog.{lang}.json: `catalog()` usará el texto del JSON de menú */
     }
+    try {
+      const drinksCatalog = await firstValueFrom(
+        this.http.get<Record<string, unknown>>(`/assets/i18n/catalog.drinks.${lang}.json`),
+      );
+      (data as Record<string, unknown>)['catalogDrinks'] = drinksCatalog;
+    } catch {
+      if (lang !== 'es') {
+        try {
+          const drinksEs = await firstValueFrom(
+            this.http.get<Record<string, unknown>>('/assets/i18n/catalog.drinks.es.json'),
+          );
+          (data as Record<string, unknown>)['catalogDrinks'] = drinksEs;
+        } catch {
+          /* bebidas: nombres del JSON */
+        }
+      }
+    }
     this.flat.set(flattenObject(data));
     this.lang.set(lang);
     try {

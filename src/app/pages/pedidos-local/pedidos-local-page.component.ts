@@ -92,12 +92,14 @@ export class PedidosLocalPageComponent {
     return this.i18n.catalog(`catalog.items.${s.id}.${i}.description`, fallback);
   }
 
-  fromPrice(_section: MenuSection, it: MenuItem, _i: number): string {
+  fromPrice(section: MenuSection, it: MenuItem, _i: number): string {
     if (it.triplePrice) {
-      const a = parseEuroLabel(it.triplePrice.tapa);
-      const b = parseEuroLabel(it.triplePrice.media);
-      const c = parseEuroLabel(it.triplePrice.racion);
-      const positives = [a, b, c].filter(x => x > 0);
+      const prices = section.halfRacionOnly
+        ? [it.triplePrice.media, it.triplePrice.racion]
+        : [it.triplePrice.tapa, it.triplePrice.media, it.triplePrice.racion];
+      const positives = prices
+        .map(p => parseEuroLabel(p))
+        .filter(x => x > 0);
       if (!positives.length) {
         return this.i18n.t('order.fromPriceAsk');
       }
@@ -111,7 +113,7 @@ export class PedidosLocalPageComponent {
 
   openSizeSheet(section: MenuSection, index: number, it: MenuItem): void {
     if (!it.triplePrice) return;
-    this.selectedFormat.set('racion');
+    this.selectedFormat.set(section.halfRacionOnly ? 'media' : 'racion');
     this.sheet.set({ section, index });
   }
 
@@ -127,7 +129,7 @@ export class PedidosLocalPageComponent {
     const fmt = this.selectedFormat();
     const display =
       fmt === 'tapa'
-        ? it.triplePrice.tapa
+        ? (it.triplePrice.tapa ?? '—')
         : fmt === 'media'
           ? it.triplePrice.media
           : it.triplePrice.racion;

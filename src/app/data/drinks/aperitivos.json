@@ -3,9 +3,11 @@
   "icon": "🍷",
   "title": "Aperitivos",
   "items": [
-    { "name": "Martini", "price": "0,00€" },
-    { "name": "Aperol", "price": "0,00€" },
-    { "name": "Campari", "price": "0,00€" },
-    { "name": "Tío Pepe", "price": "0,00€" }
+    { "name": "Licor 43", "price": "3,80€" },
+    { "name": "Martini", "price": "3,00€" },
+    { "name": "Aperol", "price": "3,00€" },
+    { "name": "Campari", "price": "3,00€" },
+    { "name": "Tío Pepe", "price": "2,00€" },
+    { "name": "Limoncello", "price": "2,50€" }
   ]
 }

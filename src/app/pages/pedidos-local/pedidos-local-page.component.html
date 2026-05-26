@@ -4,7 +4,7 @@
     <div class="kiosk-brand">
       <span class="kiosk-brand-mark">⚓</span>
       <div class="kiosk-brand-text">
-        <span class="kiosk-brand-name">Las Salinas</span>
+        <span class="kiosk-brand-name">Las Salinas Arinaga</span>
         <span class="kiosk-brand-sub">{{ 'order.subtitleDemo' | t }}</span>
       </div>
     </div>
@@ -187,15 +187,17 @@
         }
         <p class="sheet-hint">{{ 'order.selectSize' | t }}</p>
         <div class="sheet-sizes">
-          <button
-            type="button"
-            class="sheet-size"
-            [class.active]="selectedFormat() === 'tapa'"
-            (click)="selectedFormat.set('tapa')"
-          >
-            <span>{{ 'order.fmtTapa' | t }}</span>
-            <em>{{ it.triplePrice?.tapa }}</em>
-          </button>
+          @if (!sh.section.halfRacionOnly) {
+            <button
+              type="button"
+              class="sheet-size"
+              [class.active]="selectedFormat() === 'tapa'"
+              (click)="selectedFormat.set('tapa')"
+            >
+              <span>{{ 'order.fmtTapa' | t }}</span>
+              <em>{{ it.triplePrice?.tapa }}</em>
+            </button>
+          }
           <button
             type="button"
             class="sheet-size"

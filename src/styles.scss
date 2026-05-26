@@ -1,4 +1,5 @@
 @use './app/styles/view-motion.scss';
+@use './app/styles/site-pages.scss';
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -8,26 +9,28 @@ img {
 }
 
 html, body {
-  /* Altura aproximada del header fijo (sticky) para barras fixed debajo */
-  --site-header-h: 60px;
-  /* Paleta bar de madera / Arinaga */
+  --site-header-h: 64px;
   --gold: #b8892e;
   --terracotta: #a65d3f;
   --navy: #3d2918;
   --cream: #faf6f0;
   --text: #2a221c;
   --muted: #5c5048;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --shadow-soft: 0 12px 40px rgba(42, 28, 20, 0.07);
+  --shadow-elevated: 0 24px 64px rgba(42, 28, 20, 0.12);
 
   background:
-    radial-gradient(1000px 640px at 10% 0%, rgba(201, 165, 74, 0.12), transparent 55%),
-    radial-gradient(900px 520px at 92% 12%, rgba(166, 93, 63, 0.1), transparent 50%),
-    radial-gradient(800px 480px at 50% 100%, rgba(90, 56, 38, 0.06), transparent 55%),
-    linear-gradient(168deg, #faf6f0 0%, #f3e8dc 42%, #ebe0d4 100%);
+    radial-gradient(1100px 700px at 8% -5%, rgba(201, 165, 74, 0.11), transparent 52%),
+    radial-gradient(900px 560px at 96% 8%, rgba(166, 93, 63, 0.09), transparent 48%),
+    radial-gradient(700px 420px at 50% 105%, rgba(90, 56, 38, 0.05), transparent 50%),
+    linear-gradient(168deg, #faf6f0 0%, #f4ebe0 45%, #ebe0d4 100%);
   min-height: 100vh;
   color: var(--text);
+  -webkit-font-smoothing: antialiased;
 }
 
-// Sticky footer layout (footer al final de la ventana cuando falta contenido)
 body {
   display: flex;
   flex-direction: column;
@@ -50,33 +53,20 @@ app-site-footer {
   min-height: 0;
 }
 
-/* Portada “próxima apertura”: el main ocupa toda la ventana sin hueco del header */
-.site-main.site-main--splash {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  flex: 1 1 auto;
-
-  app-home-page {
-    display: block;
-    flex: 1;
-    min-height: 100vh;
-    width: 100%;
-  }
-}
-
 @media print {
   html, body {
-    background: white !important;
+    background: #f2e6da !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  /* Vista carta/imprimir: solo la hoja del menú, sin cabecera/pie del sitio */
   html.print-sheet-only,
   body.print-sheet-only {
-    height: auto !important;
-    min-height: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+    overflow: visible !important;
   }
 
   body.print-sheet-only app-site-header,
@@ -85,31 +75,27 @@ app-site-footer {
     visibility: hidden !important;
   }
 
-  body.print-sheet-only app-root {
-    display: block !important;
-    min-height: 0 !important;
-    height: auto !important;
-  }
-
-  body.print-sheet-only .site-main {
-    display: block !important;
-    min-height: 0 !important;
-    flex: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-  }
-
+  body.print-sheet-only app-root,
+  body.print-sheet-only .site-main,
   body.print-sheet-only app-menu {
     display: block !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: visible !important;
+    flex: none !important;
   }
 
   body.print-sheet-only {
     margin: 0 !important;
     padding: 0 !important;
-    overflow: hidden !important;
+  }
+
+  body.print-sheet-only .page {
+    margin: 0 !important;
   }
 
   @page {

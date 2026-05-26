@@ -3,14 +3,14 @@
   "icon": "🥃",
   "title": "Whisky",
   "items": [
-    { "name": "Haig", "price": "0,00€" },
-    { "name": "J&B", "price": "0,00€" },
-    { "name": "100 Pipers", "price": "0,00€" },
-    { "name": "J.W. Red Label", "price": "0,00€" },
-    { "name": "J.W. Black Label", "price": "0,00€" },
-    { "name": "Chivas Regal", "price": "0,00€" },
-    { "name": "Ballantine's", "price": "0,00€" },
-    { "name": "Jack Daniel's", "price": "0,00€" },
-    { "name": "Jameson", "price": "0,00€" }
+    { "name": "Haig", "price": "2,20€" },
+    { "name": "J&B", "price": "2,40€" },
+    { "name": "100 Pipers", "price": "2,20€" },
+    { "name": "J.W. Red Label", "price": "2,50€" },
+    { "name": "J.W. Black Label", "price": "4,20€" },
+    { "name": "Chivas Regal 12 años", "price": "4,80€" },
+    { "name": "Ballantine's", "price": "3,00€" },
+    { "name": "Jack Daniel's", "price": "4,50€" },
+    { "name": "Jameson", "price": "3,80€" }
   ]
 }

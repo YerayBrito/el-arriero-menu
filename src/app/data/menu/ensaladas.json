@@ -1,0 +1,21 @@
+{
+  "id": "ensaladas",
+  "icon": "🥗",
+  "title": "Ensaladas",
+  "hasTriplePricing": true,
+  "halfRacionOnly": true,
+  "items": [
+    {
+      "name": "Ensalada mixta",
+      "description": "Lechuga, zanahoria, aceitunas, cebolla, atún, pepino, tomate",
+      "price": "7,50€",
+      "allergens": ["pescado"]
+    },
+    {
+      "name": "Ensaladilla rusa",
+      "description": "Patata, huevo, pescado y cebolla",
+      "triplePrice": { "media": "7,50€", "racion": "9,80€" },
+      "allergens": ["huevo", "pescado", "moluscos"]
+    }
+  ]
+}

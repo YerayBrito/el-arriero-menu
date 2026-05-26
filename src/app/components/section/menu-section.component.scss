@@ -49,6 +49,10 @@
   padding-bottom: 1px;
 }
 
+.price-header-dual .ph-label {
+  width: 52px;
+}
+
 /* ── Pills (salsas) ── */
 .pills-row {
   display: flex;
@@ -136,6 +140,19 @@
   width: 36px;
   text-align: center;
   white-space: nowrap;
+}
+
+.prices-dual .p3 {
+  width: 52px;
+}
+
+.p3--dash {
+  color: rgba(184, 147, 62, 0.55);
+  font-weight: 400;
+}
+
+.item-row--dual-single .allergens-inline {
+  margin-left: auto;
 }
 
 /* Description */

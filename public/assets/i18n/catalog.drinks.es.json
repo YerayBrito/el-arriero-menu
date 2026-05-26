@@ -9,6 +9,7 @@
     "cervezas": "Cervezas",
     "vodka": "Vodka",
     "aperitivos": "Aperitivos",
+    "vinos": "Vinos",
     "rones": "Rones",
     "brandy": "Brandy",
     "ginebra": "Ginebra",
@@ -16,16 +17,17 @@
   },
   "items": {
     "refrescos": {
-      "0": { "name": "Agua" },
-      "1": { "name": "Coca-Cola" },
-      "2": { "name": "Coca-Cola Zero" },
-      "3": { "name": "Clipper" },
-      "4": { "name": "Fanta Limón" },
-      "5": { "name": "Fanta Naranja" },
-      "6": { "name": "Tónica" },
-      "7": { "name": "Aquarius" },
-      "8": { "name": "7 Up" },
-      "9": { "name": "Licor 43" }
+      "0": { "name": "Fuze Tea" },
+      "1": { "name": "Agua pequeña" },
+      "2": { "name": "Coca-Cola" },
+      "3": { "name": "Coca-Cola Zero" },
+      "4": { "name": "Appletiser" },
+      "5": { "name": "Fanta Limón" },
+      "6": { "name": "Fanta Naranja" },
+      "7": { "name": "Tónica" },
+      "8": { "name": "Aquarius" },
+      "9": { "name": "7 Up" },
+      "10": { "name": "Red Bull / Monster" }
     },
     "zumos": {
       "0": { "name": "Zumo de naranja" },
@@ -42,19 +44,19 @@
       "7": { "name": "Infusiones" }
     },
     "licores": {
-      "0": { "name": "Triple Sec" },
-      "1": { "name": "Amaretto" },
-      "2": { "name": "Licor de café" },
+      "0": { "name": "Tequila" },
+      "1": { "name": "Triple Sec" },
+      "2": { "name": "Amaretto" },
       "3": { "name": "Baileys" },
       "4": { "name": "Tía María" },
       "5": { "name": "Crema de orujo" },
       "6": { "name": "Jägermeister" },
-      "7": { "name": "Frangelico" }
+      "7": { "name": "Frangelico" },
+      "8": { "name": "Malibu" }
     },
     "chupitos": {
       "0": { "name": "Chupitos" },
-      "1": { "name": "Premium" },
-      "2": { "name": "Invitación" }
+      "1": { "name": "Premium" }
     },
     "cocteles": {
       "0": { "name": "Mojito" },
@@ -64,26 +66,38 @@
       "4": { "name": "Daiquiri" },
       "5": { "name": "Aperol Spritz" },
       "6": { "name": "Daiquiri de fresa" },
-      "7": { "name": "Espresso Martini" }
+      "7": { "name": "Espresso Martini" },
+      "8": { "name": "Campari Spritz" }
     },
     "cervezas": {
-      "0": { "name": "Caña" },
-      "1": { "name": "Jarra" },
-      "2": { "name": "Cerveza 0,0" },
-      "3": { "name": "Sin gluten" },
-      "4": { "name": "Con limón" },
-      "5": { "name": "Botellín" },
-      "6": { "name": "Lata" }
+      "0": { "name": "Tropical" },
+      "1": { "name": "Caña" },
+      "2": { "name": "Jarra" },
+      "3": { "name": "Cerveza 0,0" },
+      "4": { "name": "Sin gluten" },
+      "5": { "name": "Con limón" },
+      "6": { "name": "Botellín Tropical" },
+      "7": { "name": "Lata" },
+      "8": { "name": "Dorada" },
+      "9": { "name": "Dorada Especial" },
+      "10": { "name": "Dorada sin limón" },
+      "11": { "name": "Corona" }
     },
     "vodka": {
       "0": { "name": "Smirnoff" },
       "1": { "name": "Absolut" }
     },
     "aperitivos": {
-      "0": { "name": "Martini" },
-      "1": { "name": "Aperol" },
-      "2": { "name": "Campari" },
-      "3": { "name": "Tío Pepe" }
+      "0": { "name": "Licor 43" },
+      "1": { "name": "Martini" },
+      "2": { "name": "Aperol" },
+      "3": { "name": "Campari" },
+      "4": { "name": "Tío Pepe" },
+      "5": { "name": "Limoncello" }
+    },
+    "vinos": {
+      "0": { "name": "Vino tinto de la casa" },
+      "1": { "name": "Vino blanco de la casa" }
     },
     "rones": {
       "0": { "name": "Arehucas Blanco" },
@@ -92,9 +106,8 @@
       "3": { "name": "Brugal Añejo" },
       "4": { "name": "Havana 3" },
       "5": { "name": "Havana 7" },
-      "6": { "name": "Diplomático" },
-      "7": { "name": "Ron Telde" },
-      "8": { "name": "Ron miel" }
+      "6": { "name": "Ron Telde" },
+      "7": { "name": "Ron miel" }
     },
     "brandy": {
       "0": { "name": "Veterano" },
@@ -107,8 +120,7 @@
       "1": { "name": "Bombay" },
       "2": { "name": "Tanqueray" },
       "3": { "name": "Gordon's" },
-      "4": { "name": "Martin Miller's" },
-      "5": { "name": "Puerto de Indias" }
+      "4": { "name": "Puerto de Indias" }
     },
     "whisky": {
       "0": { "name": "Haig" },
@@ -116,7 +128,7 @@
       "2": { "name": "100 Pipers" },
       "3": { "name": "J.W. Red Label" },
       "4": { "name": "J.W. Black Label" },
-      "5": { "name": "Chivas Regal" },
+      "5": { "name": "Chivas Regal 12 años" },
       "6": { "name": "Ballantine's" },
       "7": { "name": "Jack Daniel's" },
       "8": { "name": "Jameson" }

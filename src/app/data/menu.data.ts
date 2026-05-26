@@ -7,19 +7,21 @@ import { MenuSection } from '../models/menu.model';
 // ═══════════════════════════════════════════════════════════════
 
 import entrantesJson from './menu/entrantes.json';
+import ensaladasJson from './menu/ensaladas.json';
 import salsasJson from './menu/salsas.json';
 import pescadosJson from './menu/pescados.json';
 import carnesJson from './menu/carnes.json';
+import bocadillosJson from './menu/bocadillos.json';
 import postresJson from './menu/postres.json';
 import domingosJson from './menu/domingos.json';
-import encargoJson from './menu/encargo.json';
 
 export const MENU_SECTIONS: MenuSection[] = [
   entrantesJson as MenuSection,
+  ensaladasJson as MenuSection,
   salsasJson as MenuSection,
   pescadosJson as MenuSection,
   carnesJson as MenuSection,
+  bocadillosJson as MenuSection,
   postresJson as MenuSection,
   domingosJson as MenuSection,
-  encargoJson as MenuSection,
 ];

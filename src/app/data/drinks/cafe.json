@@ -3,13 +3,13 @@
   "icon": "☕",
   "title": "Café",
   "items": [
-    { "name": "Café solo", "price": "0,00€" },
-    { "name": "Café con leche", "price": "0,00€" },
-    { "name": "Café cortado", "price": "0,00€" },
-    { "name": "Cortado largo", "price": "0,00€" },
-    { "name": "Barraquito", "price": "0,00€" },
-    { "name": "Bombón", "price": "0,00€" },
-    { "name": "Capuchino", "price": "0,00€" },
-    { "name": "Infusiones", "price": "0,00€" }
+    { "name": "Café solo", "price": "1,10€" },
+    { "name": "Café con leche", "price": "1,60€" },
+    { "name": "Café cortado", "price": "1,30€" },
+    { "name": "Cortado largo", "price": "1,60€" },
+    { "name": "Barraquito", "price": "4,00€" },
+    { "name": "Bombón", "price": "1,40€" },
+    { "name": "Capuchino", "price": "2,10€" },
+    { "name": "Infusiones", "price": "1,20€" }
   ]
 }

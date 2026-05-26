@@ -6,17 +6,16 @@
     {
       "name": "Caldo de pescado",
       "description": "Bajo pedido previo, para llevar",
-      "price": "00,00€",
-      "allergens": ["pescado"],
+      "price": "Consultar",
+      "allergens": ["pescado", "crustaceos", "moluscos"],
       "note": "Consúltenos con antelación"
     },
     {
       "name": "Paella para llevar",
       "description": "Bajo pedido previo · para grupos",
-      "price": "00,00€",
+      "price": "Consultar",
       "allergens": ["crustaceos", "moluscos", "pescado"],
       "note": "Consúltenos con antelación"
     }
   ]
 }
-

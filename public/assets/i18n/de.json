@@ -13,14 +13,24 @@
     "de": "DE"
   },
   "home": {
-    "ariaSplash": "Bald geöffnet",
+    "ariaSplash": "Startseite — Bar Las Salinas Arinaga",
     "kicker": "Strand von Arinaga · Gran Canaria",
-    "logoAlt": "Bar Las Salinas",
-    "headline": "Bald geöffnet",
-    "openDate": "27. Mai 2026",
-    "line1": "Wir öffnen sehr bald direkt am Meer.",
-    "line2": "Vielen Dank für Ihre Geduld.",
-    "photoCaption": "Las Salinas"
+    "logoAlt": "Bar Las Salinas Arinaga",
+    "headline": "Willkommen",
+    "tagline": "Vom Meer auf den Tisch.",
+    "ctaMenu": "Speisekarte",
+    "ctaContact": "Kontakt",
+    "photoCaption": "Las Salinas Arinaga",
+    "carouselLabel": "Galerie des Lokals",
+    "carouselPrev": "Vorheriges Bild",
+    "carouselNext": "Nächstes Bild",
+    "carouselGoTo": "Bild anzeigen",
+    "stripMenuTitle": "Unsere Karte",
+    "stripMenuText": "Gerichte, Preise und Allergene im Detail.",
+    "stripLocationTitle": "In Arinaga",
+    "stripLocationText": "Direkt am Strand, leicht zu finden.",
+    "stripSeaTitle": "Meeresfrüchte",
+    "stripSeaText": "Frische Produkte und kanarische Aromen."
   },
   "order": {
     "backHome": "Zur Startseite",
@@ -50,12 +60,21 @@
   },
   "menu": {
     "title": "Unsere Speisekarte",
-    "lead": "Gerichte, Preise und Allergeninformationen.",
-    "logoAlt": "Las Salinas",
-    "searchPlaceholder": "Speisekarte durchsuchen…",
+    "lead": "Preise, Steuer (IGIC) und Allergene.",
+    "leadDrinks": "Preise inkl. Kanarischer Steuer (IGIC) · Preis pro Einheit",
+    "cartaSwitchLabel": "Kartenart",
+    "cartaComida": "Speisen",
+    "cartaBebidas": "Getränke",
+    "takeawayNote": "Zum Mitnehmen: +0,80 €",
+    "logoAlt": "Las Salinas Arinaga",
+    "searchPlaceholder": "Gericht, Zutat suchen…",
+    "searchClear": "Suche löschen",
     "filterAll": "Alle",
+    "navLabel": "Speisekarten-Kategorien",
+    "resultsCount": "{{n}} Gerichte gefunden",
+    "noResults": "Keine passenden Gerichte. Anderes Wort oder Kategorie probieren.",
     "pricing": {
-      "tapa": "Tapa",
+      "tapa": "Klein",
       "half": "½ Portion",
       "racion": "Ganze Portion"
     },
@@ -80,25 +99,23 @@
   "contact": {
     "title": "So finden Sie uns",
     "lead": "Anfahrt, Öffnungszeiten und Kontaktdaten.",
-    "logoAlt": "Las Salinas",
+    "logoAlt": "Las Salinas Arinaga",
     "addressLabel": "Adresse",
     "openMaps": "In Google Maps öffnen",
-    "phoneLabel": "Telefon",
-    "phoneHint": "Bitte durch die echte Telefonnummer ersetzen.",
     "emailLabel": "E-Mail",
     "hoursLabel": "Öffnungszeiten",
-    "hoursHint": "Bei Bedarf je nach Saison anpassen.",
+    "hoursValue": "Montag: Ruhetag\nDienstag–Samstag: 10:00–16:00 und 19:00–23:00\nSonntag: 10:00–16:00",
     "mapLabel": "Karte",
     "mapHint": "Sie können den Standort auch in Google Maps öffnen.",
-    "mapRegion": "Karte – Bar Las Salinas",
-    "mapIframeTitle": "Karte – Bar Las Salinas"
+    "mapRegion": "Karte – Bar Las Salinas Arinaga",
+    "mapIframeTitle": "Karte – Bar Las Salinas Arinaga"
   },
   "footer": {
     "mapsLink": "In Google Maps ansehen",
     "navMenu": "Speisekarte",
     "navContact": "Kontakt",
     "notice": "Preise inkl. Kanarischer Steuer (IGIC) · Bitte informieren Sie das Personal über Allergien oder Unverträglichkeiten",
-    "copyright": "Bar Las Salinas · Arinaga · Alle Rechte vorbehalten.",
-    "legal": "Alle Inhalte dieser Website (Texte, Gestaltung, Speisekarte und Bilder) sind Eigentum von Bar Las Salinas · Arinaga. Vervielfältigung, Reproduktion oder gewerbliche Nutzung ohne vorherige schriftliche Genehmigung ist untersagt."
+    "copyright": "Bar Las Salinas Arinaga · Alle Rechte vorbehalten.",
+    "legal": "Alle Inhalte dieser Website (Texte, Gestaltung, Speisekarte und Bilder) sind Eigentum von Bar Las Salinas Arinaga. Vervielfältigung, Reproduktion oder gewerbliche Nutzung ohne vorherige schriftliche Genehmigung ist untersagt."
   }
 }

@@ -1,62 +1,155 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppLang, I18nService } from '../../i18n/i18n.service';
+import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../i18n/translate.pipe';
+import {
+  HOME_CAROUSEL_IMAGES,
+  HOME_CAROUSEL_INTERVAL_MS,
+} from '../../data/home-carousel.data';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [CommonModule, TranslatePipe],
+  imports: [CommonModule, RouterLink, TranslatePipe],
   template: `
-    <section class="splash" [attr.aria-label]="'home.ariaSplash' | t">
-      <div class="splash-bg" aria-hidden="true"></div>
-      <div class="splash-overlay" aria-hidden="true"></div>
-
-      <div
-        class="splash-lang"
-        role="group"
-        [attr.aria-label]="'nav.langPicker' | t"
-      >
-        @for (l of langs; track l) {
-          <button
-            type="button"
-            class="splash-lang-btn"
-            [class.active]="i18n.lang() === l"
-            (click)="pickLang(l)"
-          >{{ ('lang.' + l) | t }}</button>
+    <section class="hero" [attr.aria-label]="'home.ariaSplash' | t">
+      <div class="hero-carousel" aria-hidden="true">
+        @for (src of slides; track src; let i = $index) {
+          <img
+            class="hero-slide"
+            [class.is-active]="i === activeIndex()"
+            [src]="src"
+            alt=""
+            decoding="async"
+            [attr.fetchpriority]="i === 0 ? 'high' : 'low'"
+          />
         }
+        <div class="hero-carousel-vignette"></div>
       </div>
 
-      <div class="splash-body">
-        <p class="kicker">{{ 'home.kicker' | t }}</p>
-        <div class="logo-wrap">
-          <img
-            class="logo"
-            src="/assets/brand/logo-las-salinas.png"
-            width="340"
-            height="260"
-            [attr.alt]="'home.logoAlt' | t"
-          />
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-layout">
+        <div class="hero-card">
+          <p class="kicker">{{ 'home.kicker' | t }}</p>
+          <div class="logo-wrap">
+            <img
+              class="logo"
+              src="/assets/brand/logo-las-salinas.png"
+              width="340"
+              height="260"
+              [attr.alt]="'home.logoAlt' | t"
+            />
+          </div>
+          <h1 class="headline">{{ 'home.headline' | t }}</h1>
+          <p class="tagline">{{ 'home.tagline' | t }}</p>
+          <div class="hero-actions">
+            <a class="btn-primary" routerLink="/carta">{{ 'home.ctaMenu' | t }}</a>
+            <a class="btn-outline" routerLink="/contacto">{{ 'home.ctaContact' | t }}</a>
+          </div>
         </div>
-        <h1 class="headline">{{ 'home.headline' | t }}</h1>
-        <p class="open-date">{{ 'home.openDate' | t }}</p>
-        <div class="tagline">
-          <p class="tagline-line">{{ 'home.line1' | t }}</p>
-          <p class="tagline-line tagline-thanks">{{ 'home.line2' | t }}</p>
+
+        <div
+          class="carousel-ui"
+          role="group"
+          [attr.aria-label]="'home.carouselLabel' | t"
+        >
+          <button
+            type="button"
+            class="carousel-arrow carousel-arrow--prev"
+            (click)="prevSlide()"
+            [attr.aria-label]="'home.carouselPrev' | t"
+          >‹</button>
+          <div class="carousel-dots">
+            @for (src of slides; track src; let i = $index) {
+              <button
+                type="button"
+                class="carousel-dot"
+                [class.is-active]="i === activeIndex()"
+                (click)="goToSlide(i)"
+                [attr.aria-label]="('home.carouselGoTo' | t) + ' ' + (i + 1)"
+                [attr.aria-current]="i === activeIndex() ? 'true' : null"
+              ></button>
+            }
+          </div>
+          <button
+            type="button"
+            class="carousel-arrow carousel-arrow--next"
+            (click)="nextSlide()"
+            [attr.aria-label]="'home.carouselNext' | t"
+          >›</button>
         </div>
-        <span class="wave" aria-hidden="true"></span>
       </div>
 
       <p class="photo-credit">{{ 'home.photoCaption' | t }}</p>
     </section>
+
+    <section class="home-strip" aria-label="Información rápida">
+      <div class="home-strip-inner">
+        <article class="strip-card">
+          <span class="strip-icon" aria-hidden="true">🍽</span>
+          <h2 class="strip-title">{{ 'home.stripMenuTitle' | t }}</h2>
+          <p class="strip-text">{{ 'home.stripMenuText' | t }}</p>
+          <a class="strip-link" routerLink="/carta">{{ 'home.ctaMenu' | t }} →</a>
+        </article>
+        <article class="strip-card">
+          <span class="strip-icon" aria-hidden="true">📍</span>
+          <h2 class="strip-title">{{ 'home.stripLocationTitle' | t }}</h2>
+          <p class="strip-text">{{ 'home.stripLocationText' | t }}</p>
+          <a class="strip-link" routerLink="/contacto">{{ 'home.ctaContact' | t }} →</a>
+        </article>
+        <article class="strip-card strip-card--accent">
+          <span class="strip-icon" aria-hidden="true">⚓</span>
+          <h2 class="strip-title">{{ 'home.stripSeaTitle' | t }}</h2>
+          <p class="strip-text">{{ 'home.stripSeaText' | t }}</p>
+        </article>
+      </div>
+    </section>
   `,
   styleUrls: ['./home-page.component.scss'],
 })
-export class HomePageComponent {
-  readonly i18n = inject(I18nService);
-  readonly langs: AppLang[] = ['es', 'en', 'de'];
+export class HomePageComponent implements OnInit, OnDestroy {
+  readonly slides = HOME_CAROUSEL_IMAGES;
+  readonly activeIndex = signal(0);
 
-  async pickLang(lang: AppLang): Promise<void> {
-    await this.i18n.useLanguage(lang);
+  private timer: ReturnType<typeof setInterval> | null = null;
+  private reducedMotion = false;
+
+  ngOnInit(): void {
+    if (typeof window !== 'undefined') {
+      this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+    if (!this.reducedMotion && this.slides.length > 1) {
+      this.timer = setInterval(() => this.nextSlide(), HOME_CAROUSEL_INTERVAL_MS);
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.timer) clearInterval(this.timer);
+  }
+
+  nextSlide(): void {
+    const n = this.slides.length;
+    if (n < 2) return;
+    this.activeIndex.update(i => (i + 1) % n);
+    this.restartAutoplay();
+  }
+
+  prevSlide(): void {
+    const n = this.slides.length;
+    if (n < 2) return;
+    this.activeIndex.update(i => (i - 1 + n) % n);
+    this.restartAutoplay();
+  }
+
+  goToSlide(index: number): void {
+    this.activeIndex.set(index);
+    this.restartAutoplay();
+  }
+
+  private restartAutoplay(): void {
+    if (this.reducedMotion || this.slides.length < 2) return;
+    if (this.timer) clearInterval(this.timer);
+    this.timer = setInterval(() => this.nextSlide(), HOME_CAROUSEL_INTERVAL_MS);
   }
 }

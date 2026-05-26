@@ -1,0 +1,173 @@
+{
+  "sections": {
+    "entrantes": "Entrantes",
+    "salsas": "Salsas",
+    "pescados": "Pescados del Atlántico",
+    "carnes": "Carnes",
+    "postres": "Postres Caseros",
+    "domingos": "Especiales Domingos",
+    "encargo": "Por Encargo"
+  },
+  "pills": {
+    "salsas": {
+      "0": "Alioli",
+      "1": "Mojo Rojo",
+      "2": "Mojo Verde",
+      "3": "Salsa de arándanos"
+    }
+  },
+  "items": {
+    "entrantes": {
+      "0": {
+        "name": "Papas arrugadas",
+        "description": "Con mojo rojo o mojo verde"
+      },
+      "1": {
+        "name": "Queso canario",
+        "description": "Queso tierno y queso semiduro"
+      },
+      "2": {
+        "name": "Queso frito con mermelada de arándanos"
+      },
+      "3": {
+        "name": "Pimientos de padrón"
+      },
+      "4": {
+        "name": "Ensalada mixta",
+        "description": "Lechuga, tomate, cebolla, aceitunas, huevo"
+      },
+      "5": {
+        "name": "Ensaladilla rusa"
+      },
+      "6": {
+        "name": "Gambas al ajillo",
+        "description": "Aceite de oliva, ajo, guindilla"
+      },
+      "7": {
+        "name": "Pulpo a la vinagreta"
+      },
+      "8": {
+        "name": "Pulpo a la gallega",
+        "description": "Pimentón, aceite de oliva, patata"
+      },
+      "9": {
+        "name": "Gofio escaldado"
+      },
+      "10": {
+        "name": "Puntitas de calamar"
+      },
+      "11": {
+        "name": "Mejillones a la vinagreta"
+      },
+      "12": {
+        "name": "Gambas a la gabardina",
+        "description": "Rebozadas, crujientes"
+      },
+      "13": {
+        "name": "Pan"
+      }
+    },
+    "pescados": {
+      "0": {
+        "name": "Pescado a la plancha",
+        "description": "Según disponibilidad del día"
+      },
+      "1": {
+        "name": "Pescado empanado"
+      },
+      "2": {
+        "name": "Tacos de pescado",
+        "description": "A la plancha, con guarnición"
+      },
+      "3": {
+        "name": "Croquetas de pescado caseras"
+      },
+      "4": {
+        "name": "Chipirones fritos"
+      },
+      "5": {
+        "name": "Chipirones a la plancha"
+      },
+      "6": {
+        "name": "Calamares fritos"
+      },
+      "7": {
+        "name": "Calamares a la plancha"
+      },
+      "8": {
+        "name": "★ Combo Las Salinas",
+        "description": "Tacos de pescado, choco, pulpo frito, papas arrugadas y ensalada de col"
+      },
+      "9": {
+        "name": "Chocos fritos"
+      },
+      "10": {
+        "name": "Morena frita"
+      },
+      "11": {
+        "name": "Churros de pescado"
+      },
+      "12": {
+        "name": "Pescado frito al peso",
+        "description": "Precio por 100g"
+      },
+      "13": {
+        "name": "Atún a la plancha"
+      }
+    },
+    "carnes": {
+      "0": {
+        "name": "Vuelta de ternera a la plancha",
+        "description": "Con guarnición de la casa"
+      },
+      "1": {
+        "name": "Pechuga de pollo a la plancha"
+      },
+      "2": {
+        "name": "Carne de cerdo frita",
+        "description": "Con papas arrugadas y mojo"
+      }
+    },
+    "postres": {
+      "0": {
+        "name": "Mousse de chocolate"
+      },
+      "1": {
+        "name": "Natillas"
+      },
+      "2": {
+        "name": "Arroz con leche"
+      },
+      "3": {
+        "name": "Porción de tarta",
+        "description": "Preguntar disponibilidad"
+      },
+      "4": {
+        "name": "Polvito uruguayo",
+        "description": "Galleta y dulce de leche"
+      }
+    },
+    "domingos": {
+      "0": {
+        "name": "🥘 Paella",
+        "description": "De marisco o mixta · Solo domingos"
+      },
+      "1": {
+        "name": "🍲 Sancocho canario",
+        "description": "Cherne, papas, mojo y gofio · Solo domingos"
+      }
+    },
+    "encargo": {
+      "0": {
+        "name": "Caldo de pescado",
+        "description": "Bajo pedido previo, para llevar",
+        "note": "Consúltenos con antelación"
+      },
+      "1": {
+        "name": "Paella para llevar",
+        "description": "Bajo pedido previo · para grupos",
+        "note": "Consúltenos con antelación"
+      }
+    }
+  }
+}

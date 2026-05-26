@@ -37,23 +37,22 @@ interface AllergenInfo {
 export class AllergenIconComponent {
   @Input() code!: AllergenCode;
 
-  private readonly SPRITE = '/assets/allergens/sprite.svg';
-
+  /* Referencia interna (#id): imprime en Chrome; el sprite está en index.html */
   private readonly MAP: Record<AllergenCode, AllergenInfo> = {
-    gluten:      { label: 'Cereales que contengan gluten', href: `${this.SPRITE}#gluten` },
-    crustaceos:  { label: 'Crustáceos', href: `${this.SPRITE}#crustaceos` },
-    huevo:       { label: 'Huevos', href: `${this.SPRITE}#huevo` },
-    pescado:     { label: 'Pescado', href: `${this.SPRITE}#pescado` },
-    lacteos:     { label: 'Leche', href: `${this.SPRITE}#lacteos` },
-    frutosSecos: { label: 'Frutos de cáscara', href: `${this.SPRITE}#frutosSecos` },
-    mostaza:     { label: 'Mostaza', href: `${this.SPRITE}#mostaza` },
-    moluscos:    { label: 'Moluscos', href: `${this.SPRITE}#moluscos` },
-    soja:        { label: 'Soja', href: `${this.SPRITE}#soja` },
-    apio:        { label: 'Apio', href: `${this.SPRITE}#apio` },
-    sesamo:      { label: 'Granos de sésamo', href: `${this.SPRITE}#sesamo` },
-    altramuces:  { label: 'Altramuces', href: `${this.SPRITE}#altramuces` },
-    sulfitos:    { label: 'Dióxido de azufre y sulfitos', href: `${this.SPRITE}#sulfitos` },
-    cacahuetes:  { label: 'Cacahuetes', href: `${this.SPRITE}#cacahuetes` },
+    gluten:      { label: 'Cereales que contengan gluten', href: '#gluten' },
+    crustaceos:  { label: 'Crustáceos', href: '#crustaceos' },
+    huevo:       { label: 'Huevos', href: '#huevo' },
+    pescado:     { label: 'Pescado', href: '#pescado' },
+    lacteos:     { label: 'Leche', href: '#lacteos' },
+    frutosSecos: { label: 'Frutos de cáscara', href: '#frutosSecos' },
+    mostaza:     { label: 'Mostaza', href: '#mostaza' },
+    moluscos:    { label: 'Moluscos', href: '#moluscos' },
+    soja:        { label: 'Soja', href: '#soja' },
+    apio:        { label: 'Apio', href: '#apio' },
+    sesamo:      { label: 'Granos de sésamo', href: '#sesamo' },
+    altramuces:  { label: 'Altramuces', href: '#altramuces' },
+    sulfitos:    { label: 'Dióxido de azufre y sulfitos', href: '#sulfitos' },
+    cacahuetes:  { label: 'Cacahuetes', href: '#cacahuetes' },
   };
 
   get info(): AllergenInfo {

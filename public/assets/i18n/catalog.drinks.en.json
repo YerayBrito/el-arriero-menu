@@ -9,6 +9,7 @@
     "cervezas": "Beers",
     "vodka": "Vodka",
     "aperitivos": "Aperitifs",
+    "vinos": "Wines",
     "rones": "Rum",
     "brandy": "Brandy",
     "ginebra": "Gin",
@@ -16,16 +17,17 @@
   },
   "items": {
     "refrescos": {
-      "0": { "name": "Still / sparkling water" },
-      "1": { "name": "Coca-Cola" },
-      "2": { "name": "Coca-Cola Zero" },
-      "3": { "name": "Clipper (lemon-lime soda)" },
-      "4": { "name": "Lemon Fanta" },
-      "5": { "name": "Orange Fanta" },
-      "6": { "name": "Tonic water" },
-      "7": { "name": "Aquarius (still soft drink)" },
-      "8": { "name": "7 Up" },
-      "9": { "name": "Licor 43" }
+      "0": { "name": "Fuze Tea" },
+      "1": { "name": "Small bottled water" },
+      "2": { "name": "Coca-Cola" },
+      "3": { "name": "Coca-Cola Zero" },
+      "4": { "name": "Appletiser" },
+      "5": { "name": "Lemon Fanta" },
+      "6": { "name": "Orange Fanta" },
+      "7": { "name": "Tonic water" },
+      "8": { "name": "Aquarius (still soft drink)" },
+      "9": { "name": "7 Up" },
+      "10": { "name": "Red Bull / Monster" }
     },
     "zumos": {
       "0": { "name": "Fresh orange juice" },
@@ -42,19 +44,19 @@
       "7": { "name": "Herbal infusions" }
     },
     "licores": {
-      "0": { "name": "Triple Sec" },
-      "1": { "name": "Amaretto" },
-      "2": { "name": "Coffee liqueur" },
+      "0": { "name": "Tequila" },
+      "1": { "name": "Triple Sec" },
+      "2": { "name": "Amaretto" },
       "3": { "name": "Baileys" },
       "4": { "name": "Tia Maria" },
       "5": { "name": "Orujo cream liqueur" },
       "6": { "name": "Jägermeister" },
-      "7": { "name": "Frangelico" }
+      "7": { "name": "Frangelico" },
+      "8": { "name": "Malibu" }
     },
     "chupitos": {
       "0": { "name": "Shots" },
-      "1": { "name": "Premium shots" },
-      "2": { "name": "Complimentary shot" }
+      "1": { "name": "Premium shots" }
     },
     "cocteles": {
       "0": { "name": "Mojito" },
@@ -64,26 +66,38 @@
       "4": { "name": "Daiquiri" },
       "5": { "name": "Aperol Spritz" },
       "6": { "name": "Strawberry daiquiri" },
-      "7": { "name": "Espresso Martini" }
+      "7": { "name": "Espresso Martini" },
+      "8": { "name": "Campari Spritz" }
     },
     "cervezas": {
-      "0": { "name": "Draught beer (caña)" },
-      "1": { "name": "Beer pitcher" },
-      "2": { "name": "Alcohol-free beer 0.0%" },
-      "3": { "name": "Gluten-free beer" },
-      "4": { "name": "Beer with lemon" },
-      "5": { "name": "Small bottle" },
-      "6": { "name": "Can" }
+      "0": { "name": "Tropical (draught)" },
+      "1": { "name": "Draught beer (caña)" },
+      "2": { "name": "Beer pitcher" },
+      "3": { "name": "Alcohol-free beer 0.0%" },
+      "4": { "name": "Gluten-free beer" },
+      "5": { "name": "Beer with lemon" },
+      "6": { "name": "Tropical small bottle" },
+      "7": { "name": "Can" },
+      "8": { "name": "Dorada" },
+      "9": { "name": "Dorada Especial" },
+      "10": { "name": "Dorada without lemon" },
+      "11": { "name": "Corona" }
     },
     "vodka": {
       "0": { "name": "Smirnoff" },
       "1": { "name": "Absolut" }
     },
     "aperitivos": {
-      "0": { "name": "Martini" },
-      "1": { "name": "Aperol" },
-      "2": { "name": "Campari" },
-      "3": { "name": "Tio Pepe (fino sherry)" }
+      "0": { "name": "Licor 43" },
+      "1": { "name": "Martini" },
+      "2": { "name": "Aperol" },
+      "3": { "name": "Campari" },
+      "4": { "name": "Tio Pepe (fino sherry)" },
+      "5": { "name": "Limoncello" }
+    },
+    "vinos": {
+      "0": { "name": "House red wine" },
+      "1": { "name": "House white wine" }
     },
     "rones": {
       "0": { "name": "Arehucas Blanco" },
@@ -92,9 +106,8 @@
       "3": { "name": "Brugal Añejo" },
       "4": { "name": "Havana Club 3 años" },
       "5": { "name": "Havana Club 7 años" },
-      "6": { "name": "Diplomático" },
-      "7": { "name": "Ron Telde" },
-      "8": { "name": "Honey rum" }
+      "6": { "name": "Ron Telde" },
+      "7": { "name": "Honey rum" }
     },
     "brandy": {
       "0": { "name": "Veterano" },
@@ -107,8 +120,7 @@
       "1": { "name": "Bombay Sapphire" },
       "2": { "name": "Tanqueray" },
       "3": { "name": "Gordon's" },
-      "4": { "name": "Martin Miller's" },
-      "5": { "name": "Puerto de Indias" }
+      "4": { "name": "Puerto de Indias" }
     },
     "whisky": {
       "0": { "name": "Haig" },
@@ -116,7 +128,7 @@
       "2": { "name": "100 Pipers" },
       "3": { "name": "Johnnie Walker Red Label" },
       "4": { "name": "Johnnie Walker Black Label" },
-      "5": { "name": "Chivas Regal" },
+      "5": { "name": "Chivas Regal 12 years" },
       "6": { "name": "Ballantine's" },
       "7": { "name": "Jack Daniel's" },
       "8": { "name": "Jameson" }

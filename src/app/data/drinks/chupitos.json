@@ -3,8 +3,7 @@
   "icon": "🥂",
   "title": "Chupitos",
   "items": [
-    { "name": "Chupitos", "price": "0,00€" },
-    { "name": "Premium", "price": "0,00€" },
-    { "name": "Invitación", "price": "0,00€" }
+    { "name": "Chupitos", "price": "1,00€" },
+    { "name": "Premium", "price": "2,00€" }
   ]
 }

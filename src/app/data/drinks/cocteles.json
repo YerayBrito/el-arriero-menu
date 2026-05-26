@@ -3,13 +3,14 @@
   "icon": "🍹",
   "title": "Cócteles",
   "items": [
-    { "name": "Mojito", "price": "0,00€" },
-    { "name": "Mojito de fresa", "price": "0,00€" },
-    { "name": "Piña colada", "price": "0,00€" },
-    { "name": "Sex on the Beach", "price": "0,00€" },
-    { "name": "Daiquiri", "price": "0,00€" },
-    { "name": "Aperol Spritz", "price": "0,00€" },
-    { "name": "Daiquiri de fresa", "price": "0,00€" },
-    { "name": "Espresso Martini", "price": "0,00€" }
+    { "name": "Mojito", "price": "7,50€" },
+    { "name": "Mojito de fresa", "price": "8,00€" },
+    { "name": "Piña colada", "price": "7,50€" },
+    { "name": "Sex on the Beach", "price": "7,50€" },
+    { "name": "Daiquiri", "price": "7,50€" },
+    { "name": "Aperol Spritz", "price": "7,00€" },
+    { "name": "Daiquiri de fresa", "price": "8,00€" },
+    { "name": "Espresso Martini", "price": "7,00€" },
+    { "name": "Campari Spritz", "price": "7,50€" }
   ]
 }

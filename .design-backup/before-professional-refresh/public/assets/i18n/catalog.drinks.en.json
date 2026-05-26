@@ -1,0 +1,125 @@
+{
+  "sections": {
+    "refrescos": "Soft Drinks",
+    "zumos": "Juices",
+    "cafe": "Coffee",
+    "licores": "Liqueurs",
+    "chupitos": "Shots",
+    "cocteles": "Cocktails",
+    "cervezas": "Beers",
+    "vodka": "Vodka",
+    "aperitivos": "Aperitifs",
+    "rones": "Rum",
+    "brandy": "Brandy",
+    "ginebra": "Gin",
+    "whisky": "Whisky"
+  },
+  "items": {
+    "refrescos": {
+      "0": { "name": "Still / sparkling water" },
+      "1": { "name": "Coca-Cola" },
+      "2": { "name": "Coca-Cola Zero" },
+      "3": { "name": "Clipper (lemon-lime soda)" },
+      "4": { "name": "Lemon Fanta" },
+      "5": { "name": "Orange Fanta" },
+      "6": { "name": "Tonic water" },
+      "7": { "name": "Aquarius (still soft drink)" },
+      "8": { "name": "7 Up" },
+      "9": { "name": "Licor 43" }
+    },
+    "zumos": {
+      "0": { "name": "Fresh orange juice" },
+      "1": { "name": "Mixed fruit juice" }
+    },
+    "cafe": {
+      "0": { "name": "Espresso" },
+      "1": { "name": "Coffee with milk" },
+      "2": { "name": "Cortado" },
+      "3": { "name": "Long cortado" },
+      "4": { "name": "Barraquito" },
+      "5": { "name": "Coffee with condensed milk (bombón)" },
+      "6": { "name": "Cappuccino" },
+      "7": { "name": "Herbal infusions" }
+    },
+    "licores": {
+      "0": { "name": "Triple Sec" },
+      "1": { "name": "Amaretto" },
+      "2": { "name": "Coffee liqueur" },
+      "3": { "name": "Baileys" },
+      "4": { "name": "Tia Maria" },
+      "5": { "name": "Orujo cream liqueur" },
+      "6": { "name": "Jägermeister" },
+      "7": { "name": "Frangelico" }
+    },
+    "chupitos": {
+      "0": { "name": "Shots" },
+      "1": { "name": "Premium shots" },
+      "2": { "name": "Complimentary shot" }
+    },
+    "cocteles": {
+      "0": { "name": "Mojito" },
+      "1": { "name": "Strawberry mojito" },
+      "2": { "name": "Piña colada" },
+      "3": { "name": "Sex on the Beach" },
+      "4": { "name": "Daiquiri" },
+      "5": { "name": "Aperol Spritz" },
+      "6": { "name": "Strawberry daiquiri" },
+      "7": { "name": "Espresso Martini" }
+    },
+    "cervezas": {
+      "0": { "name": "Draught beer (caña)" },
+      "1": { "name": "Beer pitcher" },
+      "2": { "name": "Alcohol-free beer 0.0%" },
+      "3": { "name": "Gluten-free beer" },
+      "4": { "name": "Beer with lemon" },
+      "5": { "name": "Small bottle" },
+      "6": { "name": "Can" }
+    },
+    "vodka": {
+      "0": { "name": "Smirnoff" },
+      "1": { "name": "Absolut" }
+    },
+    "aperitivos": {
+      "0": { "name": "Martini" },
+      "1": { "name": "Aperol" },
+      "2": { "name": "Campari" },
+      "3": { "name": "Tio Pepe (fino sherry)" }
+    },
+    "rones": {
+      "0": { "name": "Arehucas Blanco" },
+      "1": { "name": "Arehucas Gold" },
+      "2": { "name": "Bacardí" },
+      "3": { "name": "Brugal Añejo" },
+      "4": { "name": "Havana Club 3 años" },
+      "5": { "name": "Havana Club 7 años" },
+      "6": { "name": "Diplomático" },
+      "7": { "name": "Ron Telde" },
+      "8": { "name": "Honey rum" }
+    },
+    "brandy": {
+      "0": { "name": "Veterano" },
+      "1": { "name": "Magno" },
+      "2": { "name": "Carlos III" },
+      "3": { "name": "Carlos I" }
+    },
+    "ginebra": {
+      "0": { "name": "Beefeater" },
+      "1": { "name": "Bombay Sapphire" },
+      "2": { "name": "Tanqueray" },
+      "3": { "name": "Gordon's" },
+      "4": { "name": "Martin Miller's" },
+      "5": { "name": "Puerto de Indias" }
+    },
+    "whisky": {
+      "0": { "name": "Haig" },
+      "1": { "name": "J&B" },
+      "2": { "name": "100 Pipers" },
+      "3": { "name": "Johnnie Walker Red Label" },
+      "4": { "name": "Johnnie Walker Black Label" },
+      "5": { "name": "Chivas Regal" },
+      "6": { "name": "Ballantine's" },
+      "7": { "name": "Jack Daniel's" },
+      "8": { "name": "Jameson" }
+    }
+  }
+}

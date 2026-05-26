@@ -3,9 +3,9 @@
   "icon": "🥃",
   "title": "Brandy",
   "items": [
-    { "name": "Veterano", "price": "0,00€" },
-    { "name": "Magno", "price": "0,00€" },
-    { "name": "Carlos III", "price": "0,00€" },
-    { "name": "Carlos I", "price": "0,00€" }
+    { "name": "Veterano", "price": "2,50€" },
+    { "name": "Magno", "price": "2,70€" },
+    { "name": "Carlos III", "price": "2,70€" },
+    { "name": "Carlos I", "price": "4,00€" }
   ]
 }

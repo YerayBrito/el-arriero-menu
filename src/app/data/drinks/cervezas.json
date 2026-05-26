@@ -3,12 +3,17 @@
   "icon": "🍺",
   "title": "Cervezas",
   "items": [
-    { "name": "Caña", "price": "0,00€" },
-    { "name": "Jarra", "price": "0,00€" },
-    { "name": "Cerveza 0,0", "price": "0,00€" },
-    { "name": "Sin gluten", "price": "0,00€" },
-    { "name": "Con limón", "price": "0,00€" },
-    { "name": "Botellín", "price": "0,00€" },
-    { "name": "Lata", "price": "0,00€" }
+    { "name": "Tropical", "price": "1,80€" },
+    { "name": "Caña", "price": "1,80€" },
+    { "name": "Jarra", "price": "2,50€" },
+    { "name": "Cerveza 0,0", "price": "2,00€" },
+    { "name": "Sin gluten", "price": "2,20€" },
+    { "name": "Con limón", "price": "2,20€" },
+    { "name": "Botellín Tropical", "price": "1,20€" },
+    { "name": "Lata", "price": "1,50€" },
+    { "name": "Dorada", "price": "2,00€" },
+    { "name": "Dorada Especial", "price": "2,90€" },
+    { "name": "Dorada sin limón", "price": "2,10€" },
+    { "name": "Corona", "price": "3,00€" }
   ]
 }

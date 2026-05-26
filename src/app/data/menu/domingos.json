@@ -5,18 +5,17 @@
   "items": [
     {
       "name": "🥘 Paella",
-      "description": "De marisco o mixta · Solo domingos",
-      "price": "00,00€",
+      "description": "De marisco o mixta · Solo domingos · Por ración",
+      "price": "14,80€",
       "allergens": ["crustaceos", "moluscos", "pescado"],
       "highlight": true
     },
     {
       "name": "🍲 Sancocho canario",
-      "description": "Cherne, papas, mojo y gofio · Solo domingos",
-      "price": "00,00€",
+      "description": "Cherne, papas, mojo y gofio · Solo domingos · Por ración",
+      "price": "14,80€",
       "allergens": ["pescado", "gluten"],
       "highlight": true
     }
   ]
 }
-

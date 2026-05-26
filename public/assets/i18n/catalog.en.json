@@ -1,161 +1,156 @@
 {
   "sections": {
     "entrantes": "Starters",
+    "ensaladas": "Salads",
     "salsas": "Sauces",
-    "pescados": "Atlantic Fish",
+    "pescados": "Seafood",
     "carnes": "Meat",
+    "bocadillos": "Sandwiches",
     "postres": "Homemade Desserts",
     "domingos": "Sunday Specials",
     "encargo": "Pre-Order"
   },
-  "pills": {
-    "salsas": {
-      "0": "Garlic aioli",
-      "1": "Red mojo",
-      "2": "Green mojo",
-      "3": "Blueberry sauce"
-    }
-  },
   "items": {
+    "salsas": {
+      "0": { "name": "Garlic aioli", "description": "Mayonnaise, garlic, parsley" },
+      "1": { "name": "Red mojo" },
+      "2": { "name": "Green mojo" },
+      "3": { "name": "Blueberry sauce" }
+    },
+    "ensaladas": {
+      "0": {
+        "name": "Mixed salad",
+        "description": "Lettuce, carrot, olives, onion, tuna, cucumber, tomato"
+      },
+      "1": {
+        "name": "Russian salad",
+        "description": "Potato, egg, fish and onion"
+      }
+    },
     "entrantes": {
       "0": {
         "name": "Wrinkly potatoes",
         "description": "With red or green mojo sauce"
       },
       "1": {
-        "name": "Canarian cheese board",
-        "description": "Fresh and semi-cured local cheese"
+        "name": "Canarian cheese",
+        "description": "Semi-cured cheese"
       },
       "2": {
-        "name": "Pan-fried cheese with blueberry compote"
+        "name": "Pan-fried cheese with blueberry compote",
+        "description": "Dairy, wheat flour, bread and egg"
       },
       "3": {
-        "name": "Padrón peppers"
+        "name": "Fish croquettes",
+        "description": "Butter, wheat flour, breadcrumbs, salt, pepper, nutmeg"
       },
       "4": {
-        "name": "Mixed salad",
-        "description": "Lettuce, tomato, onion, olives, egg"
+        "name": "Padrón peppers"
       },
       "5": {
-        "name": "Potato salad"
+        "name": "Prawns in garlic oil",
+        "description": "Garlic, chilli, salt, parsley and olive oil"
       },
       "6": {
-        "name": "Prawns in garlic oil",
-        "description": "Olive oil, garlic, dried chilli"
+        "name": "Galician-style octopus",
+        "description": "Salt, sweet or hot paprika and olive oil"
       },
       "7": {
-        "name": "Octopus vinaigrette"
+        "name": "Gofio escaldado",
+        "description": "Fish broth and gofio"
       },
       "8": {
-        "name": "Galician-style octopus",
-        "description": "Sweet paprika, olive oil, potato"
+        "name": "Crispy squid strips",
+        "description": "Wheat flour, salt"
       },
       "9": {
-        "name": "Gofio escaldado",
-        "description": "Traditional Canarian toasted grain porridge with fish broth"
+        "name": "Longorones",
+        "description": "Wheat flour, salt, pepper"
       },
       "10": {
-        "name": "Crispy squid strips"
-      },
-      "11": {
-        "name": "Mussels in vinaigrette"
-      },
-      "12": {
-        "name": "Prawns in beer batter",
-        "description": "Light crispy coating"
-      },
-      "13": {
         "name": "Bread"
       }
     },
     "pescados": {
       "0": {
-        "name": "Grilled catch of the day",
-        "description": "Ask your server for today's fish"
+        "name": "Fresh fish"
       },
       "1": {
-        "name": "Breaded fish fillet"
+        "name": "Grilled hake fillets",
+        "description": "Garlic, parsley and oil"
       },
       "2": {
-        "name": "Fish bites",
-        "description": "Grilled, served with a side"
+        "name": "Fish tacos with green mojo",
+        "description": "Fish, wheat flour, garlic, parsley, coriander, oregano, cumin, vinegar and oil"
       },
       "3": {
-        "name": "Homemade fish croquettes"
+        "name": "Baby squid grilled or fried",
+        "description": "Salt and wheat flour"
       },
       "4": {
-        "name": "Fried baby squid"
+        "name": "Fried calamari rings",
+        "description": "Salt and wheat flour"
       },
       "5": {
-        "name": "Grilled baby squid"
+        "name": "Fried cuttlefish",
+        "description": "Salt and wheat flour"
       },
       "6": {
-        "name": "Fried calamari rings"
+        "name": "Fried octopus with green mojo",
+        "description": "Garlic, coriander, pepper, oregano and cumin"
       },
       "7": {
-        "name": "Grilled calamari"
-      },
-      "8": {
-        "name": "★ Las Salinas platter",
-        "description": "Fish bites, cuttlefish, fried octopus, wrinkly potatoes and coleslaw"
-      },
-      "9": {
-        "name": "Fried cuttlefish"
-      },
-      "10": {
-        "name": "Fried moray eel"
-      },
-      "11": {
-        "name": "Fish goujons"
-      },
-      "12": {
-        "name": "Fried fish by weight",
-        "description": "Price per 100g"
-      },
-      "13": {
-        "name": "Grilled tuna steak"
+        "name": "★ Las Salinas Arinaga platter",
+        "description": "Fish tacos, fried cuttlefish, croquettes and wrinkly potatoes"
       }
     },
     "carnes": {
       "0": {
-        "name": "Grilled beef fillet",
-        "description": "With house side dish"
+        "name": "Grilled beef fillet"
       },
       "1": {
         "name": "Grilled chicken breast"
       },
       "2": {
-        "name": "Fried pork",
-        "description": "With wrinkly potatoes and mojo sauce"
+        "name": "Fried pork"
+      }
+    },
+    "bocadillos": {
+      "0": {
+        "name": "Cuttlefish sandwich",
+        "description": "Coleslaw and aioli"
+      },
+      "1": {
+        "name": "Baby squid sandwich",
+        "description": "Coleslaw and aioli"
+      },
+      "2": {
+        "name": "Chicken breast sandwich",
+        "description": "Lettuce, tomato and aioli"
+      },
+      "3": {
+        "name": "Beef fillet sandwich",
+        "description": "Lettuce, tomato and aioli"
+      },
+      "4": {
+        "name": "Extras",
+        "note": "Any extra (ham, cheese, egg): +€0.80 each"
       }
     },
     "postres": {
       "0": {
-        "name": "Chocolate mousse"
-      },
-      "1": {
-        "name": "Custard cream"
-      },
-      "2": {
-        "name": "Rice pudding"
-      },
-      "3": {
-        "name": "Slice of cake",
-        "description": "Ask your server for today's selection"
-      },
-      "4": {
-        "name": "Polvito uruguayo",
-        "description": "Biscuit crumble with dulce de leche"
+        "name": "Homemade desserts",
+        "description": "Subject to daily availability · Ask at the bar"
       }
     },
     "domingos": {
       "0": {
         "name": "🥘 Paella",
-        "description": "Seafood or mixed · Sundays only"
+        "description": "Seafood or mixed · Sundays only · Per portion"
       },
       "1": {
         "name": "🍲 Canarian sancocho",
-        "description": "Salt-cured grouper, potatoes, mojo and gofio · Sundays only"
+        "description": "Salt-cured grouper, potatoes, mojo and gofio · Sundays only · Per portion"
       }
     },
     "encargo": {
