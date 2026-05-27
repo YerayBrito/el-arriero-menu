@@ -1,5 +1,6 @@
 @use './app/styles/view-motion.scss';
 @use './app/styles/site-pages.scss';
+@use './app/styles/site-typography.scss';
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -28,7 +29,12 @@ html, body {
     linear-gradient(168deg, #faf6f0 0%, #f4ebe0 45%, #ebe0d4 100%);
   min-height: 100vh;
   color: var(--text);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }
 
 body {

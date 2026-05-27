@@ -31,7 +31,10 @@ import {
 
       <div class="hero-layout">
         <div class="hero-card">
-          <p class="kicker">{{ 'home.kicker' | t }}</p>
+          <p class="kicker">
+            <span class="kicker-chunk">{{ 'home.kickerPlace' | t }} ·</span>
+            <span class="kicker-chunk">{{ 'home.kickerRegion' | t }}</span>
+          </p>
           <div class="logo-wrap">
             <img
               class="logo"

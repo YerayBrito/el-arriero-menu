@@ -42,7 +42,7 @@
   a {
     color: rgba(255, 250, 244, 0.88);
     text-decoration: none;
-    font-family: 'Cinzel', serif;
+    font-family: var(--font-display);
     font-size: 10px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -88,7 +88,7 @@
 }
 
 .name {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-size: 12px;
@@ -96,6 +96,7 @@
 }
 
 .muted {
+  font-family: var(--font-body);
   color: rgba(255, 250, 244, 0.7);
   font-size: 12px;
   line-height: 1.45;
@@ -120,7 +121,7 @@
 
 .copyright {
   margin: 0;
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   font-size: 11px;
   letter-spacing: 0.06em;
   color: rgba(255, 250, 244, 0.82);
@@ -128,6 +129,7 @@
 
 .legal {
   margin: 0;
+  font-family: var(--font-body);
   font-size: 10px;
   line-height: 1.55;
   color: rgba(255, 250, 244, 0.5);

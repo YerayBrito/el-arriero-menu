@@ -13,7 +13,7 @@
 }
 
 .editor-head h1 {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   font-size: clamp(18px, 3vw, 22px);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -63,7 +63,7 @@
   border: none;
   background: rgba(250, 246, 240, 0.9);
   color: var(--muted, #5c5048);
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -122,7 +122,7 @@
 }
 
 .panel h2 {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   font-size: 15px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
