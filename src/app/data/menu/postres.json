@@ -1,13 +1,17 @@
 {
   "id": "postres",
-  "icon": "🍮",
+  "icon": "postres",
   "title": "Postres Caseros",
   "items": [
     {
       "name": "Postres caseros",
       "description": "Según disponibilidad del día · Pregunte en barra",
       "price": "4,00€",
-      "allergens": ["gluten", "huevo", "lacteos"]
+      "allergens": [
+        "gluten",
+        "huevo",
+        "lacteos"
+      ]
     }
   ]
 }

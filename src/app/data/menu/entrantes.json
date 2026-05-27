@@ -1,6 +1,6 @@
 {
   "id": "entrantes",
-  "icon": "🍽️",
+  "icon": "entrantes",
   "title": "Entrantes",
   "items": [
     {
@@ -12,19 +12,30 @@
       "name": "Queso canario",
       "description": "Queso semiduro",
       "price": "8,90€",
-      "allergens": ["lacteos"]
+      "allergens": [
+        "lacteos"
+      ]
     },
     {
       "name": "Queso frito con mermelada de arándanos",
       "description": "Lácteos, harina de trigo, pan y huevo",
       "price": "8,50€",
-      "allergens": ["lacteos", "gluten", "huevo"]
+      "allergens": [
+        "lacteos",
+        "gluten",
+        "huevo"
+      ]
     },
     {
       "name": "Croquetas de pescado",
       "description": "Mantequilla, harina de trigo, pan, sal, pimienta, nuez moscada",
       "price": "7,80€",
-      "allergens": ["gluten", "huevo", "lacteos", "pescado"]
+      "allergens": [
+        "gluten",
+        "huevo",
+        "lacteos",
+        "pescado"
+      ]
     },
     {
       "name": "Pimientos de padrón",
@@ -34,36 +45,51 @@
       "name": "Gambas al ajillo",
       "description": "Ajo, guindilla, sal, perejil y aceite de oliva",
       "price": "11,30€",
-      "allergens": ["crustaceos"]
+      "allergens": [
+        "crustaceos"
+      ]
     },
     {
       "name": "Pulpo a la gallega",
       "description": "Sal, pimentón dulce o picante y aceite de oliva",
       "price": "14,80€",
-      "allergens": ["moluscos"]
+      "allergens": [
+        "moluscos"
+      ]
     },
     {
       "name": "Gofio escaldado",
       "description": "Caldo de pescado y gofio",
       "price": "5,80€",
-      "allergens": ["gluten", "pescado"]
+      "allergens": [
+        "gluten",
+        "pescado"
+      ]
     },
     {
       "name": "Puntitas de calamar",
       "description": "Harina de trigo, sal",
       "price": "9,80€",
-      "allergens": ["gluten", "moluscos"]
+      "allergens": [
+        "gluten",
+        "moluscos"
+      ]
     },
     {
       "name": "Longorones",
       "description": "Harina de trigo, sal, pimienta",
       "price": "7,50€",
-      "allergens": ["gluten", "pescado"]
+      "allergens": [
+        "gluten",
+        "pescado"
+      ]
     },
     {
       "name": "Pan",
       "price": "0,80€",
-      "allergens": ["gluten"]
+      "allergens": [
+        "gluten"
+      ]
     }
   ]
 }

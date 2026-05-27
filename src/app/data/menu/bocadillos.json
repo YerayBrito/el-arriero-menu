@@ -1,31 +1,45 @@
 {
   "id": "bocadillos",
-  "icon": "🥪",
+  "icon": "bocadillos",
   "title": "Bocadillos",
   "items": [
     {
       "name": "Bocadillo de choco",
       "description": "Ensalada de col y alioli",
       "price": "4,80€",
-      "allergens": ["gluten", "huevo", "moluscos"]
+      "allergens": [
+        "gluten",
+        "huevo",
+        "moluscos"
+      ]
     },
     {
       "name": "Bocadillo de chipirones",
       "description": "Ensalada de col y alioli",
       "price": "4,80€",
-      "allergens": ["gluten", "huevo", "moluscos"]
+      "allergens": [
+        "gluten",
+        "huevo",
+        "moluscos"
+      ]
     },
     {
       "name": "Bocadillo de pechuga",
       "description": "Lechuga, tomate y alioli",
       "price": "4,10€",
-      "allergens": ["gluten", "huevo"]
+      "allergens": [
+        "gluten",
+        "huevo"
+      ]
     },
     {
       "name": "Bocadillo de vuelta",
       "description": "Lechuga, tomate y alioli",
       "price": "4,30€",
-      "allergens": ["gluten", "huevo"]
+      "allergens": [
+        "gluten",
+        "huevo"
+      ]
     },
     {
       "name": "Extras",

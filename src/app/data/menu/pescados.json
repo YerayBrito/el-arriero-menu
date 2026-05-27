@@ -1,54 +1,75 @@
 {
   "id": "pescados",
-  "icon": "🐟",
+  "icon": "pescados",
   "title": "Productos del Mar",
   "items": [
     {
       "name": "Pescado fresco",
       "price": "13,80€",
-      "allergens": ["pescado"]
+      "allergens": [
+        "pescado"
+      ]
     },
     {
       "name": "Filetes de merluza a la plancha",
       "description": "Ajo, perejil y aceite",
       "price": "12,80€",
-      "allergens": ["pescado"]
+      "allergens": [
+        "pescado"
+      ]
     },
     {
       "name": "Tacos de pescado con mojo verde",
       "description": "Pescado, harina de trigo, ajo, perejil, cilantro, orégano, comino, vinagre y aceite",
       "price": "12,80€",
-      "allergens": ["gluten", "pescado"]
+      "allergens": [
+        "gluten",
+        "pescado"
+      ]
     },
     {
       "name": "Chipirones a la plancha o fritos",
       "description": "Sal y harina de trigo",
       "price": "13,80€",
-      "allergens": ["gluten", "moluscos"]
+      "allergens": [
+        "gluten",
+        "moluscos"
+      ]
     },
     {
       "name": "Calamares fritos",
       "description": "Sal y harina de trigo",
       "price": "17,80€",
-      "allergens": ["gluten", "moluscos"]
+      "allergens": [
+        "gluten",
+        "moluscos"
+      ]
     },
     {
       "name": "Chocos fritos",
       "description": "Sal y harina de trigo",
       "price": "14,80€",
-      "allergens": ["gluten", "moluscos"]
+      "allergens": [
+        "gluten",
+        "moluscos"
+      ]
     },
     {
       "name": "Pulpo frito con mojo verde",
       "description": "Ajo, cilantro, pimiento, orégano y comino",
       "price": "17,50€",
-      "allergens": ["moluscos"]
+      "allergens": [
+        "moluscos"
+      ]
     },
     {
       "name": "★ Combo Las Salinas Arinaga",
       "description": "Tacos de pescado, choco frito, croquetas y papas arrugadas",
       "price": "18,80€",
-      "allergens": ["pescado", "moluscos"],
+      "allergens": [
+        "pescado",
+        "moluscos"
+      ],
       "highlight": true
     }
   ]

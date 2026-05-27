@@ -2,16 +2,17 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuSection } from '../../models/menu.model';
 import { AllergenIconComponent } from '../allergen-icon/allergen-icon.component';
+import { SectionIconComponent } from '../section-icon/section-icon.component';
 import { TranslatePipe } from '../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-menu-section',
   standalone: true,
-  imports: [CommonModule, AllergenIconComponent, TranslatePipe],
+  imports: [CommonModule, AllergenIconComponent, SectionIconComponent, TranslatePipe],
   template: `
     <div class="section">
       <div class="section-header">
-        <span class="section-icon">{{ section.icon }}</span>
+        <app-section-icon class="section-icon" [icon]="section.icon || section.id" />
         <span class="section-title">{{ section.title }}</span>
         <span class="section-deco">✦</span>
       </div>

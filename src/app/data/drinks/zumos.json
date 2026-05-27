@@ -1,9 +1,15 @@
 {
   "id": "zumos",
-  "icon": "🍊",
+  "icon": "zumos",
   "title": "Zumos",
   "items": [
-    { "name": "Zumo de naranja", "price": "3,50€" },
-    { "name": "Zumo variado", "price": "2,00€" }
+    {
+      "name": "Zumo de naranja",
+      "price": "3,50€"
+    },
+    {
+      "name": "Zumo variado",
+      "price": "2,00€"
+    }
   ]
 }

@@ -1,18 +1,51 @@
 {
   "id": "refrescos",
-  "icon": "🥤",
+  "icon": "refrescos",
   "title": "Refrescos",
   "items": [
-    { "name": "Fuze Tea", "price": "2,20€" },
-    { "name": "Agua pequeña", "price": "1,50€" },
-    { "name": "Coca-Cola", "price": "2,40€" },
-    { "name": "Coca-Cola Zero", "price": "2,40€" },
-    { "name": "Appletiser", "price": "2,60€" },
-    { "name": "Fanta Limón", "price": "2,40€" },
-    { "name": "Fanta Naranja", "price": "2,40€" },
-    { "name": "Tónica", "price": "2,20€" },
-    { "name": "Aquarius", "price": "2,40€" },
-    { "name": "7 Up", "price": "2,40€" },
-    { "name": "Red Bull / Monster", "price": "2,50€" }
+    {
+      "name": "Fuze Tea",
+      "price": "2,20€"
+    },
+    {
+      "name": "Agua pequeña",
+      "price": "1,50€"
+    },
+    {
+      "name": "Coca-Cola",
+      "price": "2,40€"
+    },
+    {
+      "name": "Coca-Cola Zero",
+      "price": "2,40€"
+    },
+    {
+      "name": "Appletiser",
+      "price": "2,60€"
+    },
+    {
+      "name": "Fanta Limón",
+      "price": "2,40€"
+    },
+    {
+      "name": "Fanta Naranja",
+      "price": "2,40€"
+    },
+    {
+      "name": "Tónica",
+      "price": "2,20€"
+    },
+    {
+      "name": "Aquarius",
+      "price": "2,40€"
+    },
+    {
+      "name": "7 Up",
+      "price": "2,40€"
+    },
+    {
+      "name": "Red Bull / Monster",
+      "price": "2,50€"
+    }
   ]
 }

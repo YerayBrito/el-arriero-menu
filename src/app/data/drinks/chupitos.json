@@ -1,9 +1,15 @@
 {
   "id": "chupitos",
-  "icon": "🥂",
+  "icon": "chupitos",
   "title": "Chupitos",
   "items": [
-    { "name": "Chupitos", "price": "1,00€" },
-    { "name": "Premium", "price": "2,00€" }
+    {
+      "name": "Chupitos",
+      "price": "1,00€"
+    },
+    {
+      "name": "Premium",
+      "price": "2,00€"
+    }
   ]
 }

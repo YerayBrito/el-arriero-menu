@@ -1,4 +1,5 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, computed, effect, inject, PLATFORM_ID, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -7,6 +8,7 @@ import { MENU_SECTIONS } from '../../data/menu.data';
 import { CartaKind, DRINKS_SECTIONS } from '../../data/drinks.data';
 import { MenuSection } from '../../models/menu.model';
 import { AllergenIconComponent } from '../../components/allergen-icon/allergen-icon.component';
+import { SectionIconComponent } from '../../components/section-icon/section-icon.component';
 import { TranslatePipe } from '../../i18n/translate.pipe';
 import { I18nService } from '../../i18n/i18n.service';
 
@@ -30,7 +32,7 @@ const LEGEND_CODES = [
 @Component({
   selector: 'app-menu-page',
   standalone: true,
-  imports: [CommonModule, AllergenIconComponent, TranslatePipe],
+  imports: [CommonModule, AllergenIconComponent, SectionIconComponent, TranslatePipe],
   template: `
     <div class="page-shell menu-page">
       <header class="page-hero">
@@ -91,7 +93,7 @@ const LEGEND_CODES = [
               [class.active]="activeSectionId() === s.id"
               (click)="selectSection(s.id)"
             >
-              <span class="nav-emoji" aria-hidden="true">{{ s.icon }}</span>
+              <app-section-icon class="nav-section-icon" [icon]="s.icon || s.id" />
               <span class="nav-label">{{ secTitle(s) }}</span>
             </button>
           }
@@ -110,7 +112,7 @@ const LEGEND_CODES = [
             >
               <header class="section-head" [class.section-head-triple]="s.hasTriplePricing">
                 <div class="section-title-block">
-                  <span class="emoji" aria-hidden="true">{{ s.icon }}</span>
+                  <app-section-icon class="head-section-icon" [icon]="s.icon || s.id" />
                   <h2 class="title" [id]="'nav-' + s.id">{{ secTitle(s) }}</h2>
                 </div>
                 @if (s.hasTriplePricing) {
@@ -218,6 +220,7 @@ export class MenuPageComponent {
   private readonly i18n = inject(I18nService);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
+  private readonly platformId = inject(PLATFORM_ID);
 
   readonly legendCodes = LEGEND_CODES;
 
@@ -285,9 +288,21 @@ export class MenuPageComponent {
       queryParamsHandling: 'merge',
       replaceUrl: true,
     });
+    this.scrollActiveNavIntoView();
   }
 
   selectSection(id: string): void {
     this.activeSectionId.set(id);
+    this.scrollActiveNavIntoView();
+  }
+
+  /** Evita que el ítem activo quede recortado cuando la lista de bebidas hace scroll. */
+  private scrollActiveNavIntoView(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    queueMicrotask(() => {
+      const nav = document.querySelector('.menu-page .menu-nav');
+      const active = nav?.querySelector('.nav-item.active');
+      active?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    });
   }
 }

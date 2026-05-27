@@ -6,6 +6,7 @@ import { MenuItem, MenuSection } from '../../models/menu.model';
 import { I18nService } from '../../i18n/i18n.service';
 import { TranslatePipe } from '../../i18n/translate.pipe';
 import { AllergenIconComponent } from '../../components/allergen-icon/allergen-icon.component';
+import { SectionIconComponent } from '../../components/section-icon/section-icon.component';
 
 export type OrderPriceFormat = 'tapa' | 'media' | 'racion' | 'single';
 
@@ -41,7 +42,7 @@ function lineKey(sectionId: string, itemIndex: number, format: OrderPriceFormat)
 @Component({
   selector: 'app-pedidos-local-page',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslatePipe, AllergenIconComponent],
+  imports: [CommonModule, RouterLink, TranslatePipe, AllergenIconComponent, SectionIconComponent],
   templateUrl: './pedidos-local-page.component.html',
   styleUrls: ['./pedidos-local-page.component.scss'],
 })

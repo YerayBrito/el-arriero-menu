@@ -1,15 +1,39 @@
 {
   "id": "rones",
-  "icon": "🥃",
+  "icon": "rones",
   "title": "Rones",
   "items": [
-    { "name": "Arehucas Blanco", "price": "2,00€" },
-    { "name": "Arehucas Gold", "price": "2,00€" },
-    { "name": "Bacardí", "price": "2,50€" },
-    { "name": "Brugal Añejo", "price": "3,80€" },
-    { "name": "Havana 3", "price": "2,70€" },
-    { "name": "Havana 7", "price": "3,70€" },
-    { "name": "Ron Telde", "price": "2,20€" },
-    { "name": "Ron miel", "price": "2,50€" }
+    {
+      "name": "Arehucas Blanco",
+      "price": "2,00€"
+    },
+    {
+      "name": "Arehucas Gold",
+      "price": "2,00€"
+    },
+    {
+      "name": "Bacardí",
+      "price": "2,50€"
+    },
+    {
+      "name": "Brugal Añejo",
+      "price": "3,80€"
+    },
+    {
+      "name": "Havana 3",
+      "price": "2,70€"
+    },
+    {
+      "name": "Havana 7",
+      "price": "3,70€"
+    },
+    {
+      "name": "Ron Telde",
+      "price": "2,20€"
+    },
+    {
+      "name": "Ron miel",
+      "price": "2,50€"
+    }
   ]
 }

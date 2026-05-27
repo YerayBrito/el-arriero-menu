@@ -181,8 +181,12 @@
 }
 
 .kiosk-rail-ico {
-  font-size: 28px;
-  line-height: 1;
+  --section-icon-color: var(--gold, #b8933e);
+
+  ::ng-deep .section-icon-host {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 .kiosk-rail-label {
@@ -269,7 +273,12 @@
 }
 
 .kiosk-block-ico {
-  font-size: 26px;
+  --section-icon-color: var(--gold, #b8933e);
+
+  ::ng-deep .section-icon-host {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 .kiosk-tiles {
@@ -303,10 +312,14 @@
     linear-gradient(145deg, #dbeafe, #e0f2fe);
 }
 
-.kiosk-tile-emoji {
-  font-size: 64px;
-  line-height: 1;
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+.kiosk-tile-ico {
+  --section-icon-color: #8b5a3c;
+
+  ::ng-deep .section-icon-host {
+    width: 56px;
+    height: 56px;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.12));
+  }
 }
 
 .kiosk-tile-main {

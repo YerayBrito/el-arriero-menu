@@ -1,12 +1,27 @@
 {
   "id": "ginebra",
-  "icon": "🍸",
+  "icon": "ginebra",
   "title": "Ginebra",
   "items": [
-    { "name": "Beefeater", "price": "2,80€" },
-    { "name": "Bombay", "price": "2,80€" },
-    { "name": "Tanqueray", "price": "2,80€" },
-    { "name": "Gordon's", "price": "2,80€" },
-    { "name": "Puerto de Indias", "price": "3,00€" }
+    {
+      "name": "Beefeater",
+      "price": "2,80€"
+    },
+    {
+      "name": "Bombay",
+      "price": "2,80€"
+    },
+    {
+      "name": "Tanqueray",
+      "price": "2,80€"
+    },
+    {
+      "name": "Gordon's",
+      "price": "2,80€"
+    },
+    {
+      "name": "Puerto de Indias",
+      "price": "3,00€"
+    }
   ]
 }

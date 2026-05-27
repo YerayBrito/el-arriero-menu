@@ -293,7 +293,9 @@
         <h2 id="tit-cat">Nueva categoría</h2>
         <div class="fieldset">
           <label>ID (slug, minúsculas) <input type="text" [(ngModel)]="newId" name="nid" placeholder="ej. tapas-frias" /></label>
-          <label>Icono (emoji) <input type="text" [(ngModel)]="newIcon" name="nic" /></label>
+          <label>Icono (id, opcional; por defecto el ID de la categoría)
+            <input type="text" [(ngModel)]="newIcon" name="nic" placeholder="entrantes, cervezas…" />
+          </label>
           <label>Título <input type="text" [(ngModel)]="newTitle" name="nt" /></label>
           <label>Subtítulo (opcional) <input type="text" [(ngModel)]="newSubtitle" name="ns" /></label>
           @if (!isDrinks()) {

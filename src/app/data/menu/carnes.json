@@ -1,6 +1,6 @@
 {
   "id": "carnes",
-  "icon": "🥩",
+  "icon": "carnes",
   "title": "Carnes",
   "hasTriplePricing": true,
   "halfRacionOnly": true,
@@ -15,8 +15,10 @@
     },
     {
       "name": "Carne de cerdo frita",
-      "triplePrice": { "media": "8,90€", "racion": "10,80€" }
+      "triplePrice": {
+        "media": "8,90€",
+        "racion": "10,80€"
+      }
     }
   ]
 }
-

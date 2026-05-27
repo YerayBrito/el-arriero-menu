@@ -165,7 +165,7 @@ export class MenuEditorLocalPageComponent implements OnInit, OnDestroy {
   addAllergens: AllergenCode[] = [];
 
   newId = '';
-  newIcon = '🍽️';
+  newIcon = '';
   newTitle = '';
   newSubtitle = '';
   newHasTriple = false;
@@ -528,7 +528,7 @@ export class MenuEditorLocalPageComponent implements OnInit, OnDestroy {
     }
     const section: MenuSection = {
       id,
-      icon: this.newIcon.trim() || (this.isDrinks() ? '🍹' : '🍽️'),
+      icon: this.newIcon.trim() || id,
       title,
       items: [],
       hasTriplePricing: this.isDrinks() ? false : this.newHasTriple,

@@ -1,16 +1,43 @@
 {
   "id": "licores",
-  "icon": "🥃",
+  "icon": "licores",
   "title": "Licores",
   "items": [
-    { "name": "Tequila", "price": "2,50€" },
-    { "name": "Triple Sec", "price": "2,00€" },
-    { "name": "Amaretto", "price": "4,00€" },
-    { "name": "Baileys", "price": "3,80€" },
-    { "name": "Tía María", "price": "3,80€" },
-    { "name": "Crema de orujo", "price": "3,20€" },
-    { "name": "Jägermeister", "price": "3,30€" },
-    { "name": "Frangelico", "price": "3,80€" },
-    { "name": "Malibu", "price": "3,00€" }
+    {
+      "name": "Tequila",
+      "price": "2,50€"
+    },
+    {
+      "name": "Triple Sec",
+      "price": "2,00€"
+    },
+    {
+      "name": "Amaretto",
+      "price": "4,00€"
+    },
+    {
+      "name": "Baileys",
+      "price": "3,80€"
+    },
+    {
+      "name": "Tía María",
+      "price": "3,80€"
+    },
+    {
+      "name": "Crema de orujo",
+      "price": "3,20€"
+    },
+    {
+      "name": "Jägermeister",
+      "price": "3,30€"
+    },
+    {
+      "name": "Frangelico",
+      "price": "3,80€"
+    },
+    {
+      "name": "Malibu",
+      "price": "3,00€"
+    }
   ]
 }
