@@ -198,8 +198,8 @@ const LEGEND_CODES = [
       </div>
 
       @if (!isDrinks()) {
-        <details class="legend surface-panel">
-          <summary>⚠ {{ 'menu.legendSummary' | t }}</summary>
+        <section class="legend surface-panel" aria-label="{{ 'menu.legendSummary' | t }}">
+          <h2 class="legend-title">⚠ {{ 'menu.legendSummary' | t }}</h2>
           <div class="legend-grid">
             @for (code of legendCodes; track code) {
               <div class="legend-item">
@@ -208,7 +208,7 @@ const LEGEND_CODES = [
               </div>
             }
           </div>
-        </details>
+        </section>
       }
     </div>
   `,
