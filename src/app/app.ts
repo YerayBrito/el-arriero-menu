@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, PLATFORM_ID, inject } from '@angular/core';
 import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { SiteHeaderComponent } from './components/site-header/site-header.component';
@@ -18,6 +19,7 @@ import { SiteFooterComponent } from './components/site-footer/site-footer.compon
 })
 export class App {
   private readonly router = inject(Router);
+  private readonly platformId = inject(PLATFORM_ID);
 
   constructor() {
     this.router.events
@@ -25,11 +27,37 @@ export class App {
       .subscribe(() => this.syncLayoutAfterNav());
 
     queueMicrotask(() => this.syncLayoutAfterNav());
+
+    // iOS Safari: el “pull-to-refresh” no respeta overscroll-behavior.
+    // Bloqueamos el gesto solo cuando estás arriba del todo.
+    if (isPlatformBrowser(this.platformId)) this.disablePullToRefreshIOS();
   }
 
   private syncLayoutAfterNav(): void {
     this.syncPrintSheetClass();
     this.syncPedidosKioskClass();
+  }
+
+  private disablePullToRefreshIOS(): void {
+    let startY = 0;
+    const onTouchStart = (e: TouchEvent) => {
+      startY = e.touches[0]?.clientY ?? 0;
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      const y = e.touches[0]?.clientY ?? 0;
+      const dy = y - startY;
+      if (dy <= 0) return;
+
+      const el = document.scrollingElement;
+      if (!el) return;
+      if (el.scrollTop > 0) return;
+
+      // Si estás arriba del todo y arrastras hacia abajo, cancelamos el refresh.
+      e.preventDefault();
+    };
+
+    window.addEventListener('touchstart', onTouchStart, { passive: true });
+    window.addEventListener('touchmove', onTouchMove, { passive: false });
   }
 
   /** Vista /pedidos: pantalla completa (sin cabecera web). */
