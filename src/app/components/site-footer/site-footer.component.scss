@@ -73,18 +73,23 @@
   }
 }
 
-.inner > .col:first-child a.muted {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  transition: color 0.15s ease;
+.footer-contact-links {
+  margin: 0;
 
-  &:hover {
-    color: #fffaf5;
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: #fffaf5;
+    }
   }
-}
 
-.inner > .col:first-child a.mail {
-  overflow-wrap: anywhere;
+  a.mail {
+    overflow-wrap: anywhere;
+  }
 }
 
 .name {

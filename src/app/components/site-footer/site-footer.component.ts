@@ -13,13 +13,15 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
         <div class="col">
           <div class="name">Las Salinas Arinaga</div>
           <div class="muted">C. Churruca, 40 · 35118 Arinaga · Las Palmas</div>
-          <a
-            class="muted"
-            href="https://maps.app.goo.gl/Jss47pXqB7tWmpqn7"
-            target="_blank"
-            rel="noopener noreferrer"
-          >{{ 'footer.mapsLink' | t }}</a>
-          <a class="muted mail" href="mailto:lassalinasarinaga@gmail.com">lassalinasarinaga@gmail.com</a>
+          <p class="footer-contact-links muted" data-nosnippet>
+            <a
+              href="https://maps.app.goo.gl/Jss47pXqB7tWmpqn7"
+              target="_blank"
+              rel="noopener noreferrer"
+            >{{ 'footer.mapsLink' | t }}</a>
+            <span class="footer-contact-sep" aria-hidden="true"> · </span>
+            <a class="mail" href="mailto:lassalinasarinaga@gmail.com">lassalinasarinaga@gmail.com</a>
+          </p>
         </div>
         <div class="col links">
           <a routerLink="/carta">{{ 'footer.navMenu' | t }}</a>
