@@ -5,7 +5,11 @@
  */
 export const HOME_CAROUSEL_IMAGES: readonly string[] = [
   '/assets/photos/Bar-1.jpg',
+  '/assets/photos/Bar-2.jpg',
   '/assets/photos/Bar-3.jpg',
+  '/assets/photos/Bar-4.jpg',
+  '/assets/photos/Bar-5.jpg',
+  '/assets/photos/Bar-6.jpg',
 ];
 
 /** Intervalo entre slides (ms). */
