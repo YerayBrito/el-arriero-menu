@@ -44,3 +44,35 @@ export const CARTA_SHEET_IDS = {
     right: ['cervezas', 'vodka', 'aperitivos', 'rones', 'brandy', 'ginebra', 'whisky'],
   },
 } as const;
+
+export type CartaPrintPage = {
+  left: readonly string[];
+  right: readonly string[];
+};
+
+/**
+ * Distribución de páginas A4 para impresión (/carta/imprimir).
+ * Dos hojas para mejorar legibilidad (tamaño de letra mayor).
+ */
+export const CARTA_PRINT_PAGES: Record<CartaKind, readonly CartaPrintPage[]> = {
+  comida: [
+    {
+      left: ['entrantes', 'ensaladas'],
+      right: ['pescados', 'salsas'],
+    },
+    {
+      left: ['carnes', 'bocadillos'],
+      right: ['postres', 'domingos'],
+    },
+  ],
+  bebidas: [
+    {
+      left: ['refrescos', 'zumos', 'cafe'],
+      right: ['cervezas', 'vodka', 'chupitos', 'licores'],
+    },
+    {
+      left: ['cocteles', 'vinos', 'whisky', 'aperitivos'],
+      right: ['rones', 'brandy', 'ginebra'],
+    },
+  ],
+};

@@ -6,7 +6,11 @@ import { map } from 'rxjs/operators';
 import { MenuSectionComponent } from '../section/menu-section.component';
 import { AllergenIconComponent } from '../allergen-icon/allergen-icon.component';
 import { MENU_SECTIONS } from '../../data/menu.data';
-import { CARTA_SHEET_IDS, CartaKind, DRINKS_SECTIONS } from '../../data/drinks.data';
+import {
+  CARTA_PRINT_PAGES,
+  CartaKind,
+  DRINKS_SECTIONS,
+} from '../../data/drinks.data';
 import { AllergenCode, MenuSection } from '../../models/menu.model';
 import {
   MenuPrintCatalogService,
@@ -66,7 +70,7 @@ export class MenuComponent implements OnInit {
 
   readonly restaurantName = 'LAS SALINAS ARINAGA';
   readonly addressLine = 'C. Churruca, 40 · 35118 Arinaga · Las Palmas';
-  readonly mapsUrl = 'https://maps.app.goo.gl/Jss47pXqB7tWmpqn7';
+  readonly mapsUrl = 'https://maps.app.goo.gl/LUKdof4ZQGZCkHcC7';
 
   readonly cartaKind = toSignal(
     this.route.queryParamMap.pipe(
@@ -137,18 +141,22 @@ export class MenuComponent implements OnInit {
       : null
   );
 
-  readonly leftSections = computed(() => {
+  readonly printPages = computed(() => {
     this.printCatalog.ready();
     this.printLang();
     this.cartaKind();
-    return this.localizeColumn('left');
-  });
+    const kind = this.cartaKind();
+    const pages = CARTA_PRINT_PAGES[kind];
 
-  readonly rightSections = computed(() => {
-    this.printCatalog.ready();
-    this.printLang();
-    this.cartaKind();
-    return this.localizeColumn('right');
+    return pages.map((p, index) => ({
+      index,
+      left: this.localizeIds(kind, p.left),
+      right: this.localizeIds(kind, p.right),
+      /** En comida, la leyenda debe verse en todas las hojas. */
+      showLegend: kind === 'comida',
+      /** En comida, el aviso debe verse en todas las hojas. */
+      showWarn: kind === 'comida',
+    }));
   });
 
   ngOnInit(): void {
@@ -191,20 +199,13 @@ export class MenuComponent implements OnInit {
     window.print();
   }
 
-  private localizeColumn(side: 'left' | 'right'): MenuSection[] {
-    const sections = this.sectionsForColumn(side);
-    const lang = this.printLang();
-    const kind = this.cartaKind();
-    if (!this.printCatalog.ready()) return sections;
-    return sections.map(section => this.printCatalog.localizeSection(kind, lang, section));
-  }
-
-  private sectionsForColumn(side: 'left' | 'right'): MenuSection[] {
-    const kind = this.cartaKind();
-    const ids = CARTA_SHEET_IDS[kind][side];
+  private localizeIds(kind: CartaKind, ids: readonly string[]): MenuSection[] {
     const pool = kind === 'bebidas' ? DRINKS_SECTIONS : MENU_SECTIONS;
-    return ids
+    const sections = ids
       .map(id => pool.find(section => section.id === id))
       .filter((section): section is MenuSection => section != null);
+    const lang = this.printLang();
+    if (!this.printCatalog.ready()) return sections;
+    return sections.map(section => this.printCatalog.localizeSection(kind, lang, section));
   }
 }

@@ -15,7 +15,7 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
           <div class="muted">C. Churruca, 40 · 35118 Arinaga · Las Palmas</div>
           <p class="footer-contact-links muted" data-nosnippet>
             <a
-              href="https://maps.app.goo.gl/Jss47pXqB7tWmpqn7"
+              href="https://maps.app.goo.gl/LUKdof4ZQGZCkHcC7"
               target="_blank"
               rel="noopener noreferrer"
             >{{ 'footer.mapsLink' | t }}</a>

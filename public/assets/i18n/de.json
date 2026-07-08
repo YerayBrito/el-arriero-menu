@@ -104,6 +104,8 @@
     "logoAlt": "Las Salinas Arinaga",
     "addressLabel": "Adresse",
     "openMaps": "In Google Maps öffnen",
+    "contactLabel": "Kontakt",
+    "phoneLabel": "Telefon",
     "emailLabel": "E-Mail",
     "hoursLabel": "Öffnungszeiten",
     "hoursValue": "Montag: Ruhetag\nDienstag–Samstag: 10:00–16:00 und 19:00–23:00\nSonntag: 10:00–16:00",

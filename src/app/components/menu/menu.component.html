@@ -48,74 +48,76 @@
   </div>
 </div>
 
-<div class="page" [class.page--drinks]="isDrinks()">
-  <div class="border-outer"></div>
-  <div class="border-inner"></div>
-  <span class="corner c-tl">✦</span>
-  <span class="corner c-tr">✦</span>
-  <span class="corner c-bl">✦</span>
-  <span class="corner c-br">✦</span>
+@for (p of printPages(); track p.index) {
+  <div class="page" [class.page--drinks]="isDrinks()">
+    <div class="border-outer"></div>
+    <div class="border-inner"></div>
+    <span class="corner c-tl">✦</span>
+    <span class="corner c-tr">✦</span>
+    <span class="corner c-bl">✦</span>
+    <span class="corner c-br">✦</span>
 
-  <div class="page-layout">
-    <header class="header">
-      <div class="wave">〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰</div>
-      <img
-        class="brand-logo"
-        src="/assets/brand/logo-las-salinas.png"
-        alt="Las Salinas Arinaga"
-        loading="eager"
-      />
-      <div class="tagline">{{ tagline() }}</div>
-      <div class="tagline tagline-addr">{{ addressLine }}</div>
-      <div class="divider">
-        <div class="line line-l"></div>
-        <span class="anchor">⚓</span>
-        <div class="line line-r"></div>
-      </div>
-    </header>
-
-    <div class="page-body">
-      <div class="page-body-inner">
-        <div class="two-col" [class.two-col--compact]="isDrinks()">
-          <div class="col">
-            @for (section of leftSections(); track section.id) {
-              <app-menu-section [section]="section" [pricingLabels]="pricingLabels()"></app-menu-section>
-            }
-          </div>
-
-          <div class="col">
-            @for (section of rightSections(); track section.id) {
-              <app-menu-section [section]="section" [pricingLabels]="pricingLabels()"></app-menu-section>
-            }
-          </div>
+    <div class="page-layout">
+      <header class="header">
+        <div class="wave">〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰</div>
+        <img
+          class="brand-logo"
+          src="/assets/brand/logo-las-salinas.png"
+          alt="Las Salinas Arinaga"
+          loading="eager"
+        />
+        <div class="tagline">{{ tagline() }}</div>
+        <div class="tagline tagline-addr">{{ addressLine }}</div>
+        <div class="divider">
+          <div class="line line-l"></div>
+          <span class="anchor">⚓</span>
+          <div class="line line-r"></div>
         </div>
-      </div>
-    </div>
-  </div>
+      </header>
 
-  <div class="page-sheet-foot">
-    @if (!isDrinks()) {
-      <div class="legend">
-        <div class="legend-title">{{ legendTitle() }}</div>
-        <div class="legend-row">
-          @for (item of legend(); track item.code) {
-            <div class="legend-item">
-              <app-allergen-icon [code]="item.code"></app-allergen-icon>
-              <span class="legend-text">{{ item.label }}</span>
+      <div class="page-body">
+        <div class="page-body-inner">
+          <div class="two-col" [class.two-col--compact]="isDrinks()">
+            <div class="col">
+              @for (section of p.left; track section.id) {
+                <app-menu-section [section]="section" [pricingLabels]="pricingLabels()"></app-menu-section>
+              }
             </div>
-          }
+
+            <div class="col">
+              @for (section of p.right; track section.id) {
+                <app-menu-section [section]="section" [pricingLabels]="pricingLabels()"></app-menu-section>
+              }
+            </div>
+          </div>
         </div>
       </div>
-    }
+    </div>
 
-    <div class="footer">
-      <div class="footer-note">{{ footerNote() }}</div>
-      @if (isPrintView() && pdfTakeawayNote()) {
-        <div class="footer-takeaway">{{ pdfTakeawayNote() }}</div>
+    <div class="page-sheet-foot">
+      @if (p.showLegend) {
+        <div class="legend">
+          <div class="legend-title">{{ legendTitle() }}</div>
+          <div class="legend-row">
+            @for (item of legend(); track item.code) {
+              <div class="legend-item">
+                <app-allergen-icon [code]="item.code"></app-allergen-icon>
+                <span class="legend-text">{{ item.label }}</span>
+              </div>
+            }
+          </div>
+        </div>
       }
-      @if (!isDrinks()) {
-        <div class="footer-warn">{{ footerWarn() }}</div>
-      }
+
+      <div class="footer">
+        <div class="footer-note">{{ footerNote() }}</div>
+        @if (isPrintView() && pdfTakeawayNote()) {
+          <div class="footer-takeaway">{{ pdfTakeawayNote() }}</div>
+        }
+        @if (p.showWarn) {
+          <div class="footer-warn">{{ footerWarn() }}</div>
+        }
+      </div>
     </div>
   </div>
-</div>
+}
