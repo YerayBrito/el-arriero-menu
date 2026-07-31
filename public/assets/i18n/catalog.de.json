@@ -101,7 +101,7 @@
       },
       "7": {
         "name": "★ Las Salinas Arinaga Teller",
-        "description": "Fisch-Tacos, frittierte Sepia, Kroketten und runzelige Kartoffeln"
+        "description": "Meeresfrüchte"
       }
     },
     "carnes": {
@@ -117,24 +117,40 @@
     },
     "bocadillos": {
       "0": {
-        "name": "Sepia-Bocadillo",
+        "name": "Sahara-Sepia-Bocadillo",
         "description": "Krautsalat und Alioli"
       },
       "1": {
-        "name": "Baby-Tintenfisch-Bocadillo",
+        "name": "Sahara-Baby-Tintenfisch-Bocadillo",
         "description": "Krautsalat und Alioli"
       },
       "2": {
+        "name": "Sahara-Calamari-Bocadillo",
+        "description": "Krautsalat und Alioli"
+      },
+      "3": {
         "name": "Hähnchenbrust-Bocadillo",
         "description": "Salat, Tomate und Alioli"
       },
-      "3": {
+      "4": {
+        "name": "Panierter Hähnchenbrust-Bocadillo",
+        "description": "Salat, Tomate und Alioli"
+      },
+      "5": {
         "name": "Rinderfilet-Bocadillo",
         "description": "Salat, Tomate und Alioli"
       },
-      "4": {
+      "6": {
+        "name": "Spezial-Hähnchenbrust-Bocadillo",
+        "description": "Salat, Tomate, Alioli, Schinken, Käse und Ei"
+      },
+      "7": {
+        "name": "Spezial-Rinderfilet-Bocadillo",
+        "description": "Salat, Tomate, Alioli, Schinken, Käse und Ei"
+      },
+      "8": {
         "name": "Extras",
-        "note": "Zusatz optional (Schinken, Käse, Ei): +0,80€ pro Stück"
+        "note": "Zusatz optional (Schinken, Käse, Ei): +0,60€ pro Stück"
       }
     },
     "postres": {

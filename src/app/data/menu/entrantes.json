@@ -52,7 +52,7 @@
     {
       "name": "Pulpo a la gallega",
       "description": "Sal, pimentón dulce o picante y aceite de oliva",
-      "price": "14,80€",
+      "price": "17,50€",
       "allergens": [
         "moluscos"
       ]
@@ -69,7 +69,7 @@
     {
       "name": "Puntitas de calamar",
       "description": "Harina de trigo, sal",
-      "price": "9,80€",
+      "price": "10,20€",
       "allergens": [
         "gluten",
         "moluscos"

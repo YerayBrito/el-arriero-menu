@@ -101,7 +101,7 @@
       },
       "7": {
         "name": "★ Combo Las Salinas Arinaga",
-        "description": "Tacos de pescado, choco frito, croquetas y papas arrugadas"
+        "description": "Productos del Mar"
       }
     },
     "carnes": {
@@ -117,24 +117,40 @@
     },
     "bocadillos": {
       "0": {
-        "name": "Bocadillo de choco",
+        "name": "Bocadillo de choco sahariano",
         "description": "Ensalada de col y alioli"
       },
       "1": {
-        "name": "Bocadillo de chipirones",
+        "name": "Bocadillo de chipirones sahariano",
         "description": "Ensalada de col y alioli"
       },
       "2": {
+        "name": "Bocadillo calamares saharianos",
+        "description": "Ensalada de col y alioli"
+      },
+      "3": {
         "name": "Bocadillo de pechuga",
         "description": "Lechuga, tomate y alioli"
       },
-      "3": {
+      "4": {
+        "name": "Bocadillo de pechuga empanada",
+        "description": "Lechuga, tomate y alioli"
+      },
+      "5": {
         "name": "Bocadillo de vuelta",
         "description": "Lechuga, tomate y alioli"
       },
-      "4": {
+      "6": {
+        "name": "Bocadillo pechuga especial",
+        "description": "Lechuga, tomate, alioli, jamón, queso y huevo"
+      },
+      "7": {
+        "name": "Bocadillo vuelta especial",
+        "description": "Lechuga, tomate, alioli, jamón, queso y huevo"
+      },
+      "8": {
         "name": "Extras",
-        "note": "Si desea algún extra (jamón, queso, huevo): +0,80€ cada uno"
+        "note": "Si desea algún extra (jamón, queso, huevo): +0,60€ cada uno"
       }
     },
     "postres": {

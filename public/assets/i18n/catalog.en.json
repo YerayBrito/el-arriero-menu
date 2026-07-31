@@ -101,7 +101,7 @@
       },
       "7": {
         "name": "★ Las Salinas Arinaga platter",
-        "description": "Fish tacos, fried cuttlefish, croquettes and wrinkly potatoes"
+        "description": "Seafood"
       }
     },
     "carnes": {
@@ -117,24 +117,40 @@
     },
     "bocadillos": {
       "0": {
-        "name": "Cuttlefish sandwich",
+        "name": "Saharan cuttlefish sandwich",
         "description": "Coleslaw and aioli"
       },
       "1": {
-        "name": "Baby squid sandwich",
+        "name": "Saharan baby squid sandwich",
         "description": "Coleslaw and aioli"
       },
       "2": {
+        "name": "Saharan calamari sandwich",
+        "description": "Coleslaw and aioli"
+      },
+      "3": {
         "name": "Chicken breast sandwich",
         "description": "Lettuce, tomato and aioli"
       },
-      "3": {
+      "4": {
+        "name": "Breaded chicken breast sandwich",
+        "description": "Lettuce, tomato and aioli"
+      },
+      "5": {
         "name": "Beef fillet sandwich",
         "description": "Lettuce, tomato and aioli"
       },
-      "4": {
+      "6": {
+        "name": "Special chicken breast sandwich",
+        "description": "Lettuce, tomato, aioli, ham, cheese and egg"
+      },
+      "7": {
+        "name": "Special beef fillet sandwich",
+        "description": "Lettuce, tomato, aioli, ham, cheese and egg"
+      },
+      "8": {
         "name": "Extras",
-        "note": "Any extra (ham, cheese, egg): +€0.80 each"
+        "note": "Any extra (ham, cheese, egg): +€0.60 each"
       }
     },
     "postres": {
