@@ -108,7 +108,7 @@
     "phoneLabel": "Teléfono",
     "emailLabel": "Correo",
     "hoursLabel": "Horario",
-    "hoursValue": "Lunes: descanso\nMartes a sábado: 10:00–16:00 y 19:00–23:00\nDomingo: 10:00–16:00",
+    "hoursValue": "Lunes: descanso\nMartes a sábado: 11:00-23:00 (La cocina permanecera cerrada de 16:00 a 19:00)\nDomingo: 10:00–17:00",
     "mapLabel": "Mapa",
     "mapHint": "También puedes abrirlo en Google Maps si lo prefieres.",
     "mapRegion": "Mapa de Las Salinas Arinaga",

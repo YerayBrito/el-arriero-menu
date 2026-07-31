@@ -108,7 +108,7 @@
     "phoneLabel": "Telefon",
     "emailLabel": "E-Mail",
     "hoursLabel": "Öffnungszeiten",
-    "hoursValue": "Montag: Ruhetag\nDienstag–Samstag: 10:00–16:00 und 19:00–23:00\nSonntag: 10:00–16:00",
+    "hoursValue": "Montag: Ruhetag\nDienstag–Samstag: 11:00–23:00 (Die Küche bleibt von 16:00 bis 19:00 Uhr geschlossen)\nSonntag: 10:00–16:00",
     "mapLabel": "Karte",
     "mapHint": "Sie können den Standort auch in Google Maps öffnen.",
     "mapRegion": "Karte – Bar Las Salinas Arinaga",
