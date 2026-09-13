@@ -106,16 +106,20 @@
     },
     "carnes": {
       "0": {
-        "name": "Grilled beef fillet"
+        "name": "Grilled beef fillet",
+        "description": "Beef, coleslaw and fries"
       },
       "1": {
-        "name": "Grilled chicken breast"
+        "name": "Grilled chicken breast",
+        "description": "Chicken breast, coleslaw and fries"
       },
       "2": {
-        "name": "Fried pork"
+        "name": "Fried pork",
+        "description": "Pork, coleslaw and fries"
       },
       "3": {
-        "name": "Breaded chicken breast platter with fries and coleslaw"
+        "name": "Breaded chicken breast",
+        "description": "Breaded chicken breast, coleslaw and fries"
       }
     },
     "bocadillos": {

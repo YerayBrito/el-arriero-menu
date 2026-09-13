@@ -7,21 +7,25 @@
   "items": [
     {
       "name": "Vuelta de ternera a la plancha",
+      "description": "Carne de ternera, ensalada de col y papas fritas",
       "price": "11,80€"
     },
     {
       "name": "Pechuga de pollo a la plancha",
+      "description": "Pechuga de pollo, ensalada de col y papas fritas",
       "price": "10,80€"
     },
     {
       "name": "Carne de cerdo frita",
+      "description": "Carne de cerdo, ensalada de col y papas fritas",
       "triplePrice": {
         "media": "8,90€",
         "racion": "10,80€"
       }
     },
     {
-      "name": "Plato de pechuga empanada con papas fritas y ensalada de col",
+      "name": "Pechuga empanada",
+      "description": "Pechuga empanada, ensalada de col y papas fritas",
       "price": "12,50€",
       "allergens": [
         "gluten",

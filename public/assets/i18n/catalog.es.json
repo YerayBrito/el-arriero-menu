@@ -106,16 +106,20 @@
     },
     "carnes": {
       "0": {
-        "name": "Vuelta de ternera a la plancha"
+        "name": "Vuelta de ternera a la plancha",
+        "description": "Carne de ternera, ensalada de col y papas fritas"
       },
       "1": {
-        "name": "Pechuga de pollo a la plancha"
+        "name": "Pechuga de pollo a la plancha",
+        "description": "Pechuga de pollo, ensalada de col y papas fritas"
       },
       "2": {
-        "name": "Carne de cerdo frita"
+        "name": "Carne de cerdo frita",
+        "description": "Carne de cerdo, ensalada de col y papas fritas"
       },
       "3": {
-        "name": "Plato de pechuga empanada con papas fritas y ensalada de col"
+        "name": "Pechuga empanada",
+        "description": "Pechuga empanada, ensalada de col y papas fritas"
       }
     },
     "bocadillos": {

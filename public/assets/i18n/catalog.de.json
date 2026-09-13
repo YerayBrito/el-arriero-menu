@@ -106,16 +106,20 @@
     },
     "carnes": {
       "0": {
-        "name": "Rinderfilet vom Grill"
+        "name": "Rinderfilet vom Grill",
+        "description": "Rindfleisch, Krautsalat und Pommes frites"
       },
       "1": {
-        "name": "Hähnchenbrust vom Grill"
+        "name": "Hähnchenbrust vom Grill",
+        "description": "Hähnchenbrust, Krautsalat und Pommes frites"
       },
       "2": {
-        "name": "Gebratenes Schweinefleisch"
+        "name": "Gebratenes Schweinefleisch",
+        "description": "Schweinefleisch, Krautsalat und Pommes frites"
       },
       "3": {
-        "name": "Panierte Hähnchenbrust mit Pommes frites und Krautsalat"
+        "name": "Panierte Hähnchenbrust",
+        "description": "Panierte Hähnchenbrust, Krautsalat und Pommes frites"
       }
     },
     "bocadillos": {
