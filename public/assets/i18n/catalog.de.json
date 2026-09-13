@@ -113,6 +113,9 @@
       },
       "2": {
         "name": "Gebratenes Schweinefleisch"
+      },
+      "3": {
+        "name": "Panierte Hähnchenbrust mit Pommes frites und Krautsalat"
       }
     },
     "bocadillos": {
@@ -149,6 +152,10 @@
         "description": "Salat, Tomate, Alioli, Schinken, Käse und Ei"
       },
       "8": {
+        "name": "Fisch-Bocadillo",
+        "description": "Fisch, Krautsalat und Alioli"
+      },
+      "9": {
         "name": "Extras",
         "note": "Zusatz optional (Schinken, Käse, Ei): +0,60€ pro Stück"
       }
@@ -161,10 +168,6 @@
     },
     "domingos": {
       "0": {
-        "name": "🥘 Paella",
-        "description": "Mit Meeresfrüchten oder gemischt · nur sonntags · Pro Portion"
-      },
-      "1": {
         "name": "🍲 Kanarischer Sancocho",
         "description": "Gesalzener Zackenbarsch, Kartoffeln, Mojo und Gofio · nur sonntags · Pro Portion"
       }

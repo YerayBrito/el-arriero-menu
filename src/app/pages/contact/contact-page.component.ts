@@ -4,8 +4,8 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
 import { SectionIconComponent } from '../../components/section-icon/section-icon.component';
 
 const MAPS_URL = 'https://maps.app.goo.gl/LUKdof4ZQGZCkHcC7';
-const PHONE = '644 33 17 41';
-const PHONE_TEL = '+34644331741';
+const PHONE = '663 81 73 81';
+const PHONE_TEL = '+34663817381';
 const EMAIL = 'lassalinasarinaga@gmail.com';
 
 @Component({

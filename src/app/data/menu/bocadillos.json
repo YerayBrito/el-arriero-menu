@@ -81,6 +81,16 @@
       ]
     },
     {
+      "name": "Bocadillo de pescado",
+      "description": "Pescado, ensalada de col y alioli",
+      "price": "5,50€",
+      "allergens": [
+        "gluten",
+        "huevo",
+        "pescado"
+      ]
+    },
+    {
       "name": "Extras",
       "note": "Si desea algún extra (jamón, queso, huevo): +0,60€ cada uno"
     }

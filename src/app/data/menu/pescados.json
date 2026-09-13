@@ -39,7 +39,7 @@
     {
       "name": "Calamares fritos",
       "description": "Sal y harina de trigo",
-      "price": "17,80€",
+      "price": "19,80€",
       "allergens": [
         "gluten",
         "moluscos"
@@ -65,7 +65,7 @@
     {
       "name": "★ Combo Las Salinas Arinaga",
       "description": "Productos del Mar",
-      "price": "23,50€",
+      "price": "25,00€",
       "allergens": [
         "pescado",
         "moluscos"

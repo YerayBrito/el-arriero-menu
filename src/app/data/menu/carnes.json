@@ -19,6 +19,14 @@
         "media": "8,90€",
         "racion": "10,80€"
       }
+    },
+    {
+      "name": "Plato de pechuga empanada con papas fritas y ensalada de col",
+      "price": "12,50€",
+      "allergens": [
+        "gluten",
+        "huevo"
+      ]
     }
   ]
 }

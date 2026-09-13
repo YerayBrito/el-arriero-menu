@@ -113,6 +113,9 @@
       },
       "2": {
         "name": "Carne de cerdo frita"
+      },
+      "3": {
+        "name": "Plato de pechuga empanada con papas fritas y ensalada de col"
       }
     },
     "bocadillos": {
@@ -149,6 +152,10 @@
         "description": "Lechuga, tomate, alioli, jamón, queso y huevo"
       },
       "8": {
+        "name": "Bocadillo de pescado",
+        "description": "Pescado, ensalada de col y alioli"
+      },
+      "9": {
         "name": "Extras",
         "note": "Si desea algún extra (jamón, queso, huevo): +0,60€ cada uno"
       }
@@ -161,10 +168,6 @@
     },
     "domingos": {
       "0": {
-        "name": "🥘 Paella",
-        "description": "De marisco o mixta · Solo domingos · Por ración"
-      },
-      "1": {
         "name": "🍲 Sancocho canario",
         "description": "Cherne, papas, mojo y gofio · Solo domingos · Por ración"
       }

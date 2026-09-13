@@ -113,6 +113,9 @@
       },
       "2": {
         "name": "Fried pork"
+      },
+      "3": {
+        "name": "Breaded chicken breast platter with fries and coleslaw"
       }
     },
     "bocadillos": {
@@ -149,6 +152,10 @@
         "description": "Lettuce, tomato, aioli, ham, cheese and egg"
       },
       "8": {
+        "name": "Fish sandwich",
+        "description": "Fish, coleslaw and aioli"
+      },
+      "9": {
         "name": "Extras",
         "note": "Any extra (ham, cheese, egg): +€0.60 each"
       }
@@ -161,10 +168,6 @@
     },
     "domingos": {
       "0": {
-        "name": "🥘 Paella",
-        "description": "Seafood or mixed · Sundays only · Per portion"
-      },
-      "1": {
         "name": "🍲 Canarian sancocho",
         "description": "Salt-cured grouper, potatoes, mojo and gofio · Sundays only · Per portion"
       }
