@@ -13,17 +13,6 @@
         "moluscos"
       ],
       "note": "Consúltenos con antelación"
-    },
-    {
-      "name": "Paella para llevar",
-      "description": "Bajo pedido previo · para grupos",
-      "price": "Consultar",
-      "allergens": [
-        "crustaceos",
-        "moluscos",
-        "pescado"
-      ],
-      "note": "Consúltenos con antelación"
     }
   ]
 }
