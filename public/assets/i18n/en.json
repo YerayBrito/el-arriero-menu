@@ -143,6 +143,7 @@
     "depositMoreThan15": "Groups of more than 15 guests",
     "depositNote": "This amount is deducted from the total on the day of the event.",
     "guestsTitle": "Guests and cancellation",
+    "minGuests": "These menus are available for groups of 8 people or more.",
     "guestsConfirm": "The final number of guests must be confirmed at least 72 hours in advance.",
     "guestsFinalAmount": "<strong>The final amount is calculated on the confirmed number</strong>, even if fewer people attend.",
     "cancelOk": "Cancellation with more than 72h notice: the full deposit is refunded.",

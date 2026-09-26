@@ -143,6 +143,7 @@
     "depositMoreThan15": "Grupos de más de 15 comensales",
     "depositNote": "Este importe se descuenta del total el día del evento.",
     "guestsTitle": "Comensales y cancelación",
+    "minGuests": "Estos menús están disponibles para grupos a partir de 8 personas.",
     "guestsConfirm": "El número definitivo de comensales debe confirmarse con un mínimo de 72 horas de antelación.",
     "guestsFinalAmount": "<strong>El importe final se calcula sobre el número confirmado</strong>, incluso si asisten menos personas.",
     "cancelOk": "Cancelación con más de 72h: se devuelve el anticipo íntegro.",

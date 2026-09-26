@@ -143,6 +143,7 @@
     "depositMoreThan15": "Gruppen mit mehr als 15 Personen",
     "depositNote": "Dieser Betrag wird am Tag der Veranstaltung vom Gesamtbetrag abgezogen.",
     "guestsTitle": "Personenzahl und Stornierung",
+    "minGuests": "Diese Menüs sind für Gruppen ab 8 Personen verfügbar.",
     "guestsConfirm": "Die endgültige Personenzahl muss mindestens 72 Stunden im Voraus bestätigt werden.",
     "guestsFinalAmount": "<strong>Der Endbetrag wird auf Basis der bestätigten Personenzahl berechnet</strong>, auch wenn weniger Personen erscheinen.",
     "cancelOk": "Stornierung mit mehr als 72 Stunden Vorlauf: Die volle Anzahlung wird zurückerstattet.",

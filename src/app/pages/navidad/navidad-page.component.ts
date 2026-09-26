@@ -89,6 +89,7 @@ const PHONE_TEL = '+34663817381';
           <div class="terms-col">
             <h3>{{ 'navidad.guestsTitle' | t }}</h3>
             <ul>
+              <li><strong>{{ 'navidad.minGuests' | t }}</strong></li>
               <li>{{ 'navidad.guestsConfirm' | t }}</li>
               <li [innerHTML]="'navidad.guestsFinalAmount' | t"></li>
               <li>{{ 'navidad.cancelOk' | t }}</li>
