@@ -46,6 +46,13 @@ import {
           </div>
           <h1 class="headline">{{ 'home.headline' | t }}</h1>
           <p class="tagline">{{ 'home.tagline' | t }}</p>
+
+          <a class="xmas-ribbon" routerLink="/navidad" aria-label="Menús de Navidad para grupos, ver detalles">
+            <span class="xmas-ribbon-icon" aria-hidden="true">🎄</span>
+            <span class="xmas-ribbon-text">Menús de Navidad para Grupos ya disponibles</span>
+            <span class="xmas-ribbon-arrow" aria-hidden="true">→</span>
+          </a>
+
           <div class="hero-actions">
             <a class="btn-primary" routerLink="/carta">{{ 'home.ctaMenu' | t }}</a>
             <a class="btn-outline" routerLink="/contacto">{{ 'home.ctaContact' | t }}</a>
@@ -86,15 +93,6 @@ import {
 
       <p class="photo-credit">{{ 'home.photoCaption' | t }}</p>
     </section>
-
-    <a class="xmas-banner" routerLink="/navidad" aria-label="Menús de Navidad para grupos, ver detalles">
-      <span class="xmas-banner-icon" aria-hidden="true">🎄</span>
-      <span class="xmas-banner-text">
-        <strong>Menús de Navidad para Grupos ya disponibles</strong>
-        <span>Comidas de empresa y grupos de amigos · Reserva con antelación</span>
-      </span>
-      <span class="xmas-banner-cta">Ver menús →</span>
-    </a>
 
     <section class="home-strip" aria-label="Información rápida">
       <div class="home-strip-inner">
