@@ -14,7 +14,7 @@ export const CHRISTMAS_MENUS: ChristmasMenu[] = [
     nombre: 'Menú Marisco',
     entrantes: ['Gambas al ajillo', 'Mejillones al vapor', 'Pulpo a la gallega'],
     extra: 'Puntitas de calamar',
-    principales: ['Calamares fritos', 'Chocos fritos', 'Pulpo frito con mojo verde'],
+    principales: ['Calamares fritos', 'Paella de marisco', 'Sancocho'],
     priceBase: 44,
     priceAmp: 47,
   },
