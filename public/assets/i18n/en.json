@@ -3,6 +3,7 @@
     "home": "Home",
     "menu": "Menu",
     "contact": "Contact",
+    "navidad": "Christmas",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "langPicker": "Language"
@@ -32,7 +33,8 @@
     "stripLocationTitle": "In Arinaga",
     "stripLocationText": "By the beach, easy to find.",
     "stripSeaTitle": "Seafood kitchen",
-    "stripSeaText": "Fresh fish, seafood and tapas with Canarian flavour."
+    "stripSeaText": "Fresh fish, seafood and tapas with Canarian flavour.",
+    "xmasRibbon": "Christmas Group Menus now available"
   },
   "order": {
     "backHome": "Back to home",
@@ -121,5 +123,33 @@
     "notice": "Prices include local tax (IGIC) · Please inform staff of any allergies or intolerances",
     "copyright": "Bar Las Salinas Arinaga · All rights reserved.",
     "legal": "All content on this website (text, design, menu and images) is the property of Bar Las Salinas Arinaga. Reproduction or commercial use without prior written permission is strictly prohibited."
+  },
+  "navidad": {
+    "kicker": "🎄 Christmas {{year}}",
+    "title": "Christmas Group Menus",
+    "lead": "Company meals and groups of friends. Fixed menus per person, designed to enjoy the sea with no surprises on the bill.",
+    "entrantesLabel": "Starters to share",
+    "entrantesNote": "(1 portion per 4 people)",
+    "principalLabel": "Main course to choose",
+    "principalNote": "(1 per person)",
+    "ampliadoPrefix": "+ Extended: adds",
+    "includesText": "Includes dessert, bread, aioli and red mojo sauce, water, and 1 drink (soft drink, draft beer or glass of wine). Extra drinks charged separately.",
+    "priceBaseLabel": "Base",
+    "priceAmpLabel": "Extended",
+    "termsTitle": "Booking conditions",
+    "depositTitle": "Deposit",
+    "depositIntro": "To secure the date and number of guests, we require a deposit towards the final amount:",
+    "depositUpTo15": "Groups of up to 15 guests",
+    "depositMoreThan15": "Groups of more than 15 guests",
+    "depositNote": "This amount is deducted from the total on the day of the event.",
+    "guestsTitle": "Guests and cancellation",
+    "guestsConfirm": "The final number of guests must be confirmed at least 72 hours in advance.",
+    "guestsFinalAmount": "<strong>The final amount is calculated on the confirmed number</strong>, even if fewer people attend.",
+    "cancelOk": "Cancellation with more than 72h notice: the full deposit is refunded.",
+    "cancelLate": "Cancellation with less than 72h notice, or not showing up: the deposit is non-refundable.",
+    "confirmTitle": "To confirm the booking",
+    "confirmText": "Name of the person responsible, contact phone number, date and time, number of guests and chosen menu. <strong>The deposit must be paid by card, at least 15 days before the booking date, in person at the venue.</strong>",
+    "callCta": "Call {{phone}}",
+    "contactCta": "View contact details"
   }
 }

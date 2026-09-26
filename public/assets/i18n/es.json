@@ -3,6 +3,7 @@
     "home": "Inicio",
     "menu": "Carta",
     "contact": "Contacto",
+    "navidad": "Navidad",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "langPicker": "Idioma"
@@ -32,7 +33,8 @@
     "stripLocationTitle": "En Arinaga",
     "stripLocationText": "Junto a la playa, fácil de encontrar.",
     "stripSeaTitle": "Cocina de mar",
-    "stripSeaText": "Pescado fresco, mariscos y tapas con sabor canario."
+    "stripSeaText": "Pescado fresco, mariscos y tapas con sabor canario.",
+    "xmasRibbon": "Menús de Navidad para Grupos ya disponibles"
   },
   "order": {
     "backHome": "Volver al inicio",
@@ -121,5 +123,33 @@
     "notice": "Precios con IGIC incluido · Consulte al personal si padece alergias o intolerancias",
     "copyright": "Bar Las Salinas Arinaga · Todos los derechos reservados.",
     "legal": "Los contenidos de este sitio web (textos, diseño, carta e imágenes) son propiedad de Bar Las Salinas Arinaga. Queda prohibida su copia, reproducción o uso comercial sin autorización previa por escrito."
+  },
+  "navidad": {
+    "kicker": "🎄 Navidad {{year}}",
+    "title": "Menús de Grupo para Navidad",
+    "lead": "Comidas de empresa y grupos de amigos. Menús cerrados por persona, pensados para disfrutar del mar sin sorpresas en la cuenta.",
+    "entrantesLabel": "Entrantes para compartir",
+    "entrantesNote": "(1 ración cada 4 personas)",
+    "principalLabel": "Principal a elegir",
+    "principalNote": "(1 por persona)",
+    "ampliadoPrefix": "+ Ampliado: añade",
+    "includesText": "Incluye postre, pan, alioli y mojo rojo, agua, y 1 bebida (refresco, caña o copa de vino). Bebida adicional aparte.",
+    "priceBaseLabel": "Base",
+    "priceAmpLabel": "Ampliado",
+    "termsTitle": "Condiciones de reserva",
+    "depositTitle": "Anticipo a cuenta",
+    "depositIntro": "Para bloquear la fecha y el número de comensales solicitamos un anticipo a cuenta del importe final:",
+    "depositUpTo15": "Grupos de hasta 15 comensales",
+    "depositMoreThan15": "Grupos de más de 15 comensales",
+    "depositNote": "Este importe se descuenta del total el día del evento.",
+    "guestsTitle": "Comensales y cancelación",
+    "guestsConfirm": "El número definitivo de comensales debe confirmarse con un mínimo de 72 horas de antelación.",
+    "guestsFinalAmount": "<strong>El importe final se calcula sobre el número confirmado</strong>, incluso si asisten menos personas.",
+    "cancelOk": "Cancelación con más de 72h: se devuelve el anticipo íntegro.",
+    "cancelLate": "Cancelación con menos de 72h, o no presentarse: el anticipo no es reembolsable.",
+    "confirmTitle": "Para confirmar la reserva",
+    "confirmText": "Nombre de la persona responsable, teléfono de contacto, fecha y hora, número de comensales y menú elegido. <strong>El anticipo debe abonarse con tarjeta, un mínimo de 15 días de antelación a la fecha de la reserva, de forma presencial en el local.</strong>",
+    "callCta": "Llamar al {{phone}}",
+    "contactCta": "Ver datos de contacto"
   }
 }

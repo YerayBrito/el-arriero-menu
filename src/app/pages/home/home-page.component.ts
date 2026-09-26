@@ -47,9 +47,9 @@ import {
           <h1 class="headline">{{ 'home.headline' | t }}</h1>
           <p class="tagline">{{ 'home.tagline' | t }}</p>
 
-          <a class="xmas-ribbon" routerLink="/navidad" aria-label="Menús de Navidad para grupos, ver detalles">
+          <a class="xmas-ribbon" routerLink="/navidad" [attr.aria-label]="'home.xmasRibbon' | t">
             <span class="xmas-ribbon-icon" aria-hidden="true">🎄</span>
-            <span class="xmas-ribbon-text">Menús de Navidad para Grupos ya disponibles</span>
+            <span class="xmas-ribbon-text">{{ 'home.xmasRibbon' | t }}</span>
             <span class="xmas-ribbon-arrow" aria-hidden="true">→</span>
           </a>
 

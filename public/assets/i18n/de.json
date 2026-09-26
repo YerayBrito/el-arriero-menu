@@ -3,6 +3,7 @@
     "home": "Startseite",
     "menu": "Speisekarte",
     "contact": "Kontakt",
+    "navidad": "Weihnachten",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
     "langPicker": "Sprache"
@@ -32,7 +33,8 @@
     "stripLocationTitle": "In Arinaga",
     "stripLocationText": "Direkt am Strand, leicht zu finden.",
     "stripSeaTitle": "Meeresfrüchte",
-    "stripSeaText": "Frischer Fisch, Meeresfrüchte und Tapas mit kanarischem Geschmack."
+    "stripSeaText": "Frischer Fisch, Meeresfrüchte und Tapas mit kanarischem Geschmack.",
+    "xmasRibbon": "Weihnachts-Gruppenmenüs jetzt verfügbar"
   },
   "order": {
     "backHome": "Zur Startseite",
@@ -121,5 +123,33 @@
     "notice": "Preise inkl. Kanarischer Steuer (IGIC) · Bitte informieren Sie das Personal über Allergien oder Unverträglichkeiten",
     "copyright": "Bar Las Salinas Arinaga · Alle Rechte vorbehalten.",
     "legal": "Alle Inhalte dieser Website (Texte, Gestaltung, Speisekarte und Bilder) sind Eigentum von Bar Las Salinas Arinaga. Vervielfältigung, Reproduktion oder gewerbliche Nutzung ohne vorherige schriftliche Genehmigung ist untersagt."
+  },
+  "navidad": {
+    "kicker": "🎄 Weihnachten {{year}}",
+    "title": "Weihnachts-Gruppenmenüs",
+    "lead": "Firmenessen und Freundesgruppen. Feste Menüs pro Person, damit Sie das Meer ohne Überraschungen auf der Rechnung genießen können.",
+    "entrantesLabel": "Vorspeisen zum Teilen",
+    "entrantesNote": "(1 Portion pro 4 Personen)",
+    "principalLabel": "Hauptgericht zur Wahl",
+    "principalNote": "(1 pro Person)",
+    "ampliadoPrefix": "+ Erweitert: fügt hinzu",
+    "includesText": "Enthalten sind Dessert, Brot, Aioli und rote Mojo-Soße, Wasser und 1 Getränk (Softdrink, Bier vom Fass oder ein Glas Wein). Weitere Getränke werden separat berechnet.",
+    "priceBaseLabel": "Basis",
+    "priceAmpLabel": "Erweitert",
+    "termsTitle": "Reservierungsbedingungen",
+    "depositTitle": "Anzahlung",
+    "depositIntro": "Um das Datum und die Personenzahl zu sichern, bitten wir um eine Anzahlung auf den Gesamtbetrag:",
+    "depositUpTo15": "Gruppen bis 15 Personen",
+    "depositMoreThan15": "Gruppen mit mehr als 15 Personen",
+    "depositNote": "Dieser Betrag wird am Tag der Veranstaltung vom Gesamtbetrag abgezogen.",
+    "guestsTitle": "Personenzahl und Stornierung",
+    "guestsConfirm": "Die endgültige Personenzahl muss mindestens 72 Stunden im Voraus bestätigt werden.",
+    "guestsFinalAmount": "<strong>Der Endbetrag wird auf Basis der bestätigten Personenzahl berechnet</strong>, auch wenn weniger Personen erscheinen.",
+    "cancelOk": "Stornierung mit mehr als 72 Stunden Vorlauf: Die volle Anzahlung wird zurückerstattet.",
+    "cancelLate": "Stornierung mit weniger als 72 Stunden Vorlauf oder Nichterscheinen: Die Anzahlung wird nicht erstattet.",
+    "confirmTitle": "Zur Bestätigung der Reservierung",
+    "confirmText": "Name der verantwortlichen Person, Telefonnummer, Datum und Uhrzeit, Personenzahl und gewähltes Menü. <strong>Die Anzahlung muss mit Karte, mindestens 15 Tage vor dem Reservierungstermin, persönlich vor Ort geleistet werden.</strong>",
+    "callCta": "Anrufen: {{phone}}",
+    "contactCta": "Kontaktdaten ansehen"
   }
 }
