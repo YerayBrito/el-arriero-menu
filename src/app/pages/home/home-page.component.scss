@@ -266,6 +266,82 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Banner destacado de Navidad */
+.xmas-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1080px;
+  margin: -8px 16px 20px;
+  padding: 18px 22px;
+  border-radius: var(--radius-lg, 16px);
+  text-decoration: none;
+  background: linear-gradient(120deg, #7a2a1f 0%, #9c3a24 45%, #b8892e 130%);
+  box-shadow: 0 12px 36px rgba(90, 30, 20, 0.28);
+  border: 1px solid rgba(255, 235, 210, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  @media (min-width: 640px) {
+    margin: -8px auto 24px;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 44px rgba(90, 30, 20, 0.34);
+  }
+}
+
+.xmas-banner-icon {
+  font-size: 30px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.xmas-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+
+  strong {
+    font-family: var(--font-display);
+    font-size: clamp(13px, 2vw, 15px);
+    letter-spacing: 0.02em;
+    color: #fffaf5;
+  }
+
+  span {
+    font-family: var(--font-body);
+    font-size: clamp(12px, 1.8vw, 13.5px);
+    color: rgba(255, 250, 244, 0.85);
+  }
+}
+
+.xmas-banner-cta {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3d2918;
+  background: #fff8ec;
+  padding: 9px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .xmas-banner {
+    flex-wrap: wrap;
+  }
+
+  .xmas-banner-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* Franja informativa bajo el hero */
 .home-strip {
   background: linear-gradient(180deg, rgba(255, 252, 248, 0.6) 0%, transparent 100%);

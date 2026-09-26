@@ -25,6 +25,7 @@ import { TranslatePipe } from '../../i18n/translate.pipe';
           >{{ 'nav.home' | t }}</a>
           <a routerLink="/carta" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.menu' | t }}</a>
           <a routerLink="/contacto" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.contact' | t }}</a>
+          <a class="nav-xmas" routerLink="/navidad" routerLinkActive="active" (click)="closeMenu()">🎄 Navidad</a>
         </nav>
 
         <div class="lang" role="group" [attr.aria-label]="'nav.langPicker' | t">

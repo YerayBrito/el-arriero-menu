@@ -118,6 +118,23 @@
       border-color: rgba(201, 165, 74, 0.45);
     }
   }
+
+  .nav-xmas {
+    color: #f3c98e;
+    border-color: rgba(201, 165, 74, 0.4);
+    background: rgba(184, 137, 46, 0.12);
+
+    &:hover {
+      background: rgba(184, 137, 46, 0.22);
+      color: #fffaf5;
+    }
+
+    &.active {
+      background: rgba(184, 137, 46, 0.32);
+      border-color: rgba(201, 165, 74, 0.6);
+      color: #fffaf5;
+    }
+  }
 }
 
 .burger {

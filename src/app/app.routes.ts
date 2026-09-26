@@ -3,16 +3,18 @@ import { Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home/home-page.component';
 import { MenuPageComponent } from './pages/menu/menu-page.component';
 import { ContactPageComponent } from './pages/contact/contact-page.component';
+import { NavidadPageComponent } from './pages/navidad/navidad-page.component';
 import { localOnlyGuard } from './guards/local-only.guard';
 
 /**
- * Rutas públicas: inicio, carta y contacto.
+ * Rutas públicas: inicio, carta, contacto y navidad.
  * Herramientas solo en local: `/editor-carta`, `/pedidos`, `/carta/imprimir`.
  */
 export const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomePageComponent },
   { path: 'carta', component: MenuPageComponent },
   { path: 'contacto', component: ContactPageComponent },
+  { path: 'navidad', component: NavidadPageComponent },
 
   {
     path: 'carta/imprimir',

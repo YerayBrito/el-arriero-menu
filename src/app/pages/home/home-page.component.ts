@@ -87,6 +87,15 @@ import {
       <p class="photo-credit">{{ 'home.photoCaption' | t }}</p>
     </section>
 
+    <a class="xmas-banner" routerLink="/navidad" aria-label="Menús de Navidad para grupos, ver detalles">
+      <span class="xmas-banner-icon" aria-hidden="true">🎄</span>
+      <span class="xmas-banner-text">
+        <strong>Menús de Navidad para Grupos ya disponibles</strong>
+        <span>Comidas de empresa y grupos de amigos · Reserva con antelación</span>
+      </span>
+      <span class="xmas-banner-cta">Ver menús →</span>
+    </a>
+
     <section class="home-strip" aria-label="Información rápida">
       <div class="home-strip-inner">
         <article class="strip-card">
